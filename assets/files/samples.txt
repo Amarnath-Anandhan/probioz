@@ -1,0 +1,8 @@
+Sample_001	Human_Blood	TP53
+Sample_002	Human_Tissue	BRCA1
+Sample_003	Mouse_Liver	EGFR
+Sample_004	Human_Blood	MYC
+Sample_005	Plant_Leaf	RBCS
+Sample_006	Bacteria	CODH
+Sample_007	Yeast	ACT1
+Sample_008	Human_Tissue	KRAS

@@ -1,0 +1,442 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>probioz | project_9_python</title>
+    <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon.png">
+    <link rel="icon" type="image/png" sizes="48x48" href="/images/favicon.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="/images/favicon.png">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Raleway:wght@400;600;700&family=Karla:wght@300;400;500;600&family=Ubuntu+Mono:wght@400;700&display=swap"
+        rel="stylesheet">
+    <!-- Notebook Playground dependencies -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.65.16/codemirror.min.css">
+    <link rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.65.16/theme/material-darker.min.css">
+    <link rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/styles/atom-one-dark.min.css">
+    <!-- Notebook Playground styles -->
+    <link rel="stylesheet" href="project_notebook.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.65.16/codemirror.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.65.16/mode/python/python.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/highlight.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/pyodide/v0.24.1/full/pyodide.js"></script>
+    <link rel="stylesheet" href="../css/tokens.css">
+    <link rel="stylesheet" href="../css/primitives.css">
+    <link rel="stylesheet" href="../css/header-sizing.css">
+    <link rel="stylesheet" href="../css/layout-sizing.css">
+    <link rel="stylesheet" href="../css/page-specific.css">
+    <link rel="stylesheet" href="../css/project.css">
+</head>
+
+<body class="footer-stick">
+    <a class="skip-link" href="#main">Skip to content</a>
+
+    <!-- Header / Nav -->
+    <header class="site-header">
+        <nav class="navbar" role="navigation" aria-label="Main">
+            <div class="brand">
+                <img src="../images/logo.png" alt="Website Logo" class="site-logo">
+                <span class="logo-text">probioz</span>
+            </div>
+
+            <button class="hamburger" aria-label="Toggle menu" aria-expanded="false" aria-controls="navMenu">
+                <span class="bar"></span><span class="bar"></span><span class="bar"></span>
+            </button>
+
+            <ul id="navMenu" class="nav-links">
+                <li><a href="../home.html">Home</a></li>
+                <li><a class="active" href="../prlist.html">Projects</a></li>
+                <li><a href="../quizzes.html">Quiz</a></li>
+                <li><a href="../about.html">About Us</a></li>
+                <li><a href="../feedback.html">Feedback</a></li>
+                <li><a href="../contact.html">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+    <!-- Secondary Subject Navigation -->
+    <div class="subject-bar">
+        <ul>
+            <li><a href="../python.html">Python</a></li>
+            <li><a href="../perl.html">Perl</a></li>
+            <li><a href="../r.html">R</a></li>
+            <li><a href="../sql.html">SQL</a></li>
+            <li><a href="../ml.html">ML</a></li>
+        </ul>
+    </div>
+    <div class="wrap">
+        <div class="card">
+            <button class="btn_prev" onclick="window.location.href='project_8.html'">previous</button>
+            <div class="meta">
+                <h1>9.Mini DNA Analysis Dashboard (Report + Plots + Exports)</h1>
+                <div class="badge">Beginner</div>
+            </div>
+    
+            <div>
+                <p><strong style="color:#7dd3fc">Goal: </strong>Goal: Build one program that takes a DNA sequence, runs a
+                    set of analyses, and produces a small “dashboard” output: summary text, a CSV, and two plots.</p>
+                <p><strong style="color:#7dd3fc">Rule: </strong>Rule: Each cell has partial code. Fill the TODO lines, run
+                    the cell, check the output, then go to the next cell. The last cell has the full working program.</p>
+                <p><strong style="color:#7dd3fc">What this tool will do: </strong>What this tool will do: It takes DNA input
+                    (paste or FASTA), cleans and validates it, calculates base counts and GC%, finds motif positions, counts
+                    k-mers, exports a summary CSV, saves a text report, and creates two plots (base composition + k-mer
+                    frequency).</p>
+            </div>
+    
+            <!-- Notebook Playground section added -->
+            <div class="section nb-playground" id="notebook">
+                <h3>Lets start</h3>
+    
+                <div class="nb-filebar">
+                    <div class="nb-filebar-actions">
+                        <button type="button" class="nb-upload-global">Upload File</button>
+                        <button type="button" class="nb-show-uploads">Show Uploads</button>
+                        <button type="button" class="nb-clear-uploads-global">Clear Uploads</button>
+                        <span class="nb-upload-status" aria-live="polite"></span>
+                    </div>
+    
+                    <div class="nb-uploads-panel" hidden>
+                        <div class="nb-uploads-header">
+                            <strong>Uploaded files</strong>
+                            <button type="button" class="nb-refresh-uploads">Refresh</button>
+                        </div>
+                        <div class="nb-uploads-list"></div>
+                    </div>
+                </div>
+    
+                <div class="nb-cell" data-cell="1">
+    
+                    <div class="nb-cell-title">Input (paste/FASTA) and cleaning</div>
+                    <p class="nb-cell-desc">We start by choosing input mode. Paste is fastest, FASTA is more realistic.
+                        We read the raw sequence, clean it, and make sure we got a proper DNA string (A/T/G/C only).
+                        When you run this cell, check the length and preview. If length is 0, the input is empty or mostly
+                        invalid characters.</p>
+    
+                    <textarea class="nb-editor"># Cell 1: Input + clean DNA
+    
+    def read_fasta_sequence(file_path: str) -> str:
+        parts = []
+        with open(file_path, "r", encoding="utf-8") as f:
+            for line in f:
+                line = line.strip()
+                if line == "" or line.startswith(">"):
+                    continue
+                parts.append(line)
+        return "".join(parts)
+    
+    def clean_dna(seq: str) -> str:
+        seq = seq.upper()
+        seq = seq.replace(" ", "").replace("\n", "").replace("\t", "")
+        valid = set("ATGC")
+        seq = "".join(ch for ch in seq if ch in valid)
+        return seq
+    
+    mode = input("Choose input mode (PASTE or FASTA): ").strip().upper()
+    
+    # TODO: get raw sequence based on mode
+    # Hint:
+    # if mode == "PASTE":
+    #     raw = input("Paste DNA: ")
+    # elif mode == "FASTA":
+    #     path = input("FASTA file path: ").strip()
+    #     raw = read_fasta_sequence(path)
+    # else:
+    #     print("Invalid mode")
+    #     raw = ""
+    
+    # TODO: clean DNA
+    # Hint: seq = clean_dna(raw)
+    
+    # TODO: print basic info
+    # Hint:
+    # print("Length:", len(seq))
+    # print("Preview:", seq[:60])</textarea>
+                    <div class="nb-actions">
+                        <button class="nb-run" type="button">Run Cell</button>
+                        <button class="nb-reset" type="button">Reset</button>
+                        <button class="nb-clear" type="button">Clear</button>
+                    </div>
+                    <div class="nb-output" aria-live="polite">
+                        <pre class="nb-output-text"></pre>
+                    </div>
+                    <div class="nb-files"></div>
+                    <div class="nb-plot"></div>
+                </div>
+    
+                <div class="nb-cell" data-cell="2">
+    
+                    <div class="nb-cell-title">Summary stats + motif search</div>
+                    <p class="nb-cell-desc">Now we compute stats that should always be in a DNA report: base counts, GC%,
+                        and length.
+                        Then we search for a motif. We use find() in a loop so we can collect all positions.
+                        When you run this cell, you should see counts, GC%, and motif positions.</p>
+    
+                    <textarea class="nb-editor"># Cell 2: Stats + motif search
+    
+    def base_counts(seq: str):
+        a = seq.count("A")
+        t = seq.count("T")
+        g = seq.count("G")
+        c = seq.count("C")
+        return a, t, g, c
+    
+    def gc_percent(seq: str) -> float:
+        if len(seq) == 0:
+            return 0.0
+        return ((seq.count("G") + seq.count("C")) / len(seq)) * 100
+    
+    def motif_positions(seq: str, motif: str):
+        positions = []
+        start = 0
+    
+        # TODO: find all motif positions
+        # Hint:
+        # while True:
+        #     idx = seq.find(motif, start)
+        #     if idx == -1:
+        #         break
+        #     positions.append(idx)
+        #     start = idx + 1
+    
+        return positions
+    
+    motif = input("Enter motif (example ATG): ").strip().upper()
+    
+    # TODO: compute counts and GC
+    # Hint:
+    # a, t, g, c = base_counts(seq)
+    # gc = gc_percent(seq)
+    
+    # TODO: find motif positions
+    # Hint:
+    # pos = motif_positions(seq, motif)
+    
+    # TODO: print summary
+    # Hint:
+    # print("A:", a, "T:", t, "G:", g, "C:", c)
+    # print("GC%:", round(gc, 2))
+    # print("Motif positions:", pos)</textarea>
+                    <div class="nb-actions">
+                        <button class="nb-run" type="button">Run Cell</button>
+                        <button class="nb-reset" type="button">Reset</button>
+                        <button class="nb-clear" type="button">Clear</button>
+                    </div>
+                    <div class="nb-output" aria-live="polite">
+                        <pre class="nb-output-text"></pre>
+                    </div>
+                    <div class="nb-files"></div>
+                    <div class="nb-plot"></div>
+                </div>
+    
+                <div class="nb-cell" data-cell="3">
+    
+                    <div class="nb-cell-title">k-mer counting (top k-mers)</div>
+                    <p class="nb-cell-desc">Now we count k-mers. This gives a quick “pattern fingerprint” of the sequence.
+                        We slide across the sequence one base at a time and count each substring of size k in a dictionary.
+                        When you run this cell, check the top k-mers list. If it is empty, your k is bigger than the
+                        sequence.</p>
+    
+                    <textarea class="nb-editor"># Cell 3: k-mer frequency
+    
+    def kmer_counts(seq: str, k: int):
+        counts = {}
+    
+        # TODO: count k-mers
+        # Hint:
+        # for i in range(0, len(seq) - k + 1):
+        #     kmer = seq[i:i+k]
+        #     counts[kmer] = counts.get(kmer, 0) + 1
+    
+        return counts
+    
+    k_text = input("Enter k (example 3): ").strip()
+    k = int(k_text) if k_text != "" else 3
+    
+    # TODO: compute counts and show top 10
+    # Hint:
+    # counts = kmer_counts(seq, k)
+    # top = sorted(counts.items(), key=lambda x: x[1], reverse=True)[:10]
+    # print("Top k-mers:", top)</textarea>
+                    <div class="nb-actions">
+                        <button class="nb-run" type="button">Run Cell</button>
+                        <button class="nb-reset" type="button">Reset</button>
+                        <button class="nb-clear" type="button">Clear</button>
+                    </div>
+                    <div class="nb-output" aria-live="polite">
+                        <pre class="nb-output-text"></pre>
+                    </div>
+                    <div class="nb-files"></div>
+                    <div class="nb-plot"></div>
+                </div>
+    
+                <div class="nb-cell" data-cell="4">
+    
+                    <div class="nb-cell-title">Full final dashboard program (exports + plots)</div>
+                    <p class="nb-cell-desc">Now we build the full dashboard output.
+                        We export a CSV summary, save a text report, and draw two plots: base composition and top k-mers.
+                        When you run it, you should end with files + plots, not only prints.</p>
+                    <details>
+                        <summary>Show full program</summary>
+                        <textarea class="nb-editor"># Cell 4: Full Final Code - Mini DNA Analysis Dashboard
+
+import csv
+import matplotlib.pyplot as plt
+
+def read_fasta_sequence(file_path: str) -> str:
+    parts = []
+    with open(file_path, "r", encoding="utf-8") as f:
+        for line in f:
+            line = line.strip()
+            if line == "" or line.startswith(">"):
+                continue
+            parts.append(line)
+    return "".join(parts)
+
+def clean_dna(seq: str) -> str:
+    seq = seq.upper()
+    seq = seq.replace(" ", "").replace("\n", "").replace("\t", "")
+    valid = set("ATGC")
+    seq = "".join(ch for ch in seq if ch in valid)
+    return seq
+
+def base_counts(seq: str):
+    a = seq.count("A")
+    t = seq.count("T")
+    g = seq.count("G")
+    c = seq.count("C")
+    return a, t, g, c
+
+def gc_percent(seq: str) -> float:
+    if len(seq) == 0:
+        return 0.0
+    return ((seq.count("G") + seq.count("C")) / len(seq)) * 100
+
+def motif_positions(seq: str, motif: str):
+    positions = []
+    start = 0
+    while True:
+        idx = seq.find(motif, start)
+        if idx == -1:
+            break
+        positions.append(idx)
+        start = idx + 1
+    return positions
+
+def kmer_counts(seq: str, k: int):
+    counts = {}
+    for i in range(0, len(seq) - k + 1):
+        kmer = seq[i:i+k]
+        counts[kmer] = counts.get(kmer, 0) + 1
+    return counts
+
+mode = input("Choose input mode (PASTE or FASTA): ").strip().upper()
+if mode == "PASTE":
+    raw = input("Paste DNA: ")
+elif mode == "FASTA":
+    path = input("FASTA file path: ").strip()
+    raw = read_fasta_sequence(path)
+else:
+    print("Invalid mode")
+    raise SystemExit
+
+seq = clean_dna(raw)
+
+print("Length:", len(seq))
+if len(seq) == 0:
+    print("No DNA bases found. Use A/T/G/C only.")
+    raise SystemExit
+
+a, t, g, c = base_counts(seq)
+gc = gc_percent(seq)
+
+motif = input("Enter motif (example ATG): ").strip().upper()
+pos = motif_positions(seq, motif)
+
+k_text = input("Enter k (example 3): ").strip()
+k = int(k_text) if k_text != "" else 3
+counts = kmer_counts(seq, k)
+
+top_k = sorted(counts.items(), key=lambda x: x[1], reverse=True)[:10]
+
+print("A:", a, "T:", t, "G:", g, "C:", c)
+print("GC%:", round(gc, 2))
+print("Motif positions:", pos)
+print("Top k-mers:", top_k)
+
+summary_csv = input("Summary CSV name (example summary.csv): ").strip()
+if summary_csv == "":
+    summary_csv = "summary.csv"
+
+report_txt = input("Report text file (example report.txt): ").strip()
+if report_txt == "":
+    report_txt = "report.txt"
+
+with open(summary_csv, "w", newline="", encoding="utf-8") as f:
+    writer = csv.writer(f)
+    writer.writerow(["Length", "GC_percent", "A", "T", "G", "C", "Motif", "Motif_positions_count", "k"])
+    writer.writerow([len(seq), round(gc, 2), a, t, g, c, motif, len(pos), k])
+
+with open(report_txt, "w", encoding="utf-8") as f:
+    f.write("Mini DNA Analysis Dashboard\n")
+    f.write(f"Length: {len(seq)}\n")
+    f.write(f"GC%: {round(gc, 2)}\n")
+    f.write(f"A: {a}  T: {t}  G: {g}  C: {c}\n")
+    f.write(f"Motif: {motif}\n")
+    f.write(f"Motif positions: {pos}\n")
+    f.write(f"Top {len(top_k)} k-mers (k={k}):\n")
+    for km, ct in top_k:
+        f.write(f"{km}\t{ct}\n")
+
+print("Saved:", summary_csv)
+print("Saved:", report_txt)
+
+plt.figure()
+plt.bar(["A", "T", "G", "C"], [a, t, g, c])
+plt.ylabel("Count")
+plt.title("Base Composition")
+plt.show()
+
+if len(top_k) > 0:
+    labels = [x[0] for x in top_k]
+    values = [x[1] for x in top_k]
+
+    plt.figure()
+    plt.bar(labels, values)
+    plt.xticks(rotation=90)
+    plt.ylabel("Count")
+    plt.title(f"Top k-mers (k={k})")
+    plt.tight_layout()
+    plt.show()</textarea>
+                    </details>
+    
+                    <div class="nb-actions">
+                        <button class="nb-run" type="button">Run Cell</button>
+                        <button class="nb-reset" type="button">Reset</button>
+                        <button class="nb-clear" type="button">Clear</button>
+                    </div>
+                    <div class="nb-output" aria-live="polite">
+                        <pre class="nb-output-text"></pre>
+                    </div>
+                    <div class="nb-files"></div>
+                    <div class="nb-plot"></div>
+                </div>
+            </div>
+            <div class="btn_wrapper">
+                <button class="btn_prev" onclick="window.location.href='project_8.html'">previous</button>
+                <button class="btn_next" onclick="window.location.href='project_10.html'">Next</button>
+            </div>
+        </div>
+    </div>
+
+    <footer class="site-footer">
+        <p>&copy; 2026 Probioz &mdash; Built for Biologists, by Biologist.</p>
+    </footer>
+
+    <!-- Notebook Playground logic -->
+    <script src="project_notebook.js"></script>
+    <script src="../js/project.js"></script>
+</body>
+
+</html>

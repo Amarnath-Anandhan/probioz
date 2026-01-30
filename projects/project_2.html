@@ -1,0 +1,428 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>probioz | project_2_python</title>
+    <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon.png">
+    <link rel="icon" type="image/png" sizes="48x48" href="/images/favicon.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="/images/favicon.png">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Raleway:wght@400;600;700&family=Karla:wght@300;400;500;600&family=Ubuntu+Mono:wght@400;700&display=swap"
+        rel="stylesheet">
+    <!-- Notebook Playground dependencies -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.65.16/codemirror.min.css">
+    <link rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.65.16/theme/material-darker.min.css">
+    <link rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/styles/atom-one-dark.min.css">
+    <!-- Notebook Playground styles -->
+    <link rel="stylesheet" href="project_notebook.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.65.16/codemirror.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.65.16/mode/python/python.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/highlight.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/pyodide/v0.24.1/full/pyodide.js"></script>
+    <link rel="stylesheet" href="../css/tokens.css">
+    <link rel="stylesheet" href="../css/primitives.css">
+    <link rel="stylesheet" href="../css/header-sizing.css">
+    <link rel="stylesheet" href="../css/layout-sizing.css">
+    <link rel="stylesheet" href="../css/page-specific.css">
+    <link rel="stylesheet" href="../css/project.css">
+</head>
+
+<body class="footer-stick">
+    <a class="skip-link" href="#main">Skip to content</a>
+
+    <!-- Header / Nav -->
+    <header class="site-header">
+        <nav class="navbar" role="navigation" aria-label="Main">
+            <div class="brand">
+                <img src="../images/logo.png" alt="Website Logo" class="site-logo">
+                <span class="logo-text">probioz</span>
+            </div>
+
+            <button class="hamburger" aria-label="Toggle menu" aria-expanded="false" aria-controls="navMenu">
+                <span class="bar"></span><span class="bar"></span><span class="bar"></span>
+            </button>
+
+            <ul id="navMenu" class="nav-links">
+                <li><a href="../home.html">Home</a></li>
+                <li><a class="active" href="../prlist.html">Projects</a></li>
+                <li><a href="../quizzes.html">Quiz</a></li>
+                <li><a href="../about.html">About Us</a></li>
+                <li><a href="../feedback.html">Feedback</a></li>
+                <li><a href="../contact.html">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+    <!-- Secondary Subject Navigation -->
+    <div class="subject-bar">
+        <ul>
+            <li><a href="../python.html">Python</a></li>
+            <li><a href="../perl.html">Perl</a></li>
+            <li><a href="../r.html">R</a></li>
+            <li><a href="../sql.html">SQL</a></li>
+            <li><a href="../ml.html">ML</a></li>
+        </ul>
+    </div>
+    <div class="wrap">
+        <div class="card">
+            <button class="btn_prev" onclick="window.location.href='project_1.html'">previous</button>
+            <div class="meta">
+                <h1>2.Multi-FASTA Analyzer</h1>
+                <div class="badge">Beginner</div>
+            </div>
+    
+            <div>
+                <p><strong style="color:#7dd3fc">Goal: </strong>Goal: Build one program that reads a multi-FASTA file and
+                    makes a simple CSV summary.</p>
+                <p><strong style="color:#7dd3fc">Rule: </strong>Rule: Each cell has partial code. Fill the TODO lines, run
+                    the cell, check the output, then go to the next cell. The last cell has the full working program.</p>
+                <p><strong style="color:#7dd3fc">What this tool will do: </strong>What this tool will do: It reads a
+                    multi-FASTA file, collects each sequence ID and sequence, calculates length and GC%, takes the first 20
+                    bases, filters by minimum length, and saves the summary as a CSV.</p>
+            </div>
+    
+            <!-- Notebook Playground section added -->
+            <div class="section nb-playground" id="notebook">
+                <h3>Lets start</h3>
+    
+                <div class="nb-filebar">
+                    <div class="nb-filebar-actions">
+                        <button type="button" class="nb-upload-global">Upload File</button>
+                        <button type="button" class="nb-show-uploads">Show Uploads</button>
+                        <button type="button" class="nb-clear-uploads-global">Clear Uploads</button>
+                        <span class="nb-upload-status" aria-live="polite"></span>
+                    </div>
+    
+                    <div class="nb-uploads-panel" hidden>
+                        <div class="nb-uploads-header">
+                            <strong>Uploaded files</strong>
+                            <button type="button" class="nb-refresh-uploads">Refresh</button>
+                        </div>
+                        <div class="nb-uploads-list"></div>
+                    </div>
+                </div>
+    
+                <div class="nb-cell" data-cell="1">
+    
+                    <div class="nb-cell-title">Read the FASTA file</div>
+                    <p class="nb-cell-desc">Here we read the file and store data as (seq_id, seq) pairs.
+                        We detect headers using line.startswith(">"), build the sequence using a list and "".join(), and
+                        store each finished record in a list.</p>
+    
+                    <textarea class="nb-editor"># Cell 1: Read multi-FASTA (manual parsing)
+    
+    def read_fasta(file_path: str):
+        records = []
+    
+        current_id = None
+        current_seq_parts = []
+    
+        with open(file_path, "r", encoding="utf-8") as f:
+            for line in f:
+                line = line.strip()
+    
+                if line == "":
+                    continue
+    
+                if line.startswith(">"):
+                    # TODO: if we already have a record, save it
+                    # Hint:
+                    # if current_id is not None:
+                    #     full_seq = "".join(current_seq_parts)
+                    #     records.append((current_id, full_seq))
+    
+                    # TODO: start a new record
+                    # Hint:
+                    # current_id = line[1:].split()[0]
+                    # current_seq_parts = []
+    
+                    pass
+                else:
+                    # TODO: add sequence line
+                    # Hint: current_seq_parts.append(line)
+                    pass
+    
+        # TODO: save the last record after loop
+        # Hint:
+        # if current_id is not None:
+        #     full_seq = "".join(current_seq_parts)
+        #     records.append((current_id, full_seq))
+    
+        return records
+    
+    
+    file_path = input("Enter FASTA file path: ")
+    file_path = file_path.strip()
+    records = read_fasta(file_path)
+    
+    print("Total sequences:", len(records))
+    if len(records) > 0:
+        print("First ID:", records[0][0])
+        print("First 30 bases:", records[0][1][:30])</textarea>
+                    <div class="nb-actions">
+                        <button class="nb-run" type="button">Run Cell</button>
+                        <button class="nb-reset" type="button">Reset</button>
+                        <button class="nb-clear" type="button">Clear</button>
+                    </div>
+                    <div class="nb-output" aria-live="polite">
+                        <pre class="nb-output-text"></pre>
+                    </div>
+                    <div class="nb-files"></div>
+                    <div class="nb-plot"></div>
+                </div>
+    
+                <div class="nb-cell" data-cell="2">
+    
+                    <div class="nb-cell-title">Build the summary rows</div>
+                    <p class="nb-cell-desc">Here we calculate length, GC%, and a short preview for each sequence.
+                        We use len() for length, count() for base counts, and simple math for GC%.</p>
+    
+                    <textarea class="nb-editor"># Cell 2: Build summary rows
+    
+    def gc_percent(seq: str) -> float:
+        if len(seq) == 0:
+            return 0.0
+    
+        g_count = seq.count("G")
+        c_count = seq.count("C")
+        gc = g_count + c_count
+    
+        return (gc / len(seq)) * 100
+    
+    
+    summary_rows = []
+    
+    for seq_id, seq in records:
+        seq = seq.upper()
+    
+        # TODO: length
+        # Hint: length = len(seq)
+    
+        # TODO: GC%
+        # Hint: gc = gc_percent(seq)
+    
+        # TODO: first 20 bases
+        # Hint: preview = seq[:20]
+    
+        # TODO: store the row (id, length, gc, preview)
+        # Hint: summary_rows.append((seq_id, length, round(gc, 2), preview))
+    
+    print("Rows prepared:", len(summary_rows))
+    if len(summary_rows) > 0:
+        print("Example row:", summary_rows[0])</textarea>
+                    <div class="nb-actions">
+                        <button class="nb-run" type="button">Run Cell</button>
+                        <button class="nb-reset" type="button">Reset</button>
+                        <button class="nb-clear" type="button">Clear</button>
+                    </div>
+                    <div class="nb-output" aria-live="polite">
+                        <pre class="nb-output-text"></pre>
+                    </div>
+                    <div class="nb-files"></div>
+                    <div class="nb-plot"></div>
+                </div>
+    
+                <div class="nb-cell" data-cell="3">
+    
+                    <div class="nb-cell-title">Filter and export CSV</div>
+                    <p class="nb-cell-desc">Here we filter by minimum length and save to CSV.
+                        We use a simple if length >= min_len check and csv.writer() to write the file.</p>
+    
+                    <textarea class="nb-editor"># Cell 3: Filter + Export CSV
+    
+    import csv
+    
+    min_len_text = input("Minimum length (example: 0): ")
+    min_len_text = min_len_text.strip()
+    if min_len_text == "":
+        min_len = 0
+    else:
+        min_len = int(min_len_text)
+    
+    out_csv = input("Output CSV name (example: summary.csv): ")
+    out_csv = out_csv.strip()
+    if out_csv == "":
+        out_csv = "summary.csv"
+    
+    filtered_rows = []
+    
+    for row in summary_rows:
+        seq_id, length, gc, preview = row
+    
+        # TODO: keep only rows where length >= min_len
+        # Hint:
+        # if length >= min_len:
+        #     filtered_rows.append(row)
+    
+    with open(out_csv, "w", newline="", encoding="utf-8") as f:
+        writer = csv.writer(f)
+        writer.writerow(["Sequence_ID", "Length", "GC_percent", "First_20_bases"])
+        writer.writerows(filtered_rows)
+    
+    print("Saved:", out_csv)
+    print("Rows written:", len(filtered_rows))</textarea>
+                    <div class="nb-actions">
+                        <button class="nb-run" type="button">Run Cell</button>
+                        <button class="nb-reset" type="button">Reset</button>
+                        <button class="nb-clear" type="button">Clear</button>
+                    </div>
+                    <div class="nb-output" aria-live="polite">
+                        <pre class="nb-output-text"></pre>
+                    </div>
+                    <div class="nb-files"></div>
+                    <div class="nb-plot"></div>
+                </div>
+    
+                <div class="nb-cell" data-cell="4">
+    
+                    <div class="nb-cell-title">Full final program</div>
+                    <p class="nb-cell-desc">Here we combine reading, summary, filtering, and CSV export into one clean tool.
+                        We keep the code simple with small functions and clear steps.</p>
+                    <details>
+                        <summary>Show full program</summary>
+                        <textarea class="nb-editor"># Cell 4: Full Final Code - Multi-FASTA Analyzer
+
+import csv
+
+def read_fasta(file_path: str):
+    records = []
+    current_id = None
+    current_seq_parts = []
+
+    with open(file_path, "r", encoding="utf-8") as f:
+        for line in f:
+            line = line.strip()
+            if line == "":
+                continue
+
+            if line.startswith(">"):
+                # Save previous record
+                if current_id is not None:
+                    full_seq = "".join(current_seq_parts)
+                    records.append((current_id, full_seq))
+                # Start new record
+                current_id = line[1:].split()[0]
+                current_seq_parts = []
+            else:
+                current_seq_parts.append(line)
+
+    # Save last record
+    if current_id is not None:
+        full_seq = "".join(current_seq_parts)
+        records.append((current_id, full_seq))
+
+    return records
+
+
+def gc_percent(seq: str) -> float:
+    if len(seq) == 0:
+        return 0.0
+
+    g_count = seq.count("G")
+    c_count = seq.count("C")
+    gc = g_count + c_count
+
+    return (gc / len(seq)) * 100
+
+
+def build_summary(records):
+    rows = []
+
+    for seq_id, seq in records:
+        seq = seq.upper()
+
+        length = len(seq)
+        gc = gc_percent(seq)
+        preview = seq[:20]
+
+        rows.append((seq_id, length, round(gc, 2), preview))
+
+    return rows
+
+
+def filter_by_min_length(rows, min_len: int):
+    filtered = []
+
+    for row in rows:
+        seq_id, length, gc, preview = row
+        if length >= min_len:
+            filtered.append(row)
+
+    return filtered
+
+
+def export_csv(rows, out_csv: str):
+    with open(out_csv, "w", newline="", encoding="utf-8") as f:
+        writer = csv.writer(f)
+        writer.writerow(["Sequence_ID", "Length", "GC_percent", "First_20_bases"])
+        writer.writerows(rows)
+
+
+file_path = input("Enter FASTA file path: ")
+file_path = file_path.strip()
+records = read_fasta(file_path)
+
+print("Total sequences:", len(records))
+
+if len(records) == 0:
+    print("No sequences found. Check the FASTA format.")
+else:
+    summary_rows = build_summary(records)
+
+    min_len_text = input("Minimum length (example: 0): ")
+    min_len_text = min_len_text.strip()
+    if min_len_text == "":
+        min_len = 0
+    else:
+        min_len = int(min_len_text)
+
+    out_csv = input("Output CSV name (example: summary.csv): ")
+    out_csv = out_csv.strip()
+    if out_csv == "":
+        out_csv = "summary.csv"
+
+    filtered_rows = filter_by_min_length(summary_rows, min_len)
+    export_csv(filtered_rows, out_csv)
+
+    print("Saved:", out_csv)
+    print("Rows written:", len(filtered_rows))</textarea>
+                    </details>
+    
+                    <div  class="nb-cell-desc">
+                        <strong class="nb-cell-title">How this program works</strong>
+                        <br>read_fasta() reads the file and returns a list of (id, sequence) pairs.
+                        build_summary() makes rows with ID, length, GC%, and first 20 bases, then we filter by length and
+                        export to CSV.) - I have given you the content of project to follow the rules what I said. </div>
+    
+                    <div class="nb-actions">
+                        <button class="nb-run" type="button">Run Cell</button>
+                        <button class="nb-reset" type="button">Reset</button>
+                        <button class="nb-clear" type="button">Clear</button>
+                    </div>
+                    <div class="nb-output" aria-live="polite">
+                        <pre class="nb-output-text"></pre>
+                    </div>
+                    <div class="nb-files"></div>
+                    <div class="nb-plot"></div>
+                </div>
+            </div>
+            <div class="btn_wrapper">
+                <button class="btn_prev" onclick="window.location.href='project_1.html'">previous</button>
+                <button class="btn_next" onclick="window.location.href='project_3.html'">Next</button>
+            </div>
+        </div>
+    </div>
+
+    <footer class="site-footer">
+        <p>&copy; 2026 Probioz &mdash; Built for Biologists, by Biologist.</p>
+    </footer>
+
+    <!-- Notebook Playground logic -->
+    <script src="project_notebook.js"></script>
+    <script src="../js/project.js"></script>
+</body>
+
+</html>

@@ -1,0 +1,358 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>probioz | project_8_python</title>
+    <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon.png">
+    <link rel="icon" type="image/png" sizes="48x48" href="/images/favicon.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="/images/favicon.png">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Raleway:wght@400;600;700&family=Karla:wght@300;400;500;600&family=Ubuntu+Mono:wght@400;700&display=swap"
+        rel="stylesheet">
+    <!-- Notebook Playground dependencies -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.65.16/codemirror.min.css">
+    <link rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.65.16/theme/material-darker.min.css">
+    <link rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/styles/atom-one-dark.min.css">
+    <!-- Notebook Playground styles -->
+    <link rel="stylesheet" href="project_notebook.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.65.16/codemirror.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.65.16/mode/python/python.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/highlight.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/pyodide/v0.24.1/full/pyodide.js"></script>
+    <link rel="stylesheet" href="../css/tokens.css">
+    <link rel="stylesheet" href="../css/primitives.css">
+    <link rel="stylesheet" href="../css/header-sizing.css">
+    <link rel="stylesheet" href="../css/layout-sizing.css">
+    <link rel="stylesheet" href="../css/page-specific.css">
+    <link rel="stylesheet" href="../css/project.css">
+</head>
+
+<body class="footer-stick">
+    <a class="skip-link" href="#main">Skip to content</a>
+
+    <!-- Header / Nav -->
+    <header class="site-header">
+        <nav class="navbar" role="navigation" aria-label="Main">
+            <div class="brand">
+                <img src="../images/logo.png" alt="Website Logo" class="site-logo">
+                <span class="logo-text">probioz</span>
+            </div>
+
+            <button class="hamburger" aria-label="Toggle menu" aria-expanded="false" aria-controls="navMenu">
+                <span class="bar"></span><span class="bar"></span><span class="bar"></span>
+            </button>
+
+            <ul id="navMenu" class="nav-links">
+                <li><a href="../home.html">Home</a></li>
+                <li><a class="active" href="../prlist.html">Projects</a></li>
+                <li><a href="../quizzes.html">Quiz</a></li>
+                <li><a href="../about.html">About Us</a></li>
+                <li><a href="../feedback.html">Feedback</a></li>
+                <li><a href="../contact.html">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+    <!-- Secondary Subject Navigation -->
+    <div class="subject-bar">
+        <ul>
+            <li><a href="../python.html">Python</a></li>
+            <li><a href="../perl.html">Perl</a></li>
+            <li><a href="../r.html">R</a></li>
+            <li><a href="../sql.html">SQL</a></li>
+            <li><a href="../ml.html">ML</a></li>
+        </ul>
+    </div>
+    <div class="wrap">
+        <div class="card">
+            <button class="btn_prev" onclick="window.location.href='project_7.html'">previous</button>
+            <div class="meta">
+                <h1>8.Codon Usage + Simple Codon Optimization Tool</h1>
+                <div class="badge">Beginner</div>
+            </div>
+    
+            <div>
+                <p><strong style="color:#7dd3fc">Goal: </strong>Goal: Build one program that counts codons in a DNA sequence
+                    and suggests a simple optimized version using a target codon table.</p>
+                <p><strong style="color:#7dd3fc">Rule: </strong>Rule: Each cell has partial code. Fill the TODO lines, run
+                    the cell, check the output, then go to the next cell. The last cell has the full working program.</p>
+                <p><strong style="color:#7dd3fc">What this tool will do: </strong>What this tool will do: It takes a DNA
+                    coding sequence (CDS), cleans it, checks that the length is a multiple of 3, counts codon usage, shows
+                    the most common codons, and creates a simple “optimized” DNA by replacing codons using a target
+                    preference table (toy version).</p>
+            </div>
+    
+            <!-- Notebook Playground section added -->
+            <div class="section nb-playground" id="notebook">
+                <h3>Lets start</h3>
+    
+                <div class="nb-filebar">
+                    <div class="nb-filebar-actions">
+                        <button type="button" class="nb-upload-global">Upload File</button>
+                        <button type="button" class="nb-show-uploads">Show Uploads</button>
+                        <button type="button" class="nb-clear-uploads-global">Clear Uploads</button>
+                        <span class="nb-upload-status" aria-live="polite"></span>
+                    </div>
+    
+                    <div class="nb-uploads-panel" hidden>
+                        <div class="nb-uploads-header">
+                            <strong>Uploaded files</strong>
+                            <button type="button" class="nb-refresh-uploads">Refresh</button>
+                        </div>
+                        <div class="nb-uploads-list"></div>
+                    </div>
+                </div>
+    
+                <div class="nb-cell" data-cell="1">
+    
+                    <div class="nb-cell-title">Input, clean, and CDS checks</div>
+                    <p class="nb-cell-desc">We first take a DNA sequence and clean it to keep only A/T/G/C.
+                        Then we do two checks that matter for coding sequences: the sequence should start with ATG, and
+                        length should be a multiple of 3.
+                        When you run this cell, you should see length, start codon check, and whether the length fits
+                        codons.</p>
+    
+                    <textarea class="nb-editor"># Cell 1: Clean DNA + CDS checks
+    
+    def clean_dna(seq: str) -> str:
+        seq = seq.upper()
+        seq = seq.replace(" ", "").replace("\n", "").replace("\t", "")
+        valid = set("ATGC")
+        seq = "".join(ch for ch in seq if ch in valid)
+        return seq
+    
+    raw = input("Paste CDS DNA sequence: ")
+    seq = clean_dna(raw)
+    
+    print("Length:", len(seq))
+    print("Starts with ATG:", seq.startswith("ATG"))
+    print("Length multiple of 3:", len(seq) % 3 == 0)
+    print("Preview:", seq[:60])</textarea>
+                    <div class="nb-actions">
+                        <button class="nb-run" type="button">Run Cell</button>
+                        <button class="nb-reset" type="button">Reset</button>
+                        <button class="nb-clear" type="button">Clear</button>
+                    </div>
+                    <div class="nb-output" aria-live="polite">
+                        <pre class="nb-output-text"></pre>
+                    </div>
+                    <div class="nb-files"></div>
+                    <div class="nb-plot"></div>
+                </div>
+    
+                <div class="nb-cell" data-cell="2">
+    
+                    <div class="nb-cell-title">Count codons</div>
+                    <p class="nb-cell-desc">Now we split the sequence into codons (triplets) and count them in a dictionary.
+                        We move in steps of 3 using range(0, len(seq), 3) and slice using seq[i:i+3].
+                        When you run this cell, you should see total codons and a few codon counts.</p>
+    
+                    <textarea class="nb-editor"># Cell 2: Codon usage counting
+    
+    def codon_counts(seq: str):
+        counts = {}
+    
+        # TODO: loop in steps of 3 and count codons
+        # Hint:
+        # for i in range(0, len(seq), 3):
+        #     codon = seq[i:i+3]
+        #     counts[codon] = counts.get(codon, 0) + 1
+    
+        return counts
+    
+    counts = codon_counts(seq)
+    
+    # TODO: print total codons
+    # Hint: print("Total codons:", len(seq) // 3)
+    
+    # TODO: print first 10 codons sorted by count (high to low)
+    # Hint:
+    # top = sorted(counts.items(), key=lambda x: x[1], reverse=True)[:10]
+    # print("Top codons:", top)</textarea>
+                    <div class="nb-actions">
+                        <button class="nb-run" type="button">Run Cell</button>
+                        <button class="nb-reset" type="button">Reset</button>
+                        <button class="nb-clear" type="button">Clear</button>
+                    </div>
+                    <div class="nb-output" aria-live="polite">
+                        <pre class="nb-output-text"></pre>
+                    </div>
+                    <div class="nb-files"></div>
+                    <div class="nb-plot"></div>
+                </div>
+    
+                <div class="nb-cell" data-cell="3">
+    
+                    <div class="nb-cell-title">Simple optimization mapping (toy table)</div>
+                    <p class="nb-cell-desc">Now we create a simple codon preference table. This is not a real organism table
+                        yet, just a small example so students learn the idea.
+                        We map some codons to preferred codons. Then we rebuild a new sequence codon-by-codon.
+                        When you run this cell, you should see the original and optimized preview.</p>
+    
+                    <textarea class="nb-editor"># Cell 3: Simple codon optimization (toy mapping)
+    
+    # Example preference table (toy version)
+    # In real life, this would depend on organism codon usage
+    preferred = {
+        "TTT": "TTC",  # Phe
+        "TTA": "CTG",  # Leu
+        "ATT": "ATC",  # Ile
+        "AAA": "AAG",  # Lys
+        "GAA": "GAG",  # Glu
+    }
+    
+    def optimize_seq(seq: str, preferred_map: dict):
+        optimized_codons = []
+    
+        # TODO: loop codons and replace if present in map
+        # Hint:
+        # for i in range(0, len(seq), 3):
+        #     codon = seq[i:i+3]
+        #     new_codon = preferred_map.get(codon, codon)
+        #     optimized_codons.append(new_codon)
+    
+        # TODO: join optimized codons
+        # Hint: return "".join(optimized_codons)
+    
+    original_preview = seq[:60]
+    # TODO: make optimized sequence
+    # Hint: optimized = optimize_seq(seq, preferred)
+    
+    # print("Original:", original_preview)
+    # print("Optimized:", optimized[:60])</textarea>
+                    <div class="nb-actions">
+                        <button class="nb-run" type="button">Run Cell</button>
+                        <button class="nb-reset" type="button">Reset</button>
+                        <button class="nb-clear" type="button">Clear</button>
+                    </div>
+                    <div class="nb-output" aria-live="polite">
+                        <pre class="nb-output-text"></pre>
+                    </div>
+                    <div class="nb-files"></div>
+                    <div class="nb-plot"></div>
+                </div>
+    
+                <div class="nb-cell" data-cell="4">
+    
+                    <div class="nb-cell-title">Full final program with export</div>
+                    <p class="nb-cell-desc">Now we connect everything: clean → check → count codons → optimize → export.
+                        We export codon counts to CSV and save the optimized DNA to a text file.
+                        When you run the full program, you should get two output files and see previews printed.</p>
+                    <details>
+                        <summary>Show full program</summary>
+                        <textarea class="nb-editor"># Cell 4: Full Final Code - Codon Usage + Simple Optimization Tool
+
+import csv
+
+def clean_dna(seq: str) -> str:
+    seq = seq.upper()
+    seq = seq.replace(" ", "").replace("\n", "").replace("\t", "")
+    valid = set("ATGC")
+    seq = "".join(ch for ch in seq if ch in valid)
+    return seq
+
+def codon_counts(seq: str):
+    counts = {}
+    for i in range(0, len(seq), 3):
+        codon = seq[i:i+3]
+        if len(codon) == 3:
+            counts[codon] = counts.get(codon, 0) + 1
+    return counts
+
+preferred = {
+    "TTT": "TTC",
+    "TTA": "CTG",
+    "ATT": "ATC",
+    "AAA": "AAG",
+    "GAA": "GAG",
+}
+
+def optimize_seq(seq: str, preferred_map: dict):
+    optimized_codons = []
+    for i in range(0, len(seq), 3):
+        codon = seq[i:i+3]
+        if len(codon) != 3:
+            break
+        new_codon = preferred_map.get(codon, codon)
+        optimized_codons.append(new_codon)
+    return "".join(optimized_codons)
+
+def export_codon_csv(counts: dict, out_csv: str):
+    rows = sorted(counts.items(), key=lambda x: x[1], reverse=True)
+    with open(out_csv, "w", newline="", encoding="utf-8") as f:
+        writer = csv.writer(f)
+        writer.writerow(["Codon", "Count"])
+        writer.writerows(rows)
+
+raw = input("Paste CDS DNA sequence: ")
+seq = clean_dna(raw)
+
+print("Length:", len(seq))
+print("Starts with ATG:", seq.startswith("ATG"))
+print("Length multiple of 3:", len(seq) % 3 == 0)
+
+if len(seq) == 0:
+    print("No DNA bases found. Use A/T/G/C only.")
+    raise SystemExit
+
+if len(seq) % 3 != 0:
+    print("Warning: sequence length is not a multiple of 3. Last incomplete codon will be ignored.")
+
+counts = codon_counts(seq)
+print("Total codons:", len(seq) // 3)
+
+top = sorted(counts.items(), key=lambda x: x[1], reverse=True)[:10]
+print("Top codons:", top)
+
+optimized = optimize_seq(seq, preferred)
+print("Original preview:", seq[:60])
+print("Optimized preview:", optimized[:60])
+
+out_csv = input("Codon count CSV name (example codons.csv): ").strip()
+if out_csv == "":
+    out_csv = "codons.csv"
+
+out_txt = input("Optimized sequence file (example optimized.txt): ").strip()
+if out_txt == "":
+    out_txt = "optimized.txt"
+
+export_codon_csv(counts, out_csv)
+print("Saved:", out_csv)
+
+with open(out_txt, "w", encoding="utf-8") as f:
+    f.write(optimized)
+print("Saved:", out_txt)</textarea>
+                    </details>
+    
+                    <div class="nb-actions">
+                        <button class="nb-run" type="button">Run Cell</button>
+                        <button class="nb-reset" type="button">Reset</button>
+                        <button class="nb-clear" type="button">Clear</button>
+                    </div>
+                    <div class="nb-output" aria-live="polite">
+                        <pre class="nb-output-text"></pre>
+                    </div>
+                    <div class="nb-files"></div>
+                    <div class="nb-plot"></div>
+                </div>
+            </div>
+            <div class="btn_wrapper">
+                <button class="btn_prev" onclick="window.location.href='project_7.html'">previous</button>
+                <button class="btn_next" onclick="window.location.href='project_9.html'">Next</button>
+            </div>
+        </div>
+    </div>
+
+    <footer class="site-footer">
+        <p>&copy; 2026 Probioz &mdash; Built for Biologists, by Biologist.</p>
+    </footer>
+
+    <!-- Notebook Playground logic -->
+    <script src="project_notebook.js"></script>
+    <script src="../js/project.js"></script>
+</body>
+
+</html>

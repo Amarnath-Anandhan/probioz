@@ -1,0 +1,353 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>probioz | project_7_python</title>
+    <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon.png">
+    <link rel="icon" type="image/png" sizes="48x48" href="/images/favicon.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="/images/favicon.png">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Raleway:wght@400;600;700&family=Karla:wght@300;400;500;600&family=Ubuntu+Mono:wght@400;700&display=swap"
+        rel="stylesheet">
+    <!-- Notebook Playground dependencies -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.65.16/codemirror.min.css">
+    <link rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.65.16/theme/material-darker.min.css">
+    <link rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/styles/atom-one-dark.min.css">
+    <!-- Notebook Playground styles -->
+    <link rel="stylesheet" href="project_notebook.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.65.16/codemirror.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.65.16/mode/python/python.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/highlight.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/pyodide/v0.24.1/full/pyodide.js"></script>
+    <link rel="stylesheet" href="../css/tokens.css">
+    <link rel="stylesheet" href="../css/primitives.css">
+    <link rel="stylesheet" href="../css/header-sizing.css">
+    <link rel="stylesheet" href="../css/layout-sizing.css">
+    <link rel="stylesheet" href="../css/page-specific.css">
+    <link rel="stylesheet" href="../css/project.css">
+</head>
+
+<body class="footer-stick">
+    <a class="skip-link" href="#main">Skip to content</a>
+
+    <!-- Header / Nav -->
+    <header class="site-header">
+        <nav class="navbar" role="navigation" aria-label="Main">
+            <div class="brand">
+                <img src="../images/logo.png" alt="Website Logo" class="site-logo">
+                <span class="logo-text">probioz</span>
+            </div>
+
+            <button class="hamburger" aria-label="Toggle menu" aria-expanded="false" aria-controls="navMenu">
+                <span class="bar"></span><span class="bar"></span><span class="bar"></span>
+            </button>
+
+            <ul id="navMenu" class="nav-links">
+                <li><a href="../home.html">Home</a></li>
+                <li><a class="active" href="../prlist.html">Projects</a></li>
+                <li><a href="../quizzes.html">Quiz</a></li>
+                <li><a href="../about.html">About Us</a></li>
+                <li><a href="../feedback.html">Feedback</a></li>
+                <li><a href="../contact.html">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+    <!-- Secondary Subject Navigation -->
+    <div class="subject-bar">
+        <ul>
+            <li><a href="../python.html">Python</a></li>
+            <li><a href="../perl.html">Perl</a></li>
+            <li><a href="../r.html">R</a></li>
+            <li><a href="../sql.html">SQL</a></li>
+            <li><a href="../ml.html">ML</a></li>
+        </ul>
+    </div>
+    <div class="wrap">
+        <div class="card">
+            <button class="btn_prev" onclick="window.location.href='project_6.html'">previous</button>
+            <div class="meta">
+                <h1>7.BLAST Top-Hits Collector (CSV Report)</h1>
+                <div class="badge">Beginner</div>
+            </div>
+    
+            <div>
+                <p><strong style="color:#7dd3fc">Goal: </strong>Goal: Build one program that takes a DNA sequence, runs
+                    BLAST, and saves the top hits to a CSV file.</p>
+                <p><strong style="color:#7dd3fc">Rule: </strong>Rule: Each cell has partial code. Fill the TODO lines, run
+                    the cell, check the output, then go to the next cell. The last cell has the full working program.</p>
+                <p><strong style="color:#7dd3fc">What this tool will do: </strong>What this tool will do: It takes a DNA
+                    sequence (pasted or from FASTA), sends it to NCBI BLAST, reads the result, extracts the top hits (ID,
+                    title, e-value, score), and saves them to a CSV.</p>
+            </div>
+    
+            <!-- Notebook Playground section added -->
+            <div class="section nb-playground" id="notebook">
+                <h3>Lets start</h3>
+    
+                <div class="nb-filebar">
+                    <div class="nb-filebar-actions">
+                        <button type="button" class="nb-upload-global">Upload File</button>
+                        <button type="button" class="nb-show-uploads">Show Uploads</button>
+                        <button type="button" class="nb-clear-uploads-global">Clear Uploads</button>
+                        <span class="nb-upload-status" aria-live="polite"></span>
+                    </div>
+    
+                    <div class="nb-uploads-panel" hidden>
+                        <div class="nb-uploads-header">
+                            <strong>Uploaded files</strong>
+                            <button type="button" class="nb-refresh-uploads">Refresh</button>
+                        </div>
+                        <div class="nb-uploads-list"></div>
+                    </div>
+                </div>
+    
+                <div class="nb-cell" data-cell="1">
+    
+                    <div class="nb-cell-title">Get sequence input and clean it</div>
+                    <p class="nb-cell-desc">First we take the sequence input. Keep it simple: paste the DNA sequence and
+                        clean it.
+                        We remove whitespace, convert to uppercase, and keep only A/T/G/C.
+                        When you run this cell, you should see a cleaned length and preview.</p>
+    
+                    <textarea class="nb-editor"># Cell 1: Input + clean DNA
+    
+    def clean_dna(seq: str) -> str:
+        seq = seq.upper()
+        seq = seq.replace(" ", "").replace("\n", "").replace("\t", "")
+        valid = set("ATGC")
+        seq = "".join(ch for ch in seq if ch in valid)
+        return seq
+    
+    raw = input("Paste DNA sequence: ")
+    seq = clean_dna(raw)
+    
+    print("Length:", len(seq))
+    print("Preview:", seq[:60])</textarea>
+                    <div class="nb-actions">
+                        <button class="nb-run" type="button">Run Cell</button>
+                        <button class="nb-reset" type="button">Reset</button>
+                        <button class="nb-clear" type="button">Clear</button>
+                    </div>
+                    <div class="nb-output" aria-live="polite">
+                        <pre class="nb-output-text"></pre>
+                    </div>
+                    <div class="nb-files"></div>
+                    <div class="nb-plot"></div>
+                </div>
+    
+                <div class="nb-cell" data-cell="2">
+    
+                    <div class="nb-cell-title">Run BLAST and save raw output</div>
+                    <p class="nb-cell-desc">Now we run BLAST using Biopython.
+                        We use NCBIWWW.qblast() to send the sequence. This can take time and may fail if network blocks it.
+                        We save the raw BLAST XML output to a file so we can re-parse it without running BLAST again.
+                        When you run this cell, you should get a file like blast.xml.</p>
+    
+                    <textarea class="nb-editor"># Cell 2: Run BLAST and save XML
+    
+    from Bio.Blast import NCBIWWW
+    
+    out_xml = input("Output XML name (example blast.xml): ")
+    out_xml = out_xml.strip()
+    if out_xml == "":
+        out_xml = "blast.xml"
+    
+    # TODO: run BLAST
+    # Hint:
+    # result_handle = NCBIWWW.qblast("blastn", "nt", seq)
+    
+    # TODO: save to file
+    # Hint:
+    # with open(out_xml, "w", encoding="utf-8") as f:
+    #     f.write(result_handle.read())
+    # result_handle.close()
+    
+    print("Saved BLAST XML as:", out_xml)</textarea>
+                    <div class="nb-actions">
+                        <button class="nb-run" type="button">Run Cell</button>
+                        <button class="nb-reset" type="button">Reset</button>
+                        <button class="nb-clear" type="button">Clear</button>
+                    </div>
+                    <div class="nb-output" aria-live="polite">
+                        <pre class="nb-output-text"></pre>
+                    </div>
+                    <div class="nb-files"></div>
+                    <div class="nb-plot"></div>
+                </div>
+    
+                <div class="nb-cell" data-cell="3">
+    
+                    <div class="nb-cell-title">Parse BLAST XML and extract top hits</div>
+                    <p class="nb-cell-desc">Now we parse the BLAST XML file and collect a few important fields.
+                        We use NCBIXML.read() to read the result. Then we loop through alignments and HSPs to get e-value
+                        and score.
+                        We keep a simple list of rows and limit to top N hits.
+                        When you run this cell, you should see a small table printed.</p>
+    
+                    <textarea class="nb-editor"># Cell 3: Parse BLAST XML and extract hits
+    
+    from Bio.Blast import NCBIXML
+    
+    top_n_text = input("How many hits to collect (example 10): ")
+    top_n_text = top_n_text.strip()
+    top_n = int(top_n_text) if top_n_text != "" else 10
+    
+    # TODO: open XML and parse
+    # Hint:
+    # with open(out_xml, "r", encoding="utf-8") as f:
+    #     blast_record = NCBIXML.read(f)
+    
+    hits = []
+    
+    # TODO: loop over alignments and take top hits
+    # Hint:
+    # for alignment in blast_record.alignments:
+    #     for hsp in alignment.hsps:
+    #         hit_id = alignment.hit_id
+    #         title = alignment.hit_def
+    #         evalue = hsp.expect
+    #         score = hsp.score
+    #         hits.append((hit_id, title, evalue, score))
+    #         break
+    #     if len(hits) >= top_n:
+    #         break
+    
+    # TODO: print preview
+    # Hint:
+    # for row in hits:
+    #     print(row)</textarea>
+                    <div class="nb-actions">
+                        <button class="nb-run" type="button">Run Cell</button>
+                        <button class="nb-reset" type="button">Reset</button>
+                        <button class="nb-clear" type="button">Clear</button>
+                    </div>
+                    <div class="nb-output" aria-live="polite">
+                        <pre class="nb-output-text"></pre>
+                    </div>
+                    <div class="nb-files"></div>
+                    <div class="nb-plot"></div>
+                </div>
+    
+                <div class="nb-cell" data-cell="4">
+    
+                    <div class="nb-cell-title">Full final program with CSV export</div>
+                    <p class="nb-cell-desc">Now we connect everything: input → BLAST → parse → export CSV.
+                        We export to CSV so the result can be reused outside Python.
+                        We also handle errors with a clear message, because BLAST can fail due to network or NCBI limits.
+                    </p>
+                    <details>
+                        <summary>Show full program</summary>
+                        <textarea class="nb-editor"># Cell 4: Full Final Code - BLAST Top-Hits Collector
+
+import csv
+from Bio.Blast import NCBIWWW, NCBIXML
+
+def clean_dna(seq: str) -> str:
+    seq = seq.upper()
+    seq = seq.replace(" ", "").replace("\n", "").replace("\t", "")
+    valid = set("ATGC")
+    seq = "".join(ch for ch in seq if ch in valid)
+    return seq
+
+def run_blast_and_save(seq: str, out_xml: str):
+    result_handle = NCBIWWW.qblast("blastn", "nt", seq)
+    with open(out_xml, "w", encoding="utf-8") as f:
+        f.write(result_handle.read())
+    result_handle.close()
+
+def parse_blast_xml(out_xml: str, top_n: int):
+    with open(out_xml, "r", encoding="utf-8") as f:
+        blast_record = NCBIXML.read(f)
+
+    hits = []
+
+    for alignment in blast_record.alignments:
+        for hsp in alignment.hsps:
+            hit_id = alignment.hit_id
+            title = alignment.hit_def
+            evalue = hsp.expect
+            score = hsp.score
+            hits.append((hit_id, title, evalue, score))
+            break
+
+        if len(hits) >= top_n:
+            break
+
+    return hits
+
+def export_csv(hits, out_csv: str):
+    with open(out_csv, "w", newline="", encoding="utf-8") as f:
+        writer = csv.writer(f)
+        writer.writerow(["Hit_ID", "Title", "E_value", "Score"])
+        writer.writerows(hits)
+
+raw = input("Paste DNA sequence: ")
+seq = clean_dna(raw)
+
+print("Length:", len(seq))
+if len(seq) == 0:
+    print("No DNA bases found. Input must contain A/T/G/C.")
+    raise SystemExit
+
+out_xml = input("Output XML name (example blast.xml): ")
+out_xml = out_xml.strip()
+if out_xml == "":
+    out_xml = "blast.xml"
+
+out_csv = input("Output CSV name (example blast_hits.csv): ")
+out_csv = out_csv.strip()
+if out_csv == "":
+    out_csv = "blast_hits.csv"
+
+top_n_text = input("How many hits to collect (example 10): ")
+top_n_text = top_n_text.strip()
+top_n = int(top_n_text) if top_n_text != "" else 10
+
+try:
+    run_blast_and_save(seq, out_xml)
+    print("Saved BLAST XML as:", out_xml)
+
+    hits = parse_blast_xml(out_xml, top_n)
+    export_csv(hits, out_csv)
+
+    print("Saved:", out_csv)
+    print("Hits written:", len(hits))
+
+except Exception as e:
+    print("BLAST failed.")
+    print("Reason:", str(e))</textarea>
+                    </details>
+    
+                    <div class="nb-actions">
+                        <button class="nb-run" type="button">Run Cell</button>
+                        <button class="nb-reset" type="button">Reset</button>
+                        <button class="nb-clear" type="button">Clear</button>
+                    </div>
+                    <div class="nb-output" aria-live="polite">
+                        <pre class="nb-output-text"></pre>
+                    </div>
+                    <div class="nb-files"></div>
+                    <div class="nb-plot"></div>
+                </div>
+            </div>
+            <div class="btn_wrapper">
+                <button class="btn_prev" onclick="window.location.href='project_6.html'">previous</button>
+                <button class="btn_next" onclick="window.location.href='project_8.html'">Next</button>
+            </div>
+        </div>
+    </div>
+
+    <footer class="site-footer">
+        <p>&copy; 2026 Probioz &mdash; Built for Biologists, by Biologist.</p>
+    </footer>
+
+    <!-- Notebook Playground logic -->
+    <script src="project_notebook.js"></script>
+    <script src="../js/project.js"></script>
+</body>
+
+</html>

@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <title>Probioz — Contact</title>
+    <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon.png">
+    <link rel="icon" type="image/png" sizes="48x48" href="/images/favicon.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="/images/favicon.png">
+    <link rel="icon" href="/icons/favicon.ico" />
+    <link rel="stylesheet" href="/css/tokens.css">
+    <link rel="stylesheet" href="/css/primitives.css">
+    <link rel="stylesheet" href="/css/header-sizing.css">
+    <link rel="stylesheet" href="/css/layout-sizing.css">
+    <link rel="stylesheet" href="/css/page-specific.css">
+    <link rel="stylesheet" href="/css/contact.css">
+</head>
+
+<body class="no-subnav footer-stick">
+
+    <header class="site-header">
+        <nav class="navbar">
+            <div class="brand">
+                <img src="../images/logo.png" alt="Website Logo" class="site-logo">
+                <span class="logo-text">probioz</span>
+            </div>
+
+            <button class="hamburger" aria-label="Menu">
+                <span class="bar"></span><span class="bar"></span><span class="bar"></span>
+            </button>
+
+            <ul class="nav-links">
+                <li><a href="home.html">Home</a></li>
+                <li><a href="prlist.html">Projects</a></li>
+                <li><a href="quizzes.html">Quiz</a></li>
+                <li><a href="about.html">About Us</a></li>
+                <li><a href="feedback.html">Feedback</a></li>
+                <li><a class="active" href="contact.html">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main class="wrap contact-page">
+
+        <section class="contact-card">
+            <h1>Contact Probioz</h1>
+            <p class="lead">Questions about courses or collaborations? We reply within 48 hours.</p>
+
+            <form id="contactForm" action="https://script.google.com/macros/s/AKfycbxYKXX7a_Sy3eF8pz4QuhumrrlF90BYvIPFjbKXenx68F6A_MTf1itdZBHOZbZ81V7e/exec" method="POST" target="hidden_iframe" novalidate>
+            <input type="hidden" name="formType" value="contact">
+
+                <div class="row">
+                    <label>Name *</label>
+                    <input type="text" placeholder="Enter your name..." name="name" required>
+                    <div class="error" id="err-name"></div>
+                </div>
+
+                <div class="row">
+                    <label>Email *</label>
+                    <input type="email" placeholder="Enter your mail ID..." name="email" required>
+                    <div class="error" id="err-email"></div>
+                </div>
+
+                <div class="row">
+                    <label>Subject</label>
+                    <select name="subject">
+                        <option>General</option>
+                        <option>Course Content</option>
+                        <option>Project</option>
+                        <option>Issue / Bug</option>
+                    </select>
+                </div>
+
+                <div class="row">
+                <label>Message *</label>
+                <textarea name="message" placeholder="Give your valuable message here..." rows="6" required></textarea>
+                <div class="error" id="err-message"></div>
+                </div>
+                <div class="form-actions">
+                    <button class="btn primary" id="submitBtn">Send message</button>
+                    <button type="reset" class="btn">Reset</button>
+                </div>
+
+                <div id="formStatus" class="form-status" hidden></div>
+            </form>
+        </section>
+
+        <aside>
+            <div class="card">
+                <h3>Reach us</h3>
+                <p><strong>Email:</strong> <a href="mailto:support@probioz.org">support@probioz.org</a></p>
+                <p><strong>Office Hours:</strong> Mon–Fri, 10 AM – 6 PM IST</p>
+            </div>
+            <div class="card">
+                <h3>Community</h3>
+                <p><a href="#">GitHub</a> · <a href="#">LinkedIn</a></p>
+            </div>
+        </aside>
+
+    </main>
+    <div id="toast" class="toast">
+        <div>
+            <div class="toast-icon">
+                <svg viewBox="0 0 24 24">
+                    <path d="M5 13l4 4L19 7"></path>
+                </svg>
+            </div>
+            <div class="toast-message">
+                Message sent successfully!
+            </div>
+        </div>
+    </div>
+
+    <iframe name="hidden_iframe" style="display:none;"></iframe>
+
+    <footer class="site-footer">
+        <p>
+        &copy; 2026 Probioz &#8212; Built for Biologists, by Biologist.
+        </p>
+    </footer>
+    <script src="/js/contact.js"></script>
+</body>
+
+</html>

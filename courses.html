@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <title>Probioz — Courses</title>
+    <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon.png">
+    <link rel="icon" type="image/png" sizes="48x48" href="/images/favicon.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="/images/favicon.png">
+
+    <meta name="description" content="Courses at Probioz — Python for Biologists and more (free)." />
+    <link rel="icon" href="/icons/favicon.ico" type="image/x-icon" />
+
+    <link rel="stylesheet" href="/css/tokens.css">
+    <link rel="stylesheet" href="/css/primitives.css">
+    <link rel="stylesheet" href="/css/header-sizing.css">
+    <link rel="stylesheet" href="/css/layout-sizing.css">
+    <link rel="stylesheet" href="/css/page-specific.css">
+    <link rel="stylesheet" href="/css/courses.css">
+
+</head>
+
+<body class="has-subnav footer-stick">
+
+    <!-- Header / Navbar -->
+    <header class="site-header">
+        <nav class="navbar" role="navigation" aria-label="Main">
+            <div class="brand">
+                <img src="../images/logo.png" alt="Website Logo" class="site-logo">
+                <span class="logo-text">probioz</span>
+            </div>
+            <button class="hamburger" aria-label="Toggle menu" aria-expanded="false" aria-controls="navMenu">
+                <span class="bar"></span><span class="bar"></span><span class="bar"></span>
+            </button>
+
+            <ul id="navMenu" class="nav-links">
+                <li><a href="home.html">Home</a></li>
+                <li><a class="active" href="courses.html" aria-current="page">Courses</a></li>
+                <li><a href="prlist.html">Projects</a></li>
+                <li><a href="quizzes.html">Quiz</a></li>
+                <li><a href="about.html">About Us</a></li>
+                <li><a href="feedback.html">Feedback</a></li>
+                <li><a href="contact.html">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+    <!-- Secondary Subject Navigation -->
+    <div class="subject-bar">
+        <ul>
+            <li><a href="python.html">Python</a></li>
+            <li><a href="perl.html">Perl</a></li>
+            <li><a href="r.html">R</a></li>
+            <li><a href="sql.html">SQL</a></li>
+            <li><a href="ml.html">ML</a></li>
+        </ul>
+    </div>
+
+    <main id="main" class="courses-container">
+        <!-- HERO -->
+        <section class="hero-card" id="top-hero">
+            <h1>Start Learning Python for Biologists — Free</h1>
+            <p>Practical, example-driven Python course designed for biology students and researchers. Learn how to
+                handle sequences, parse FASTA files, use Biopython, visualize data, and build small tools for your lab —
+                all for free.</p>
+            <div style="display:flex;gap:10px;align-items:center">
+                <a href="python.html" class="btn btn-primary">Go to Python Course</a>
+                <a href="contact.html" class="btn btn-ghost">Ask a question</a>
+            </div>
+            <p class="note">New courses will be added soon. Follow us or check back to see the latest.</p>
+        </section>
+
+        <!-- Controls -->
+        <div class="controls">
+            <div class="search" role="search">
+                <input type="search" id="searchInput" placeholder="Search courses (e.g., Python, Biopython, Data)"
+                    aria-label="Search courses">
+                <button id="searchBtn" class="btn btn-ghost">Search</button>
+            </div>
+            <div class="filter">
+                <label for="typeFilter" style="font-weight:700;color:white">Show:</label>
+                <select id="typeFilter">
+                    <option value="all">All</option>
+                    <option value="free">Free</option>
+                    <option value="coming">Coming soon</option>
+                </select>
+            </div>
+        </div>
+
+        <!-- Courses grid -->
+        <section class="courses-grid" id="coursesGrid" >
+            <!-- Python course card (real) -->
+            <article class="card" data-title="Python for Biologists" data-type="free" id="python-course"  style="background:  #7b2184;">
+                <div>
+                    <div style="display:flex;justify-content:space-between;align-items:flex-start;" >
+                        <h3>Python for Biologists</h3>
+                        <span class="ribbon">FREE</span>
+                    </div>
+
+                    <p>Learn Python from basics to applied bioinformatics: variables, sequences, Biopython, file parsing
+                        (FASTA/GenBank), data analysis with Pandas, and visualizations.</p>
+
+                    <div class="meta">Duration: Self-paced · Level: Beginner → Intermediate</div>
+
+                    <div class="tags">
+                        <span class="tag">Python</span>
+                        <span class="tag">Biopython</span>
+                        <span class="tag">Data</span>
+                        <span class="tag">Visualization</span>
+                    </div>
+                </div>
+
+                <div class="actions">
+                    <a class="btn btn-ghost" href="python.html">View course</a>
+                    <button class="btn btn-primary" onclick="location.href='python.html'">Start</button>
+                </div>
+            </article>
+
+            <!-- Coming soon cards -->
+            <article class="card coming-soon" data-title="Advanced Genomics" data-type="coming"  style="background: #5033ba;">
+                <div>
+                    <h3>Advanced Genomics (Coming soon)</h3>
+                    <p>Deep-dive into genome analysis, alignment algorithms, and large-scale variant calling pipelines.
+                    </p>
+                    <div class="meta">Planned: 2026 · Level: Advanced</div>
+                    <div class="tags">
+                        <span class="tag">Genomics</span>
+                        <span class="tag">Alignment</span>
+                        <span class="tag">Pipelines</span>
+                    </div>
+                </div>
+                <div class="actions">
+                    <button class="btn btn-ghost" disabled>Coming soon</button>
+                </div>
+            </article>
+
+            <article class="card coming-soon" data-title="Machine Learning for Biology" data-type="coming"  style="background: #276e8a;">
+                <div>
+                    <h3>Machine Learning for Biology (Coming soon)</h3>
+                    <p>Intro to ML concepts with biological datasets: classification, clustering, and practical examples
+                        using scikit-learn.</p>
+                    <div class="meta">Planned: 2026 · Level: Intermediate</div>
+                    <div class="tags">
+                        <span class="tag">ML</span>
+                        <span class="tag">scikit-learn</span>
+                    </div>
+                </div>
+                <div class="actions">
+                    <button class="btn btn-ghost" disabled>Coming soon</button>
+                </div>
+            </article>
+
+            <article class="card coming-soon" data-title="Data Visualization for Biology" data-type="coming"  style="background:  #f15c5c;">
+                <div>
+                    <h3>Data Visualization for Biology (Coming soon)</h3>
+                    <p>Use matplotlib and seaborn to create publication-ready plots for gene expression and other
+                        experimental data.</p>
+                    <div class="meta">Planned: 2026 · Level: Beginner → Intermediate</div>
+                    <div class="tags">
+                        <span class="tag">Matplotlib</span>
+                        <span class="tag">Seaborn</span>
+                    </div>
+                </div>
+                <div class="actions">
+                    <button class="btn btn-ghost" disabled>Coming soon</button>
+                </div>
+            </article>
+
+            <article class="card coming-soon" data-title="Biopython Deep-Dive" data-type="coming"  style="background: #bb47a8;">
+                <div>
+                    <h3>Biopython Deep-Dive (Coming soon)</h3>
+                    <p>Advanced parsing, accessing NCBI, BLAST automation, and building bioinformatics tools using
+                        Biopython.</p>
+                    <div class="meta">Planned: 2026 · Level: Intermediate</div>
+                    <div class="tags">
+                        <span class="tag">Biopython</span>
+                        <span class="tag">NCBI</span>
+                    </div>
+                </div>
+                <div class="actions">
+                    <button class="btn btn-ghost" disabled>Coming soon</button>
+                </div>
+            </article>
+        </section>
+
+        <p class="note">Don’t see the course you want? <a href="contact.html"
+                style="color:var(--brand);font-weight:800">Tell us</a> what topics you need — we’ll prioritize.</p>
+    </main>
+    <footer class="site-footer">
+        <p>&copy; 2026 Probioz &mdash; Built for Biologists, by Biologist.</p>
+    </footer>
+
+    <!-- Internal JS -->
+    <script src="/js/courses.js"></script>
+    
+</body>
+
+</html>

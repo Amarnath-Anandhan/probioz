@@ -1,0 +1,329 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>probioz | project_4_python</title>
+    <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon.png">
+    <link rel="icon" type="image/png" sizes="48x48" href="/images/favicon.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="/images/favicon.png">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Raleway:wght@400;600;700&family=Karla:wght@300;400;500;600&family=Ubuntu+Mono:wght@400;700&display=swap"
+        rel="stylesheet">
+    <!-- Notebook Playground dependencies -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.65.16/codemirror.min.css">
+    <link rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.65.16/theme/material-darker.min.css">
+    <link rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/styles/atom-one-dark.min.css">
+    <!-- Notebook Playground styles -->
+    <link rel="stylesheet" href="project_notebook.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.65.16/codemirror.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.65.16/mode/python/python.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/highlight.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/pyodide/v0.24.1/full/pyodide.js"></script>
+    <link rel="stylesheet" href="../css/tokens.css">
+    <link rel="stylesheet" href="../css/primitives.css">
+    <link rel="stylesheet" href="../css/header-sizing.css">
+    <link rel="stylesheet" href="../css/layout-sizing.css">
+    <link rel="stylesheet" href="../css/page-specific.css">
+    <link rel="stylesheet" href="../css/project.css">
+</head>
+
+<body class="footer-stick">
+    <a class="skip-link" href="#main">Skip to content</a>
+
+    <!-- Header / Nav -->
+    <header class="site-header">
+        <nav class="navbar" role="navigation" aria-label="Main">
+            <div class="brand">
+                <img src="../images/logo.png" alt="Website Logo" class="site-logo">
+                <span class="logo-text">probioz</span>
+            </div>
+
+            <button class="hamburger" aria-label="Toggle menu" aria-expanded="false" aria-controls="navMenu">
+                <span class="bar"></span><span class="bar"></span><span class="bar"></span>
+            </button>
+
+            <ul id="navMenu" class="nav-links">
+                <li><a href="../home.html">Home</a></li>
+                <li><a class="active" href="../prlist.html">Projects</a></li>
+                <li><a href="../quizzes.html">Quiz</a></li>
+                <li><a href="../about.html">About Us</a></li>
+                <li><a href="../feedback.html">Feedback</a></li>
+                <li><a href="../contact.html">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+    <!-- Secondary Subject Navigation -->
+    <div class="subject-bar">
+        <ul>
+            <li><a href="../python.html">Python</a></li>
+            <li><a href="../perl.html">Perl</a></li>
+            <li><a href="../r.html">R</a></li>
+            <li><a href="../sql.html">SQL</a></li>
+            <li><a href="../ml.html">ML</a></li>
+        </ul>
+    </div>
+    <div class="wrap">
+        <div class="card">
+            <button class="btn_prev" onclick="window.location.href='project_3.html'">previous</button>
+            <div class="meta">
+                <h1>4.Gene Expression CSV Analyzer</h1>
+                <div class="badge">Beginner</div>
+            </div>
+    
+            <div>
+                <p><strong style="color:#7dd3fc">Goal: </strong>Goal: Build one program that reads a gene expression CSV
+                    file, cleans it, compares samples, and plots results.</p>
+                <p><strong style="color:#7dd3fc">Rule: </strong>Rule: Each cell has partial code. Fill the TODO lines, run
+                    the cell, check the output, then go to the next cell. The last cell has the full working program.</p>
+                <p><strong style="color:#7dd3fc">What this tool will do: </strong>What this tool will do: It loads a CSV
+                    file, removes missing values, calculates a simple change between two samples, selects top up and down
+                    genes, saves a results CSV, and makes a bar plot.</p>
+            </div>
+    
+            <!-- Notebook Playground section added -->
+            <div class="section nb-playground" id="notebook">
+                <h3>Lets start</h3>
+    
+                <div class="nb-filebar">
+                    <div class="nb-filebar-actions">
+                        <button type="button" class="nb-upload-global">Upload File</button>
+                        <button type="button" class="nb-show-uploads">Show Uploads</button>
+                        <button type="button" class="nb-clear-uploads-global">Clear Uploads</button>
+                        <span class="nb-upload-status" aria-live="polite"></span>
+                    </div>
+    
+                    <div class="nb-uploads-panel" hidden>
+                        <div class="nb-uploads-header">
+                            <strong>Uploaded files</strong>
+                            <button type="button" class="nb-refresh-uploads">Refresh</button>
+                        </div>
+                        <div class="nb-uploads-list"></div>
+                    </div>
+                </div>
+    
+                <div class="nb-cell" data-cell="1">
+    
+                    <div class="nb-cell-title">Load CSV and inspect columns</div>
+                    <p class="nb-cell-desc">We start by loading the CSV using pandas. The main goal here is to confirm the
+                        file loads and to see the column names.
+                        Most expression files have one column for gene name (or gene id) and two columns for sample values.
+                        We need those column names before we do anything else.
+                        When you run this cell, you should see the first few rows and the column list. If you get file not
+                        found, check the path.</p>
+    
+                    <textarea class="nb-editor"># Cell 1: Load CSV
+    
+    import pandas as pd
+    
+    file_path = input("Enter CSV file path: ")
+    file_path = file_path.strip()
+    
+    # TODO: read the CSV into a DataFrame
+    # Hint: df = pd.read_csv(file_path)
+    
+    # TODO: print columns
+    # Hint: print(df.columns)
+    
+    # TODO: show first 5 rows
+    # Hint: print(df.head())</textarea>
+                    <div class="nb-actions">
+                        <button class="nb-run" type="button">Run Cell</button>
+                        <button class="nb-reset" type="button">Reset</button>
+                        <button class="nb-clear" type="button">Clear</button>
+                    </div>
+                    <div class="nb-output" aria-live="polite">
+                        <pre class="nb-output-text"></pre>
+                    </div>
+                    <div class="nb-files"></div>
+                    <div class="nb-plot"></div>
+                </div>
+    
+                <div class="nb-cell" data-cell="2">
+    
+                    <div class="nb-cell-title">Clean data and pick columns</div>
+                    <p class="nb-cell-desc">Now we choose which columns to use and clean the table.
+                        We drop rows with missing values using dropna(). Then we make sure the sample columns are numeric
+                        using pd.to_numeric(..., errors="coerce").
+                        After converting, we drop missing values again because some values may turn into NaN during
+                        conversion.
+                        When you run this cell, check that row count is reasonable and the sample columns look numeric.</p>
+    
+                    <textarea class="nb-editor"># Cell 2: Clean and select
+    
+    # TODO: drop rows with missing values
+    # Hint: df = df.dropna()
+    
+    gene_col = input("Enter gene column name: ")
+    sample_a = input("Enter sample A column name: ")
+    sample_b = input("Enter sample B column name: ")
+    gene_col = gene_col.strip()
+    sample_a = sample_a.strip()
+    sample_b = sample_b.strip()
+    # TODO: convert sample columns to numeric
+    # Hint:
+    # df[sample_a] = pd.to_numeric(df[sample_a], errors="coerce")
+    # df[sample_b] = pd.to_numeric(df[sample_b], errors="coerce")
+    
+    # TODO: drop rows that became NaN after conversion
+    # Hint: df = df.dropna(subset=[sample_a, sample_b])
+    
+    # TODO: show cleaned size and preview
+    # Hint:
+    # print("Rows after cleaning:", len(df))
+    # print(df[[gene_col, sample_a, sample_b]].head())</textarea>
+                    <div class="nb-actions">
+                        <button class="nb-run" type="button">Run Cell</button>
+                        <button class="nb-reset" type="button">Reset</button>
+                        <button class="nb-clear" type="button">Clear</button>
+                    </div>
+                    <div class="nb-output" aria-live="polite">
+                        <pre class="nb-output-text"></pre>
+                    </div>
+                    <div class="nb-files"></div>
+                    <div class="nb-plot"></div>
+                </div>
+    
+                <div class="nb-cell" data-cell="3">
+    
+                    <div class="nb-cell-title">Compute change and pick top genes</div>
+                    <p class="nb-cell-desc">Here we calculate a simple change between two samples.
+                        We will compute change = sample_b - sample_a. This is easy to understand and works for beginners.
+                        Then we sort by change to get top up-regulated and down-regulated genes.
+                        When you run this cell, check that the top genes make sense and change values are not all zeros.</p>
+    
+                    <textarea class="nb-editor"># Cell 3: Compute change + top genes
+    
+    top_n_text = input("How many top genes to show (example 10): ")
+    top_n = int(top_n_text) if top_n_text != "" else 10
+    
+    # TODO: create a new column "change"
+    # Hint: df["change"] = df[sample_b] - df[sample_a]
+    
+    # TODO: sort to get top up and top down genes
+    # Hint:
+    # top_up = df.sort_values("change", ascending=False).head(top_n)
+    # top_down = df.sort_values("change", ascending=True).head(top_n)
+    
+    # TODO: print top up and top down
+    # Hint:
+    # print("Top up genes:")
+    # print(top_up[[gene_col, sample_a, sample_b, "change"]])
+    # print("\nTop down genes:")
+    # print(top_down[[gene_col, sample_a, sample_b, "change"]])</textarea>
+                    <div class="nb-actions">
+                        <button class="nb-run" type="button">Run Cell</button>
+                        <button class="nb-reset" type="button">Reset</button>
+                        <button class="nb-clear" type="button">Clear</button>
+                    </div>
+                    <div class="nb-output" aria-live="polite">
+                        <pre class="nb-output-text"></pre>
+                    </div>
+                    <div class="nb-files"></div>
+                    <div class="nb-plot"></div>
+                </div>
+    
+                <div class="nb-cell" data-cell="4">
+    
+                    <div class="nb-cell-title">Full final program with export and plot</div>
+                    <p class="nb-cell-desc">Now we connect everything into one program.
+                        We export a results CSV so the student has an output file, not just terminal prints.
+                        For plotting, we make a bar plot of top up genes and top down genes separately so it stays readable.
+                        When you run the full program, you should get a saved CSV and two plots.</p>
+                    <details>
+                        <summary>Show full program</summary>
+                        <textarea class="nb-editor"># Cell 4: Full Final Code - Gene Expression CSV Analyzer
+
+import pandas as pd
+import matplotlib.pyplot as plt
+
+file_path = input("Enter CSV file path: ")
+file_path = file_path.strip()
+df = pd.read_csv(file_path)
+
+print("Columns:", list(df.columns))
+print(df.head())
+
+gene_col = input("Enter gene column name: ")
+sample_a = input("Enter sample A column name: ")
+sample_b = input("Enter sample B column name: ")
+gene_col = gene_col.strip()
+sample_a = sample_a.strip()
+sample_b = sample_b.strip()
+
+df = df.dropna()
+
+df[sample_a] = pd.to_numeric(df[sample_a], errors="coerce")
+df[sample_b] = pd.to_numeric(df[sample_b], errors="coerce")
+
+df = df.dropna(subset=[sample_a, sample_b])
+
+print("Rows after cleaning:", len(df))
+
+df["change"] = df[sample_b] - df[sample_a]
+
+top_n_text = input("How many top genes to show (example 10): ")
+top_n = int(top_n_text) if top_n_text != "" else 10
+
+top_up = df.sort_values("change", ascending=False).head(top_n)
+top_down = df.sort_values("change", ascending=True).head(top_n)
+
+out_csv = input("Output CSV name (example results.csv): ")
+out_csv = out_csv.strip()
+if out_csv == "":
+    out_csv = "results.csv"
+
+result = pd.concat([top_up, top_down], ignore_index=True)
+result.to_csv(out_csv, index=False)
+
+print("Saved:", out_csv)
+
+plt.figure()
+plt.bar(top_up[gene_col].astype(str), top_up["change"])
+plt.xticks(rotation=90)
+plt.ylabel("Change (sample_b - sample_a)")
+plt.title("Top Up-regulated Genes")
+plt.tight_layout()
+plt.show()
+
+plt.figure()
+plt.bar(top_down[gene_col].astype(str), top_down["change"])
+plt.xticks(rotation=90)
+plt.ylabel("Change (sample_b - sample_a)")
+plt.title("Top Down-regulated Genes")
+plt.tight_layout()
+plt.show()</textarea>
+                    </details>
+    
+                    <div class="nb-actions">
+                        <button class="nb-run" type="button">Run Cell</button>
+                        <button class="nb-reset" type="button">Reset</button>
+                        <button class="nb-clear" type="button">Clear</button>
+                    </div>
+                    <div class="nb-output" aria-live="polite">
+                        <pre class="nb-output-text"></pre>
+                    </div>
+                    <div class="nb-files"></div>
+                    <div class="nb-plot"></div>
+                </div>
+            </div>
+            <div class="btn_wrapper">
+                <button class="btn_prev" onclick="window.location.href='project_3.html'">previous</button>
+                <button class="btn_next" onclick="window.location.href='project_5.html'">Next</button>
+            </div>
+        </div>
+    </div>
+
+    <footer class="site-footer">
+        <p>&copy; 2026 Probioz &mdash; Built for Biologists, by Biologist.</p>
+    </footer>
+
+    <!-- Notebook Playground logic -->
+    <script src="project_notebook.js"></script>
+    <script src="../js/project.js"></script>
+</body>
+
+</html>

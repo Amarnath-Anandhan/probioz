@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <title>Probioz — Quiz</title>
+    <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon.png">
+    <link rel="icon" type="image/png" sizes="48x48" href="/images/favicon.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="/images/favicon.png">
+    <link rel="stylesheet" href="/css/tokens.css">
+    <link rel="stylesheet" href="/css/primitives.css">
+    <link rel="stylesheet" href="/css/header-sizing.css">
+    <link rel="stylesheet" href="/css/layout-sizing.css">
+    <link rel="stylesheet" href="/css/page-specific.css">
+    <link rel="stylesheet" href="/css/pythonQuiz.css">
+    <link rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/styles/atom-one-dark.min.css">
+</head>
+
+<body>
+    <header class="site-header">
+        <nav class="navbar" role="navigation" aria-label="Main">
+            <div class="brand">
+                <img src="../images/logo.png" alt="Website Logo" class="site-logo">
+                <span class="logo-text">probioz</span>
+            </div>
+            <button class="hamburger" aria-label="Toggle menu" aria-expanded="false" aria-controls="navMenu">
+                <span class="bar"></span><span class="bar"></span><span class="bar"></span>
+            </button>
+            <ul id="navMenu" class="nav-links">
+                <li><a href="home.html">Home</a></li>
+                <li><a href="prlist.html">Projects</a></li>
+                <li><a class="active" href="quizzes.html" aria-current="page">Quiz</a></li>
+                <li><a href="about.html">About Us</a></li>
+                <li><a href="feedback.html">Feedback</a></li>
+                <li><a href="contact.html">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <div class="subject-bar" role="navigation" aria-label="Subjects">
+        <button class="hamburger-left" aria-label="Toggle topics" aria-expanded="false" aria-controls="sidebar">
+        <span class="bar"></span><span class="bar"></span><span class="bar"></span>
+        </button>
+        <div class="subject-bar2">
+        <ul>
+            <li><a href="python.html">Python</a></li>
+            <li><a href="perl.html">Perl</a></li>
+            <li><a href="r.html">R</a></li>
+            <li><a href="sql.html">SQL</a></li>
+            <li><a href="ml.html">ML</a></li>
+        </ul>
+        </div>
+        <button class="hamburger-right" aria-label="Toggle topics" aria-expanded="false" aria-controls="sidebar">
+            <span class="bar"></span><span class="bar"></span><span class="bar"></span>
+        </button>
+    </div>
+
+    <!-- left sidebar -->
+    <nav class="sidebarLeft" aria-label="Subjects sidebar">
+        <h2>Subjects</h2>
+        <ul class="topics">
+            <li class="topic-box">
+                <div class="topic-title" id="one" onclick="loadQuestionsFor('python')">Python</div>
+                <div class="topic-title" onclick="showmsg('perl')">Perl Programming</div>
+                <div class="topic-title" onclick="showmsg('ml')">Machine Learning</div>
+                <div class="topic-title" onclick="showmsg('r')">R programming</div>
+            </li>
+        </ul>
+    </nav>
+
+    <!-- simple modal for coming-soon messages -->
+    <div id="simple-backdrop" class="simple-backdrop" aria-hidden="true">
+        <div class="simple-modal" role="dialog" aria-modal="true" aria-labelledby="simple-title" tabindex="-1">
+            <button id="simple-close" class="simple-close" aria-label="Close">×</button>
+            <h3 id="simple-title" class="simple-title">Notice</h3>
+            <div id="simple-body" class="simple-body"></div>
+            <div class="simple-actions" style="text-align:center; margin-top:12px;">
+                <button id="simple-ok" class="simple-ok">OK</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- right sidebar -->
+    <nav class="sidebarRight" aria-label="Right content sidebar">
+        <h2>Python</h2>
+        <ul class="topics">
+            <li class="topic-box">
+                <div class="topic-title" onclick="loadQuestionFor('python:Introduction')" >Introduction</div>
+                <div class="topic-title" onclick="loadQuestionFor('python:Variables')" >Variables</div>
+                <div class="topic-title" onclick="loadQuestionFor('python:DataTypes')">Data Types</div>
+                <div class="topic-title" onclick="loadQuestionFor('python:Strings')">String</div>
+                <div class="topic-title" onclick="loadQuestionFor('python:Operators')">Operators</div>
+                <div class="topic-title" onclick="loadQuestionFor('python:Lists')">List</div>
+                <div class="topic-title" onclick="loadQuestionFor('python:Tuple')">Tuple</div>
+                <div class="topic-title" onclick="loadQuestionFor('python:Sets')">Sets</div>
+                <div class="topic-title" onclick="loadQuestionFor('python:Dictionaries')">Dictionaries</div>
+                <div class="topic-title" onclick="loadQuestionFor('python:Decision Making')">Decision Making</div>
+                <div class="topic-title" onclick="loadQuestionFor('python:Match')">Python Match</div>
+                <div class="topic-title" onclick="loadQuestionFor('python:Loops')">Loops</div>
+                <div class="topic-title" onclick="loadQuestionFor('python:Functions')">Functions</div>
+                <div class="topic-title" onclick="loadQuestionFor('python:File Handling')">File Handling</div>
+                <div class="topic-title" onclick="loadQuestionFor('python:Biopython')">Biopython</div>
+                <div class="topic-title" onclick="loadQuestionFor('python:Seq Parsing')">Seq parsing</div>
+                <div class="topic-title" onclick="loadQuestionFor('python:d-p')">DNA to Protein</div>
+                <div class="topic-title" onclick="loadQuestionFor('python:NCBI and Blast')">NCBI & BLAST</div>
+                <div class="topic-title" onclick="loadQuestionFor('python:Visualization')">Visualization</div>
+                <div class="topic-title" onclick="loadQuestionFor('python:Pandas')">Pandas</div>
+                    
+                </ul>
+            </li>
+
+
+        </ul>
+    </nav>
+
+    <!-- main content -->
+    <main class="main-content" id="main">
+        <section id="exercise-container" class="ex-wrap" aria-labelledby="ex-title">
+            <div class="ex-nav left">
+                <button class="nav-step" data-dir="prev"> Previous</button>
+            </div>
+            <div class="hero">
+            <h3 id="top-title" class="top-title">Topic</h3>
+            <h3 id="sub-title" class="sub-title">subtopic</h3>
+            </div>
+            <h2 id="ex-title" class="ex-title">Exercise</h2>
+            <!-- Prev / Next buttons for linear navigation -->
+            
+            <div class="ex-card" role="group" aria-describedby="ex-progress">
+                <div class="ex-top">
+                    <div id="ex-progress" class="ex-progress">Question <span data-qn>1</span>/<span data-total>1</span>
+                    </div>
+                    <div class="ex-score" aria-live="polite">Score: <strong data-score>0</strong></div>
+                    <!-- add to HTML: inside .ex-top -->
+                    
+                </div>
+
+                <p class="ex-question" data-question>Question text…</p>
+                <div class="ex-type" data-type hidden></div>
+                <div class="ex-code" data-code-wrap hidden>
+                    <pre><code data-code class="language-python"></code></pre>
+                </div>
+
+                <form class="ex-form" id="ex-form" onsubmit="return false;">
+                    <div class="ex-options" id="ex-options" data-options></div>
+
+                    <div class="ex-actions">
+                        <button type="button" class="ex-btn primary" id="btn-check" data-role="check">Check Answer</button>
+                        <button type="button" class="ex-btn" id="btn-next" data-role="next" hidden>Next ▶</button>
+                        <button type="button" class="ex-btn ghost" id="btn-reset" data-role="reset">Reset Quiz</button>
+                    </div>
+
+                    <div class="ex-feedback" id="ex-feedback" data-feedback aria-live="polite"></div>
+                    <details class="ex-explain" id="ex-explain" data-explain-wrap hidden>
+                        <summary>Explanation</summary>
+                        <div data-explain></div>
+                    </details>
+                    <button type="button" id="btn-movenext" class="ex-btn move-next" data-role="movenext" aria-label="Move to next question" hidden>Move to next ▶</button>
+
+                </form>
+            </div>
+            <!-- Prev / Next buttons for linear navigation -->
+            <div class="ex-nav right">
+                <button class="nav-step" data-dir="next">Next</button>
+            </div>
+
+        </section>
+    </main>
+
+    <script src="quizdata.js"></script>
+    <script src="quizengine.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/highlight.min.js"></script>
+    <script src="/js/pythonQuiz.js"></script>
+    
+</body>
+
+</html>

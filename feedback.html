@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Probioz | Feedback</title>
+    <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon.png">
+    <link rel="icon" type="image/png" sizes="48x48" href="/images/favicon.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="/images/favicon.png">
+    <meta name="description" content="Share feedback about Probioz courses, projects and site experience." />
+    <link rel="icon" href="/icons/favicon.ico" type="image/x-icon" />
+    <link rel="stylesheet" href="/css/tokens.css">
+    <link rel="stylesheet" href="/css/primitives.css">
+    <link rel="stylesheet" href="/css/header-sizing.css">
+    <link rel="stylesheet" href="/css/layout-sizing.css">
+    <link rel="stylesheet" href="/css/page-specific.css">
+    <link rel="stylesheet" href="/css/feedback.css">
+
+</head>
+
+<body class="no-subnav footer-stick">
+    <a class="skip-link" href="#main">Skip to content</a>
+
+    <!-- Header / Nav -->
+    <header class="site-header">
+        <nav class="navbar" role="navigation" aria-label="Main">
+            <div class="brand">
+                <img src="../images/logo.png" alt="Website Logo" class="site-logo">
+                <span class="logo-text">probioz</span>
+            </div>
+
+            <button class="hamburger" aria-label="Toggle menu" aria-expanded="false" aria-controls="navMenu">
+                <span class="bar"></span><span class="bar"></span><span class="bar"></span>
+            </button>
+
+            <ul id="navMenu" class="nav-links">
+                <li><a href="home.html">Home</a></li>
+                <li><a href="prlist.html">Projects</a></li>
+                <li><a href="quizzes.html">Quiz</a></li>
+                <li><a href="about.html">About Us</a></li>
+                <li><a class="active" href="feedback.html">Feedback</a></li>
+                <li><a href="contact.html">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <!-- Main -->
+    <main id="main" class="wrap feedback-container">
+        <section class="card" aria-labelledby="fbTitle">
+            <h1 id="fbTitle">We value your feedback</h1>
+            <p class="lead">Tell us what’s working well and what we should improve. Your feedback helps shape Probioz
+                for the biology community.</p>
+
+            <form id="feedbackForm"
+                action="https://script.google.com/macros/s/AKfycbxYKXX7a_Sy3eF8pz4QuhumrrlF90BYvIPFjbKXenx68F6A_MTf1itdZBHOZbZ81V7e/exec"
+                method="POST" target="hidden_iframe">
+                <input type="hidden" name="formType" value="feedback">
+                <div class="row">
+                    <div>
+                        <label for="name">Full Name</label>
+                        <input id="name" name="name" type="text" placeholder="Your name" aria-required="true" />
+                        <div id="err-name" class="error" aria-live="polite"></div>
+                    </div>
+                    <div>
+                        <label for="email">Email</label>
+                        <input id="email" name="email" type="email" placeholder="you@example.com"
+                            aria-required="true" />
+                        <div id="err-email" class="error" aria-live="polite"></div>
+                    </div>
+                </div>
+
+                <div class="row">
+                    <div>
+                        <label for="topic">What is your feedback about?</label>
+                        <select id="topic" name="topic" aria-required="true">
+                            <option value="Python course">Python course</option>
+                            <option value="Projects">Projects</option>
+                            <option value="Quizzes">Quizzes</option>
+                            <option value="Site usability">Site usability</option>
+                            <option value="Site design">Site design</option>
+                            <option value="Site functionality">Site functionality</option>
+                            <option value="Others">Others</option>
+                        </select>
+                        <div class="hint">Choose the closest match.</div>
+                        <div id="err-topic" class="error" aria-live="polite"></div>
+                    </div>
+
+                    <div>
+                        <label>Overall rating</label>
+                        <div class="stars" role="radiogroup" aria-label="Overall rating out of 5">
+                            <input type="radio" id="star5" name="rating" value="5" />
+                            <label for="star5" aria-label="5 stars">★</label>
+                            <input type="radio" id="star4" name="rating" value="4" />
+                            <label for="star4" aria-label="4 stars">★</label>
+                            <input type="radio" id="star3" name="rating" value="3" />
+                            <label for="star3" aria-label="3 stars">★</label>
+                            <input type="radio" id="star2" name="rating" value="2" />
+                            <label for="star2" aria-label="2 stars">★</label>
+                            <input type="radio" id="star1" name="rating" value="1" />
+                            <label for="star1" aria-label="1 star">★</label>
+                        </div>
+                        <div id="err-rating" class="error" aria-live="polite"></div>
+                    </div>
+                </div>
+
+                <div>
+                    <label for="message">Your feedback</label>
+                    <textarea id="message" name="message" maxlength="1000"
+                        placeholder="Share your thoughts, ideas, or issues…"></textarea>
+                    <div class="counter" id="msgCount">0/1000</div>
+                    <div id="err-message" class="error" aria-live="polite"></div>
+                </div>
+
+                <div>
+                    <label class="sr-only" for="consent">Consent</label>
+                    <input id="consent" name="consent" type="checkbox" value="I agree" />
+                    <span class="consent-text">I agree that Probioz may use my feedback to improve the site.</span>
+                    <div id="err-consent" class="error" aria-live="polite"></div>
+                </div>
+
+                <div class="actions">
+                    <button type="reset" class="btn btn-ghost">Reset</button>
+                    <button type="submit" class="btn btn-primary">Submit feedback</button>
+                </div>
+            </form>
+        </section>
+    </main>
+    <div id="toast" class="toast" role="status" aria-live="polite">
+        <div>
+            <div class="toast-icon">
+                <svg viewBox="0 0 24 24">
+                    <path d="M5 13l4 4L19 7"></path>
+                </svg>
+            </div>
+            <div class="toast-message">
+                Thank you! Your feedback was submitted.
+            </div>
+        </div>
+    </div>
+    <footer class="site-footer">
+        <p>&copy; 2026 Probioz — Built for Biologists, by Biologist.</p>
+    </footer>
+    <iframe name="hidden_iframe" id="hidden_iframe" style="display:none;"></iframe>
+    <script src="/js/feedback.js"></script>
+</body>
+
+</html>

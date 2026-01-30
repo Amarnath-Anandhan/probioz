@@ -1,0 +1,45 @@
+services:
+  db:
+    image: postgres:15
+    restart: unless-stopped
+    environment:
+      POSTGRES_USER: probioz
+      POSTGRES_PASSWORD: probioz
+      POSTGRES_DB: probioz
+    ports:
+      - "5432:5432"
+    volumes:
+      - probioz_db:/var/lib/postgresql/data
+
+  api:
+    build: ./backend
+    restart: unless-stopped
+    environment:
+      API_PORT: "8000"
+      RUNNER_WS_URL: "ws://runner:9001/ws/run"
+    ports:
+      - "8000:8000"
+    depends_on:
+      - db
+      - runner
+
+  runner:
+    build: ./runner
+    restart: unless-stopped
+    environment:
+      RUNNER_PORT: "9001"
+      RUNNER_TOKEN: "devtoken"
+      RUNNER_WORK_DIR: "/workspaces"
+      RUNNER_UPLOADS_DIR: "/uploads"
+      STARTER_FILES_DIR: "/starter_files"
+    ports:
+      - "9001:9001"
+    volumes:
+      - probioz_workspaces:/workspaces
+      - probioz_uploads:/uploads
+      - ./assets/files:/starter_files:ro
+
+volumes:
+  probioz_db:
+  probioz_workspaces:
+  probioz_uploads:

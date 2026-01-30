@@ -1,0 +1,290 @@
+
+
+/* ===== Theme & layout variables ===== */
+:root {
+    --brand: #0b3d91;
+    --brand-dark: #0642a3;
+
+    /* Dark theme background */
+    --bg-grad: linear-gradient(180deg, #041026 0%, #051228 100%);
+
+    /* Light text on dark */
+    --text: #e6eef6;
+
+    /* Card / surfaces */
+    --card: #071028;
+    --radius: 12px;
+    --shadow: 0 10px 30px rgba(2, 6, 23, .6);
+
+    /* Status colors */
+    --ok: #4ade80;
+    --bad: #ff7b7b;
+    --border: rgba(255, 255, 255, .05);
+
+    /* Theme elements */
+    --muted: #9aa4b2;
+    --accent: #7dd3fc;
+    --nav-bg: #0b1124;
+    --subject-bg: #1e3a8a;
+}
+
+/* Base */
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    font-family: "Segoe UI", system-ui, -apple-system, Roboto, Arial, sans-serif;
+    background: var(--bg-grad);
+    color: var(--text);
+}
+
+/* header */
+.site-header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 1000;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, .4);
+    background: var(--nav-bg);
+}
+
+.navbar {
+    color: var(--text);
+}
+
+.nav-links {
+    list-style: none;
+    display: flex;
+    margin: 0;
+    padding: 0;
+    margin-left: auto;
+}
+
+.nav-links a {
+    color: var(--text);
+    text-decoration: none;
+    padding: 6px 10px;
+    border-radius: 8px;
+    font-weight: 600;
+    font-size: var(--p);
+}
+
+.nav-links a.active,
+.nav-links a:hover {
+    background: rgba(255, 255, 255, .06);
+    color: var(--accent);
+}
+
+/* Hamburger (mobile) */
+.hamburger {
+    background: transparent;
+    border: 0;
+    cursor: pointer;
+    margin-left: auto;
+}
+
+.hamburger .bar {
+    display: block;
+    width: 22px;
+    height: 2px;
+    background: var(--text);
+    margin: 4px 0;
+    border-radius: 2px;
+}
+
+/* ===================== QUIZ HERO SECTION ===================== */
+.quiz-page {
+    display: flex;
+    flex-direction: column;
+    gap: calc(var(--btn-pad-y) * 3);
+}
+
+.quiz-hero {
+    background: linear-gradient(135deg, #151f3f 0%, #1e3a8a 70%, #264fbf 100%);
+    color: #fff;
+    padding: calc(var(--btn-pad-y) * 2) calc(var(--btn-pad-x) * 2);
+    border-radius: var(--radius-lg);
+    margin: 0 auto;
+    text-align: center;
+    box-shadow: 0 10px 35px rgba(2, 6, 23, .6);
+    max-width: 1000px;
+}
+
+.quiz-hero-content {
+    max-width: 700px;
+    margin: auto;
+}
+
+.quiz-hero h1 {
+    margin: 0 0 calc(var(--btn-pad-y) * 2);
+    font-size: var(--h1);
+    font-weight: 800;
+    letter-spacing: 0.5px;
+}
+
+.quiz-hero p {
+    margin: 8px 0 0;
+    color: var(--muted);
+    font-size: var(--p);
+}
+
+/* subject bar */
+.subject-bar {
+    background: var(--subject-bg);
+    border-bottom: 1px solid rgba(255, 255, 255, .08);
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.35);
+    position: fixed;
+    top: var(--nav-h);
+    width: 100%;
+    z-index: 999;
+    overflow-x: auto;
+    overflow-y: hidden;
+    scrollbar-width: none;
+    -ms-overflow-style: none;
+    padding: 0 var(--container-pad);
+}
+
+.subject-bar::-webkit-scrollbar {
+    display: none;
+}
+
+.subject-bar ul {
+    list-style: none;
+    padding: 0 6px;
+    display: flex;
+    gap: 16px;
+    margin: 0;
+    align-items: center;
+    justify-content: center;
+    min-width: max-content;
+    overflow-x: auto;
+    overflow-y: hidden;
+    scrollbar-width: none;
+    -ms-overflow-style: none;
+    width: 100%;
+}
+
+.subject-bar ul::-webkit-scrollbar {
+    display: none;
+}
+
+.subject-bar a {
+    color: var(--text);
+    text-decoration: none;
+    font-weight: 600;
+    padding: 6px 10px;
+    border-radius: 8px;
+    display: inline-block;
+    font-size: var(--p);
+}
+
+.subject-bar a:hover,
+.subject-bar a:focus {
+    color: var(--accent);
+    background: rgba(125, 211, 252, .08);
+    outline: none;
+}
+
+.subject-card {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: calc(var(--btn-pad-y) * 2);
+}
+
+.subject-card .active,
+.subject-card .inactive {
+    max-width: 260px;
+    min-height: calc(var(--btn-pad-y) * 16);
+    border: 2px solid #4d6bff;
+    border-radius: var(--radius-lg);
+    padding: calc(var(--btn-pad-y) * 2) calc(var(--btn-pad-x) * 2);
+    text-align: center;
+    background: linear-gradient(180deg, rgba(255, 255, 255, .02), rgba(255, 255, 255, .01));
+    box-shadow: 0 12px 20px rgba(2, 6, 23, .5);
+    color: var(--text);
+    transition:
+        transform 0.25s ease,
+        box-shadow 0.25s ease,
+        border 0.25s ease;
+}
+
+.subject-card h2,
+.subject-card h5 {
+    font-size: var(--h3);
+    margin: 0 0 calc(var(--btn-pad-y));
+}
+
+.subject-card p {
+    font-size: var(--p);
+    margin: 0 0 calc(var(--btn-pad-y) * 2);
+    color: var(--muted);
+}
+
+.subject-card .active:hover,
+.subject-card .inactive:hover {
+    transform: translateY(-4px);
+    border: 2px solid rgb(84, 84, 206);
+    box-shadow:
+        0 0 10px rgba(84, 84, 206, 0.6),
+        0 0 25px rgba(84, 84, 206, 0.45),
+        0 0 45px rgba(84, 84, 206, 0.25);
+
+}
+
+.small-btn {
+    border-radius: var(--radius-md);
+    background-color: #15a34a;
+    color: white;
+    font-weight: 700;
+    border: none;
+}
+
+.coming-soon {
+    display: inline-block;
+    padding: max(4px, calc(var(--btn-pad-y) - 2px)) max(6px, calc(var(--btn-pad-x) - 6px));
+    background: rgba(255, 255, 255, .08);
+    border-radius: var(--radius-sm);
+    font-size: var(--badge-font);
+    font-weight: 700;
+    color: var(--text);
+}
+
+/* Responsive tweaks */
+@media (max-width: 1023px) {
+    .nav-links {
+        position: absolute;
+        right: var(--container-pad);
+        top: calc(var(--nav-h) + var(--subnav-h));
+        background: var(--nav-bg);
+        border-radius: 12px;
+        padding: 10px 12px;
+        flex-direction: column;
+        gap: 8px;
+        display: none;
+    }
+
+    .nav-links.show {
+        display: flex;
+    }
+
+    .subject-card .active,
+    .subject-card .inactive {
+        max-width: 220px;
+        min-height: calc(var(--btn-pad-y) * 14);
+    }
+}
+
+@media (max-width: 767px) {
+
+    .subject-card .active,
+    .subject-card .inactive {
+        max-width: 100%;
+        width: 100%;
+        min-height: calc(var(--btn-pad-y) * 12);
+    }
+}
+

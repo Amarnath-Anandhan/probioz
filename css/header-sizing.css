@@ -1,0 +1,118 @@
+/* header-sizing.css */
+.site-header {
+  height: var(--nav-h);
+}
+
+.navbar {
+  min-height: var(--nav-h);
+  padding: 0 var(--container-pad);
+  display: flex;
+  align-items: center;
+}
+
+.site-logo {
+  height: var(--logo-h);
+  width: auto;
+  object-fit: contain;
+  display: block;
+  margin: 0;
+}
+
+.brand {
+  display: flex;
+  align-items: center;
+}
+
+.hamburger {
+  width: 36px;
+  height: 36px;
+  padding: 6px;
+  display: none;
+}
+
+.nav-links {
+  gap: 16px;
+}
+
+.subject-bar {
+  height: var(--subnav-h);
+  padding: 0 var(--container-pad);
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  gap: 12px;
+}
+
+.subject-bar ul {
+  display: flex;
+  flex-wrap: nowrap;
+  white-space: nowrap;
+  min-width: max-content;
+  gap: 16px;
+  margin: 0 auto;
+  padding: 0;
+  padding-bottom: 2px;
+  align-items: center;
+  flex: 1 1 auto;
+  justify-content: center;
+  overflow-x: auto;
+  overflow-y: hidden;
+  scrollbar-width: none;
+  -ms-overflow-style: none;
+  min-width: 0;
+}
+
+.subject-bar ul::-webkit-scrollbar {
+  display: none;
+}
+
+.logo-text {
+  font-size: 18px;
+  font-weight: 700;
+  letter-spacing: 0.3px;
+  line-height: 1;
+}
+
+@media (min-width:768px) and (max-width:1023px) {
+  .logo-text {
+    font-size: 17px;
+    font-weight: 780;
+  }
+
+  .subject-bar ul {
+    gap: 19px;
+  }
+}
+
+@media (max-width:840px) {
+  .logo-text {
+    font-size: 15px;
+    font-weight: 740;
+  }
+
+  .subject-bar ul {
+    gap: 15px;
+  }
+}
+
+@media (max-width:767px) {
+  .logo-text {
+    font-size: 16px;
+    font-weight: 760;
+  }
+
+  .subject-bar ul {
+    gap: 17px;
+  }
+}
+
+@media (max-width:1023px) {
+  .hamburger {
+    display: block;
+  }
+
+  .nav-links {
+    top: var(--nav-h);
+  }
+}

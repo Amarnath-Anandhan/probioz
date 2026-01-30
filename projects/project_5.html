@@ -1,0 +1,510 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>probioz | project_5_python</title>
+    <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon.png">
+    <link rel="icon" type="image/png" sizes="48x48" href="/images/favicon.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="/images/favicon.png">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Raleway:wght@400;600;700&family=Karla:wght@300;400;500;600&family=Ubuntu+Mono:wght@400;700&display=swap"
+        rel="stylesheet">
+    <!-- Notebook Playground dependencies -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.65.16/codemirror.min.css">
+    <link rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.65.16/theme/material-darker.min.css">
+    <link rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/styles/atom-one-dark.min.css">
+    <!-- Notebook Playground styles -->
+    <link rel="stylesheet" href="project_notebook.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.65.16/codemirror.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.65.16/mode/python/python.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/highlight.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/pyodide/v0.24.1/full/pyodide.js"></script>
+    <link rel="stylesheet" href="../css/tokens.css">
+    <link rel="stylesheet" href="../css/primitives.css">
+    <link rel="stylesheet" href="../css/header-sizing.css">
+    <link rel="stylesheet" href="../css/layout-sizing.css">
+    <link rel="stylesheet" href="../css/page-specific.css">
+    <link rel="stylesheet" href="../css/project.css">
+</head>
+
+<body class="footer-stick">
+    <a class="skip-link" href="#main">Skip to content</a>
+
+    <!-- Header / Nav -->
+    <header class="site-header">
+        <nav class="navbar" role="navigation" aria-label="Main">
+            <div class="brand">
+                <img src="../images/logo.png" alt="Website Logo" class="site-logo">
+                <span class="logo-text">probioz</span>
+            </div>
+
+            <button class="hamburger" aria-label="Toggle menu" aria-expanded="false" aria-controls="navMenu">
+                <span class="bar"></span><span class="bar"></span><span class="bar"></span>
+            </button>
+
+            <ul id="navMenu" class="nav-links">
+                <li><a href="../home.html">Home</a></li>
+                <li><a class="active" href="../prlist.html">Projects</a></li>
+                <li><a href="../quizzes.html">Quiz</a></li>
+                <li><a href="../about.html">About Us</a></li>
+                <li><a href="../feedback.html">Feedback</a></li>
+                <li><a href="../contact.html">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+    <!-- Secondary Subject Navigation -->
+    <div class="subject-bar">
+        <ul>
+            <li><a href="../python.html">Python</a></li>
+            <li><a href="../perl.html">Perl</a></li>
+            <li><a href="../r.html">R</a></li>
+            <li><a href="../sql.html">SQL</a></li>
+            <li><a href="../ml.html">ML</a></li>
+        </ul>
+    </div>
+    <div class="wrap">
+        <div class="card">
+            <button class="btn_prev" onclick="window.location.href='project_4.html'">previous</button>
+            <div class="meta">
+                <h1>5.DNA Sequence Analysis Pipeline (Capstone)</h1>
+                <div class="badge">Beginner</div>
+            </div>
+    
+            <div>
+                <p><strong style="color:#7dd3fc">Goal: </strong>Goal: Build one program that can take a DNA sequence from
+                    FASTA or NCBI ID, run multiple analyses, and save a complete report.</p>
+                <p><strong style="color:#7dd3fc">Rule: </strong>Rule: Each cell has partial code. Fill the TODO lines, run
+                    the cell, check the output, then go to the next cell. The last cell has the full working program.</p>
+                <p><strong style="color:#7dd3fc">What this tool will do: </strong>What this tool will do: It accepts input
+                    as a FASTA file or pasted DNA. It cleans and validates the sequence, calculates GC% and base counts,
+                    finds ORFs, searches motifs, computes k-mer counts, saves results to CSV/text files, and generates one
+                    plot.</p>
+            </div>
+    
+            <!-- Notebook Playground section added -->
+            <div class="section nb-playground" id="notebook">
+                <h3>Lets start</h3>
+    
+                <div class="nb-filebar">
+                    <div class="nb-filebar-actions">
+                        <button type="button" class="nb-upload-global">Upload File</button>
+                        <button type="button" class="nb-show-uploads">Show Uploads</button>
+                        <button type="button" class="nb-clear-uploads-global">Clear Uploads</button>
+                        <span class="nb-upload-status" aria-live="polite"></span>
+                    </div>
+    
+                    <div class="nb-uploads-panel" hidden>
+                        <div class="nb-uploads-header">
+                            <strong>Uploaded files</strong>
+                            <button type="button" class="nb-refresh-uploads">Refresh</button>
+                        </div>
+                        <div class="nb-uploads-list"></div>
+                    </div>
+                </div>
+    
+                <div class="nb-cell" data-cell="1">
+    
+                    <div class="nb-cell-title">Input, type choice, and cleaning</div>
+                    <p class="nb-cell-desc">We start by deciding how the user will provide the sequence. We support two easy
+                        inputs: paste DNA directly or give a FASTA file path.
+                        We keep the first step simple: get the raw input, clean it, and confirm we have a valid DNA
+                        sequence.
+                        Cleaning is done by removing spaces/newlines/tabs, converting to uppercase, and keeping only
+                        A/T/G/C.
+                        When you run this cell, you should see a cleaned sequence length. If it is 0, your input is empty or
+                        invalid.</p>
+    
+                    <textarea class="nb-editor"># Cell 1: Input + Clean + Validate (DNA only)
+    
+    def read_fasta_sequence(file_path: str) -> str:
+        parts = []
+        with open(file_path, "r", encoding="utf-8") as f:
+            for line in f:
+                line = line.strip()
+                if line == "" or line.startswith(">"):
+                    continue
+                parts.append(line)
+        return "".join(parts)
+    
+    def clean_dna(seq: str) -> str:
+        seq = seq.upper()
+        seq = seq.replace(" ", "").replace("\n", "").replace("\t", "")
+        valid = set("ATGC")
+        seq = "".join(ch for ch in seq if ch in valid)
+        return seq
+    
+    def is_valid_dna(seq: str) -> bool:
+        allowed = set("ATGC")
+        return len(seq) > 0 and all(ch in allowed for ch in seq)
+    
+    mode = input("Choose input mode (PASTE or FASTA): ")
+    mode = mode.strip().upper()
+    
+    # TODO: get raw sequence based on mode
+    # Hint:
+    # if mode == "PASTE":
+    #     raw = input("Paste DNA: ")
+    # elif mode == "FASTA":
+    #     path = input("FASTA file path: ")
+    #     path = path.strip()
+    #     raw = read_fasta_sequence(path)
+    # else:
+    #     print("Invalid mode")
+    #     raw = ""
+    
+    # TODO: clean the sequence
+    # Hint: seq = clean_dna(raw)
+    
+    # TODO: validate and print basic info
+    # Hint:
+    # print("Length:", len(seq))
+    # print("Valid DNA:", is_valid_dna(seq))
+    # print("Preview:", seq[:60])</textarea>
+                    <div class="nb-actions">
+                        <button class="nb-run" type="button">Run Cell</button>
+                        <button class="nb-reset" type="button">Reset</button>
+                        <button class="nb-clear" type="button">Clear</button>
+                    </div>
+                    <div class="nb-output" aria-live="polite">
+                        <pre class="nb-output-text"></pre>
+                    </div>
+                    <div class="nb-files"></div>
+                    <div class="nb-plot"></div>
+                </div>
+    
+                <div class="nb-cell" data-cell="2">
+    
+                    <div class="nb-cell-title">Basic stats (counts + GC%) and motif search</div>
+                    <p class="nb-cell-desc">Now we compute basic stats first. This is the part students always need in real
+                        projects: length, base counts, and GC%.
+                        We use count() to count bases and a simple formula for GC%.
+                        Then we add motif search using find() in a loop so we can find all matches, including overlaps.
+                        When you run this cell, you should see counts, GC%, and motif positions.</p>
+    
+                    <textarea class="nb-editor"># Cell 2: Stats + Motif search
+    
+    def base_counts(seq: str):
+        a = seq.count("A")
+        t = seq.count("T")
+        g = seq.count("G")
+        c = seq.count("C")
+        return a, t, g, c
+    
+    def gc_percent(seq: str) -> float:
+        if len(seq) == 0:
+            return 0.0
+        g = seq.count("G")
+        c = seq.count("C")
+        return ((g + c) / len(seq)) * 100
+    
+    def find_motif_positions(seq: str, motif: str):
+        positions = []
+        start = 0
+    
+        # TODO: loop and find motif positions
+        # Hint:
+        # while True:
+        #     idx = seq.find(motif, start)
+        #     if idx == -1:
+        #         break
+        #     positions.append(idx)
+        #     start = idx + 1
+    
+        return positions
+    
+    # TODO: print base counts + GC%
+    # Hint:
+    # a, t, g, c = base_counts(seq)
+    # print("A:", a, "T:", t, "G:", g, "C:", c)
+    # print("GC%:", round(gc_percent(seq), 2))
+    
+    motif = input("Motif to search (example ATG): ")
+    motif = motif.strip().upper()
+    # TODO: find motif positions and print
+    # Hint:
+    # positions = find_motif_positions(seq, motif)
+    # print("Motif positions:", positions)</textarea>
+                    <div class="nb-actions">
+                        <button class="nb-run" type="button">Run Cell</button>
+                        <button class="nb-reset" type="button">Reset</button>
+                        <button class="nb-clear" type="button">Clear</button>
+                    </div>
+                    <div class="nb-output" aria-live="polite">
+                        <pre class="nb-output-text"></pre>
+                    </div>
+                    <div class="nb-files"></div>
+                    <div class="nb-plot"></div>
+                </div>
+    
+                <div class="nb-cell" data-cell="3">
+    
+                    <div class="nb-cell-title">ORF finding and k-mer counting</div>
+                    <p class="nb-cell-desc">Now we add two bigger analyses. ORF finding is useful for real DNA sequences,
+                        and k-mer counting is useful for pattern analysis.
+                        For ORFs, we scan in frame 0 and look for ATG → stop codon. (Keeping it simple for capstone.)
+                        For k-mers, we slide a window of size k and count each substring in a dictionary.
+                        When you run this cell, you should see number of ORFs and the most common k-mers.</p>
+    
+                    <textarea class="nb-editor"># Cell 3: ORFs + K-mers
+    
+    stop_codons = {"TAA", "TAG", "TGA"}
+    
+    def find_orfs_frame0(seq: str):
+        orfs = []
+        i = 0
+    
+        while i + 3 <= len(seq):
+            codon = seq[i:i+3]
+    
+            if codon == "ATG":
+                start = i
+                j = i + 3
+    
+                # TODO: move in steps of 3 until stop codon
+                # Hint:
+                # while j + 3 <= len(seq):
+                #     next_codon = seq[j:j+3]
+                #     if next_codon in stop_codons:
+                #         end = j + 3
+                #         orfs.append((start, end))
+                #         break
+                #     j += 3
+    
+                # TODO: continue scanning
+                # Hint: i = j
+            else:
+                i += 3
+    
+        return orfs
+    
+    def kmer_counts(seq: str, k: int):
+        counts = {}
+    
+        # TODO: slide from 0 to end-k
+        # Hint:
+        # for i in range(0, len(seq) - k + 1):
+        #     kmer = seq[i:i+k]
+        #     counts[kmer] = counts.get(kmer, 0) + 1
+    
+        return counts
+    
+    # TODO: find ORFs and print count
+    # Hint:
+    # orfs = find_orfs_frame0(seq)
+    # print("ORFs (frame 0):", len(orfs))
+    
+    k_text = input("k for k-mers (example 3): ")
+    k_text = k_text.strip()
+    k = int(k_text) if k_text != "" else 3
+    
+    # TODO: compute k-mer counts and show top 10
+    # Hint:
+    # counts = kmer_counts(seq, k)
+    # top = sorted(counts.items(), key=lambda x: x[1], reverse=True)[:10]
+    # print("Top k-mers:", top)</textarea>
+                    <div class="nb-actions">
+                        <button class="nb-run" type="button">Run Cell</button>
+                        <button class="nb-reset" type="button">Reset</button>
+                        <button class="nb-clear" type="button">Clear</button>
+                    </div>
+                    <div class="nb-output" aria-live="polite">
+                        <pre class="nb-output-text"></pre>
+                    </div>
+                    <div class="nb-files"></div>
+                    <div class="nb-plot"></div>
+                </div>
+    
+                <div class="nb-cell" data-cell="4">
+    
+                    <div class="nb-cell-title">Full final program with file export + one plot</div>
+                    <p class="nb-cell-desc">Now we combine all steps and make it a complete pipeline.
+                        We save a CSV report with the main numbers, save ORFs as a text file, and plot base composition as a
+                        bar chart.
+                        This makes the program feel like a real tool: it produces outputs that can be used later.</p>
+                    <details>
+                        <summary>Show full program</summary>
+                        <textarea class="nb-editor"># Cell 4: Full Final Code - DNA Sequence Analysis Pipeline (Capstone)
+
+import csv
+import matplotlib.pyplot as plt
+
+stop_codons = {"TAA", "TAG", "TGA"}
+
+def read_fasta_sequence(file_path: str) -> str:
+    parts = []
+    with open(file_path, "r", encoding="utf-8") as f:
+        for line in f:
+            line = line.strip()
+            if line == "" or line.startswith(">"):
+                continue
+            parts.append(line)
+    return "".join(parts)
+
+def clean_dna(seq: str) -> str:
+    seq = seq.upper()
+    seq = seq.replace(" ", "").replace("\n", "").replace("\t", "")
+    valid = set("ATGC")
+    seq = "".join(ch for ch in seq if ch in valid)
+    return seq
+
+def is_valid_dna(seq: str) -> bool:
+    allowed = set("ATGC")
+    return len(seq) > 0 and all(ch in allowed for ch in seq)
+
+def base_counts(seq: str):
+    a = seq.count("A")
+    t = seq.count("T")
+    g = seq.count("G")
+    c = seq.count("C")
+    return a, t, g, c
+
+def gc_percent(seq: str) -> float:
+    if len(seq) == 0:
+        return 0.0
+    g = seq.count("G")
+    c = seq.count("C")
+    return ((g + c) / len(seq)) * 100
+
+def find_motif_positions(seq: str, motif: str):
+    positions = []
+    start = 0
+    while True:
+        idx = seq.find(motif, start)
+        if idx == -1:
+            break
+        positions.append(idx)
+        start = idx + 1
+    return positions
+
+def find_orfs_frame0(seq: str):
+    orfs = []
+    i = 0
+    while i + 3 <= len(seq):
+        codon = seq[i:i+3]
+        if codon == "ATG":
+            start = i
+            j = i + 3
+            while j + 3 <= len(seq):
+                next_codon = seq[j:j+3]
+                if next_codon in stop_codons:
+                    end = j + 3
+                    orfs.append((start, end))
+                    break
+                j += 3
+            i = j
+        else:
+            i += 3
+    return orfs
+
+def kmer_counts(seq: str, k: int):
+    counts = {}
+    for i in range(0, len(seq) - k + 1):
+        kmer = seq[i:i+k]
+        counts[kmer] = counts.get(kmer, 0) + 1
+    return counts
+
+def save_orfs(orfs, seq, out_txt: str):
+    with open(out_txt, "w", encoding="utf-8") as f:
+        for idx, (start, end) in enumerate(orfs, start=1):
+            f.write(f"ORF{idx}\tstart={start}\tend={end}\tlen={end-start}\n")
+            f.write(seq[start:end] + "\n\n")
+
+def save_summary_csv(out_csv: str, length: int, gc: float, a: int, t: int, g: int, c: int):
+    with open(out_csv, "w", newline="", encoding="utf-8") as f:
+        writer = csv.writer(f)
+        writer.writerow(["Length", "GC_percent", "A", "T", "G", "C"])
+        writer.writerow([length, round(gc, 2), a, t, g, c])
+
+mode = input("Choose input mode (PASTE or FASTA): ")
+mode = mode.strip().upper()
+if mode == "PASTE":
+    raw = input("Paste DNA: ")
+elif mode == "FASTA":
+    path = input("FASTA file path: ")
+    path = path.strip()
+    raw = read_fasta_sequence(path)
+else:
+    print("Invalid mode")
+    raise SystemExit
+
+seq = clean_dna(raw)
+
+print("Length:", len(seq))
+print("Valid DNA:", is_valid_dna(seq))
+print("Preview:", seq[:60])
+
+a, t, g, c = base_counts(seq)
+gc = gc_percent(seq)
+
+print("A:", a, "T:", t, "G:", g, "C:", c)
+print("GC%:", round(gc, 2))
+
+motif = input("Motif to search (example ATG): ")
+motif = motif.strip().upper()
+positions = find_motif_positions(seq, motif)
+print("Motif positions:", positions)
+
+orfs = find_orfs_frame0(seq)
+print("ORFs (frame 0):", len(orfs))
+
+k_text = input("k for k-mers (example 3): ")
+k_text = k_text.strip()
+k = int(k_text) if k_text != "" else 3
+counts = kmer_counts(seq, k)
+top = sorted(counts.items(), key=lambda x: x[1], reverse=True)[:10]
+print("Top k-mers:", top)
+
+out_csv = input("Enter Summary CSV file name (example summary.csv): ")
+out_csv = out_csv.strip()
+if out_csv == "":
+    out_csv = "summary.csv"
+save_summary_csv(out_csv, len(seq), gc, a, t, g, c)
+print("Saved:", out_csv)
+
+out_orf = input("ORF output file (example orfs.txt): ")
+out_orf = out_orf.strip()
+if out_orf == "":
+    out_orf = "orfs.txt"
+save_orfs(orfs, seq, out_orf)
+print("Saved:", out_orf)
+
+plt.figure()
+plt.bar(["A", "T", "G", "C"], [a, t, g, c])
+plt.ylabel("Count")
+plt.title("Base Composition")
+plt.show()</textarea>
+                    </details>
+    
+                    <div class="nb-actions">
+                        <button class="nb-run" type="button">Run Cell</button>
+                        <button class="nb-reset" type="button">Reset</button>
+                        <button class="nb-clear" type="button">Clear</button>
+                    </div>
+                    <div class="nb-output" aria-live="polite">
+                        <pre class="nb-output-text"></pre>
+                    </div>
+                    <div class="nb-files"></div>
+                    <div class="nb-plot"></div>
+                </div>
+            </div>
+            <div class="btn_wrapper">
+                <button class="btn_prev" onclick="window.location.href='project_4.html'">previous</button>
+                <button class="btn_next" onclick="window.location.href='project_6.html'">Next</button>
+            </div>
+        </div>
+    </div>
+
+    <footer class="site-footer">
+        <p>&copy; 2026 Probioz &mdash; Built for Biologists, by Biologist.</p>
+    </footer>
+
+    <!-- Notebook Playground logic -->
+    <script src="project_notebook.js"></script>
+    <script src="../js/project.js"></script>
+</body>
+
+</html>

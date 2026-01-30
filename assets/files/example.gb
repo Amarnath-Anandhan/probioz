@@ -1,0 +1,22 @@
+LOCUS       BRCA1_DEMO               180 bp    DNA     linear   UNA 23-JAN-2026
+DEFINITION  Homo sapiens BRCA1 gene, partial CDS (synthetic demo sequence).
+ACCESSION   DEMO000001
+VERSION     DEMO000001.1
+KEYWORDS    .
+SOURCE      Homo sapiens (human)
+  ORGANISM  Homo sapiens
+            Eukaryota; Metazoa; Chordata; Mammalia; Primates.
+FEATURES             Location/Qualifiers
+     source          1..180
+                     /organism="Homo sapiens"
+                     /mol_type="genomic DNA"
+     gene            1..180
+                     /gene="BRCA1"
+     CDS             1..180
+                     /gene="BRCA1"
+                     /product="breast cancer type 1 susceptibility protein (partial)"
+ORIGIN
+        1 atggatttat ctgctcttcg cgttgaagaa gttacaaaat gtcaggactt
+       61 ctgctgctgc tgctgatgat gacgatgatg atgctgctgc tgctgatgat
+      121 gatgctgatg atgacgatga tgatgctgct gctgctgatg atgatgacga
+//

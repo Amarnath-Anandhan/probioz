@@ -1,0 +1,361 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>  
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>probioz | project_1_python</title>
+    <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon.png">
+    <link rel="icon" type="image/png" sizes="48x48" href="/images/favicon.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="/images/favicon.png">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Raleway:wght@400;600;700&family=Karla:wght@300;400;500;600&family=Ubuntu+Mono:wght@400;700&display=swap"
+        rel="stylesheet">
+    <!-- Notebook Playground dependencies -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.65.16/codemirror.min.css">
+    <link rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.65.16/theme/material-darker.min.css">
+    <link rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/styles/atom-one-dark.min.css">
+    <!-- Notebook Playground styles -->
+    <link rel="stylesheet" href="project_notebook.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.65.16/codemirror.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.65.16/mode/python/python.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/highlight.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/pyodide/v0.24.1/full/pyodide.js"></script>
+    <link rel="stylesheet" href="../css/tokens.css">
+    <link rel="stylesheet" href="../css/primitives.css">
+    <link rel="stylesheet" href="../css/header-sizing.css">
+    <link rel="stylesheet" href="../css/layout-sizing.css">
+    <link rel="stylesheet" href="../css/page-specific.css">
+    <link rel="stylesheet" href="../css/project.css">
+</head>
+
+<body class="footer-stick">
+    <a class="skip-link" href="#main">Skip to content</a>
+
+    <!-- Header / Nav -->
+    <header class="site-header">
+        <nav class="navbar" role="navigation" aria-label="Main">
+            <div class="brand">
+                <img src="../images/logo.png" alt="Website Logo" class="site-logo">
+                <span class="logo-text">probioz</span>
+            </div>
+
+            <button class="hamburger" aria-label="Toggle menu" aria-expanded="false" aria-controls="navMenu">
+                <span class="bar"></span><span class="bar"></span><span class="bar"></span>
+            </button>
+
+            <ul id="navMenu" class="nav-links">
+                <li><a href="../home.html">Home</a></li>
+                <li><a class="active" href="../prlist.html">Projects</a></li>
+                <li><a href="../quizzes.html">Quiz</a></li>
+                <li><a href="../about.html">About Us</a></li>
+                <li><a href="../feedback.html">Feedback</a></li>
+                <li><a href="../contact.html">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+    <!-- Secondary Subject Navigation -->
+    <div class="subject-bar">
+        <ul>
+            <li><a href="../python.html">Python</a></li>
+            <li><a href="../perl.html">Perl</a></li>
+            <li><a href="../r.html">R</a></li>
+            <li><a href="../sql.html">SQL</a></li>
+            <li><a href="../ml.html">ML</a></li>
+        </ul>
+    </div>
+    <div class="wrap">
+        <div class="card">
+            <div class="meta">
+                <h1>1.Sequence Utility Toolkit</h1>
+                <div class="badge">Beginner</div>
+            </div>
+
+            <div>
+                <p><strong style="color:#7dd3fc">GOAL: </strong>Build one program that can clean, check, analyze, and
+                    convert a DNA/RNA sequence.
+                </p>
+                <p><strong style="color:#7dd3fc">Rule: </strong>In this project you will build a single tool step by
+                    step. Each cell contains partial code. You must fill the lines
+                    marked as TODO, run the cell, check the output, and then move to the next cell. The final cell
+                    contains the full working
+                    program.
+                </p>
+                <p><strong style="color:#7dd3fc">What this tool will do: </strong>It takes a sequence from the user,
+                    cleans it, checks whether it is DNA or RNA, calculates GC%, converts between DNA and
+                    RNA, finds reverse complement for DNA, and allows saving the result to a file.
+                </p>
+            </div>
+
+            <!-- Notebook Playground section added -->
+            <div class="section nb-playground" id="notebook">
+                <h3>Lets start</h3>
+
+                <div class="nb-filebar">
+                    <div class="nb-filebar-actions">
+                        <button type="button" class="nb-upload-global">Upload File</button>
+                        <button type="button" class="nb-show-uploads">Show Uploads</button>
+                        <button type="button" class="nb-clear-uploads-global">Clear Uploads</button>
+                        <span class="nb-upload-status" aria-live="polite"></span>
+                    </div>
+
+                    <div class="nb-uploads-panel" hidden>
+                        <div class="nb-uploads-header">
+                            <strong>Uploaded files</strong>
+                            <button type="button" class="nb-refresh-uploads">Refresh</button>
+                        </div>
+                        <div class="nb-uploads-list"></div>
+                    </div>
+                </div>
+
+                <div class="nb-cell" data-cell="1">
+
+                    <div class="nb-cell-title">Input and cleaning</div>
+                    <p class="nb-cell-desc">Here we take the sequence from the user and make it clean before using it.
+                        <br>We read the text using input(), convert it to uppercase using upper(), remove spaces and
+                        newlines using replace(), and
+                        finally keep only letters using "".join() with isalpha().
+                    </p>
+
+                    <textarea class="nb-editor">def clean_sequence(seq: str) -&gt; str:
+    seq = seq.upper()
+
+    # TODO: remove spaces, newlines, tabs
+    # Hint: seq = seq.replace(" ", "").replace("\n", "").replace("\t", "")
+
+    # TODO: keep only letters
+    # Hint: seq = "".join(ch for ch in seq if ch.isalpha())
+
+    return seq
+
+raw = input("Paste DNA/RNA sequence: ")
+seq = clean_sequence(raw)
+
+print("Cleaned:", seq)
+print("Length:", len(seq))
+</textarea>
+                    <div class="nb-actions">
+                        <button class="nb-run" type="button">Run Cell</button>
+                        <button class="nb-reset" type="button">Reset</button>
+                        <button class="nb-clear" type="button">Clear</button>
+                    </div>
+                    <div class="nb-output" aria-live="polite">
+                        <pre class="nb-output-text"></pre>
+                    </div>
+                    <div class="nb-files"></div>
+                    <div class="nb-plot"></div>
+                </div>
+
+                <div class="nb-cell" data-cell="2">
+
+                    <div class="nb-cell-title"> Validation and GC%</div>
+                    <p class="nb-cell-desc">Here we check what type of sequence we have and calculate GC%.
+                        <br>We define allowed bases using set("ATGC") or set("AUGC"), check every character using all(),
+                        count G and C using
+                        count(), and handle empty sequence using if len(seq) == 0.
+                    </p>
+
+                    <textarea class="nb-editor">def is_valid_dna(seq: str) -&gt; bool:
+    allowed = set("ATGC")
+    # TODO: check every character using all()
+    # Hint: return len(seq) &gt; 0 and all(ch in allowed for ch in seq)
+
+def is_valid_rna(seq: str) -&gt; bool:
+    allowed = set("AUGC")
+    # TODO: same logic as DNA
+    # Hint: return len(seq) &gt; 0 and all(ch in allowed for ch in seq)
+
+def gc_percent(seq: str) -&gt; float:
+    if len(seq) == 0:
+        return 0.0
+    # TODO: compute GC% using count()
+    # Hint: gc = seq.count("G") + seq.count("C")
+    # Hint: return (gc / len(seq)) * 100
+
+print("Valid DNA:", is_valid_dna(seq))
+print("Valid RNA:", is_valid_rna(seq))
+print("GC%:", round(gc_percent(seq), 2))
+</textarea>
+                    <div class="nb-actions">
+                        <button class="nb-run" type="button">Run Cell</button>
+                        <button class="nb-reset" type="button">Reset</button>
+                        <button class="nb-clear" type="button">Clear</button>
+                    </div>
+                    <div class="nb-output" aria-live="polite">
+                        <pre class="nb-output-text"></pre>
+                    </div>
+                    <div class="nb-files"></div>
+                    <div class="nb-plot"></div>
+                </div>
+
+                <div class="nb-cell" data-cell="3">
+
+                    <div class="nb-cell-title">Conversions and reverse complement</div>
+                    <p class="nb-cell-desc">Here we add operations that change the sequence.
+                        <br>We convert DNA to RNA and RNA to DNA using replace(), and build the reverse complement using
+                        a dictionary,
+                        reversed(seq), and "".join().
+                    </p>
+
+                    <textarea class="nb-editor">def dna_to_rna(seq: str) -&gt; str:
+    # TODO: use replace()
+    # Hint: return seq.replace("T", "U")
+
+def rna_to_dna(seq: str) -&gt; str:
+    # TODO: use replace()
+    # Hint: return seq.replace("U", "T")
+
+def reverse_complement_dna(seq: str) -&gt; str:
+    comp = {"A": "T", "T": "A", "G": "C", "C": "G"}
+    # TODO: reverse and map using comp + join
+    # Hint: return "".join(comp[ch] for ch in reversed(seq))
+
+print("DNA → RNA:", dna_to_rna(seq))
+print("RNA → DNA:", rna_to_dna(seq))
+
+if is_valid_dna(seq):
+    print("RevComp:", reverse_complement_dna(seq))
+else:
+    print("RevComp: DNA only")
+</textarea>
+                    <div class="nb-actions">
+                        <button class="nb-run" type="button">Run Cell</button>
+                        <button class="nb-reset" type="button">Reset</button>
+                        <button class="nb-clear" type="button">Clear</button>
+                    </div>
+                    <div class="nb-output" aria-live="polite">
+                        <pre class="nb-output-text"></pre>
+                    </div>
+                    <div class="nb-files"></div>
+                    <div class="nb-plot"></div>
+                </div>
+
+                <div class="nb-cell" data-cell="4">
+
+                    <div class="nb-cell-title"> Full toolkit Program</div>
+                    <p class="nb-cell-desc">Here we combine all functions into one menu-driven program.
+                        <br>We use while True to keep the program running, if / elif to handle user choice, and
+                        open(filename, "w") to save output
+                        to a file.
+                    </p>
+                    <details>
+                        <summary>Show full program</summary>
+                        <textarea class="nb-editor">
+def clean_sequence(seq: str) -> str:
+    seq = seq.upper()
+    valid = set("ATGCU")
+    seq = seq.replace(" ", "").replace("\n", "").replace("\t", "")
+    seq = "".join(ch for ch in seq if ch in valid)
+    return seq
+
+def is_valid_dna(seq: str) -&gt; bool:
+    allowed = set("ATGC")
+    return len(seq) &gt; 0 and all(ch in allowed for ch in seq)
+
+def is_valid_rna(seq: str) -&gt; bool:
+    allowed = set("AUGC")
+    return len(seq) &gt; 0 and all(ch in allowed for ch in seq)
+
+def gc_percent(seq: str) -&gt; float:
+    if len(seq) == 0:
+        return 0.0
+    gc = seq.count("G") + seq.count("C")
+    return (gc / len(seq)) * 100
+
+def dna_to_rna(seq: str) -&gt; str:
+    return seq.replace("T", "U")
+
+def rna_to_dna(seq: str) -&gt; str:
+    return seq.replace("U", "T")
+
+def reverse_complement_dna(seq: str) -&gt; str:
+    comp = {"A": "T", "T": "A", "G": "C", "C": "G"}
+    return "".join(comp[ch] for ch in reversed(seq))
+
+def save_to_file(text: str, filename: str) -&gt; None:
+    with open(filename, "w", encoding="utf-8") as f:
+        f.write(text)
+
+def menu():
+    print("\n--- Sequence Utility Toolkit ---")
+    print("1) GC%")
+    print("2) DNA → RNA")
+    print("3) RNA → DNA")
+    print("4) Reverse Complement (DNA)")
+    print("5) Save sequence")
+    print("0) Exit")
+    print()
+
+raw = input("Paste DNA/RNA sequence: ")
+seq = clean_sequence(raw)
+
+print("\nCleaned:", seq)
+print("Length:", len(seq))
+
+while True:
+    menu()
+    choice = input("Choose option : ").strip()
+
+    if choice == "1":
+        print("GC%:", round(gc_percent(seq), 2))
+
+    elif choice == "2":
+        if is_valid_dna(seq):
+            print("RNA:", dna_to_rna(seq))
+        else:
+            print("Not valid DNA (use ATGC).")
+
+    elif choice == "3":
+        if is_valid_rna(seq):
+            print("DNA:", rna_to_dna(seq))
+        else:
+            print("Not valid RNA (use AUGC).")
+
+    elif choice == "4":
+        if is_valid_dna(seq):
+            print("RevComp:", reverse_complement_dna(seq))
+        else:
+            print("RevComp works only for DNA.")
+
+    elif choice == "5":
+        filename = input("Enter the output filename: \n").strip()
+        save_to_file(seq, filename)
+        print("Saved your file .")
+
+    elif choice == "0":
+        break
+
+    else:
+        print("Invalid option.")
+</textarea>
+                    </details>
+
+                    <div class="nb-actions">
+                        <button class="nb-run" type="button">Run Cell</button>
+                        <button class="nb-reset" type="button">Reset</button>
+                        <button class="nb-clear" type="button">Clear</button>
+                    </div>
+                    <div class="nb-output" aria-live="polite">
+                        <pre class="nb-output-text"></pre>
+                    </div>
+                    <div class="nb-files"></div>
+                    <div class="nb-plot"></div>
+                </div>
+            </div>
+            <div class="btn_wrapper">
+                <button class="btn_next" onclick="window.location.href='project_2.html'">Next</button>
+            </div>
+        </div>
+    </div>
+    <footer class="site-footer">
+        <p>&copy; 2026 Probioz &mdash; Built for Biologists, by Biologist.</p>
+    </footer>
+
+    <!-- Notebook Playground logic -->
+    <script src="project_notebook.js?v=20260127"></script>
+    <script src="../js/project.js"></script>
+</body>
+
+</html>

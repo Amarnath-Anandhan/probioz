@@ -1,0 +1,6 @@
+gene,sequence,result,score
+TP53,ATGGCTAGCTAG,Pathogenic,0.95
+CFTR,ATGACCAGCTAG,Likely_pathogenic,0.85
+HBB,ATGGTGCACCTG,Benign,0.20
+INS,ATGCCCTGTGGA,Benign,0.10
+INS,ATGCCCTGTGGA,Benign,0.10

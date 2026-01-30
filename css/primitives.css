@@ -1,0 +1,136 @@
+/* primitives.css */
+h1 {
+  font-size: var(--h1);
+  line-height: 1.15;
+  margin: 0 0 0.6em;
+}
+
+h2 {
+  font-size: var(--h2);
+  line-height: 1.2;
+  margin: 0 0 0.6em;
+}
+
+h3 {
+  font-size: var(--h3);
+  line-height: 1.25;
+  margin: 0 0 0.5em;
+}
+
+p {
+  font-size: var(--p);
+  line-height: 1.6;
+  margin: 0 0 0.9em;
+}
+
+small,
+.small {
+  font-size: var(--small);
+  line-height: 1.4;
+}
+
+button,
+.btn,
+.btn_next,
+input[type="button"],
+input[type="submit"],
+input[type="reset"] {
+  padding: var(--btn-pad-y) var(--btn-pad-x);
+  font-size: var(--p);
+  line-height: 1.2;
+  min-height: calc(var(--btn-pad-y) * 2 + var(--p));
+  border-radius: var(--radius-md);
+}
+
+input[type="text"],
+input[type="email"],
+input[type="password"],
+input[type="search"],
+input[type="url"],
+input[type="tel"],
+input[type="number"],
+textarea,
+select {
+  padding: var(--input-pad-y) var(--input-pad-x);
+  font-size: var(--p);
+  line-height: 1.4;
+  min-height: calc(var(--input-pad-y) * 2 + var(--p));
+  border-radius: var(--radius-sm);
+}
+
+pre {
+  font-size: var(--pre-font);
+  line-height: 1.5;
+  padding: calc(var(--btn-pad-y) + 4px) calc(var(--btn-pad-x) + 4px);
+  border-radius: var(--radius-md);
+  overflow: auto;
+}
+
+code {
+  font-size: var(--pre-font);
+  padding: 0.1em 0.35em;
+  border-radius: var(--radius-sm);
+}
+
+details {
+  font-size: var(--details-font);
+}
+
+details > summary {
+  font-size: var(--details-font);
+  padding: var(--btn-pad-y) var(--btn-pad-x);
+  border-radius: var(--radius-sm);
+}
+
+ul,
+ol {
+  margin: 0 0 0.9em 1.25em;
+  padding: 0;
+}
+
+li {
+  margin: 0.2em 0;
+}
+
+footer,
+.site-footer {
+  background: var(--bg-grad);
+  margin-top: 100px;
+  padding: 1px;
+  text-align: center;
+  color: var(--text);
+  font-size: var(--small);
+  line-height: 1.5;
+}
+
+.site-footer p {
+  margin: 7px;
+  font-size: var(--small);
+  line-height: 1.5;
+}
+
+form {
+  margin: 0 0 1rem;
+}
+
+.footer-stick {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+.footer-stick main,
+.footer-stick .wrap,
+.footer-stick .container {
+  flex: 1 0 auto;
+}
+
+.footer-stick .site-footer {
+  margin-top: auto;
+}
+
+label {
+  display: inline-block;
+  margin: 0 0 0.4em;
+  font-size: var(--small);
+}

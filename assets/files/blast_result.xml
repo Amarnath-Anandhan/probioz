@@ -1,0 +1,1442 @@
+<?xml version="1.0" encoding="US-ASCII"?>
+<!DOCTYPE BlastOutput PUBLIC "-//NCBI//NCBI BlastOutput/EN" "http://www.ncbi.nlm.nih.gov/dtd/NCBI_BlastOutput.dtd">
+<BlastOutput>
+  <BlastOutput_program>blastn</BlastOutput_program>
+  <BlastOutput_version>BLASTN 2.17.0+</BlastOutput_version>
+  <BlastOutput_reference>Stephen F. Altschul, Thomas L. Madden, Alejandro A. Sch&amp;auml;ffer, Jinghui Zhang, Zheng Zhang, Webb Miller, and David J. Lipman (1997), &quot;Gapped BLAST and PSI-BLAST: a new generation of protein database search programs&quot;, Nucleic Acids Res. 25:3389-3402.</BlastOutput_reference>
+  <BlastOutput_db>core_nt</BlastOutput_db>
+  <BlastOutput_query-ID>Query_4981027</BlastOutput_query-ID>
+  <BlastOutput_query-def>No definition line</BlastOutput_query-def>
+  <BlastOutput_query-len>817</BlastOutput_query-len>
+  <BlastOutput_param>
+    <Parameters>
+      <Parameters_expect>10</Parameters_expect>
+      <Parameters_sc-match>2</Parameters_sc-match>
+      <Parameters_sc-mismatch>-3</Parameters_sc-mismatch>
+      <Parameters_gap-open>5</Parameters_gap-open>
+      <Parameters_gap-extend>2</Parameters_gap-extend>
+      <Parameters_filter>L;m;</Parameters_filter>
+    </Parameters>
+  </BlastOutput_param>
+<BlastOutput_iterations>
+<Iteration>
+  <Iteration_iter-num>1</Iteration_iter-num>
+  <Iteration_query-ID>Query_4981027</Iteration_query-ID>
+  <Iteration_query-def>No definition line</Iteration_query-def>
+  <Iteration_query-len>817</Iteration_query-len>
+<Iteration_hits>
+<Hit>
+  <Hit_num>1</Hit_num>
+  <Hit_id>gi|1721991165|ref|XM_030348088.1|</Hit_id>
+  <Hit_def>PREDICTED: Gadus morhua trichorhinophalangeal syndrome I (trps1), transcript variant X1, mRNA</Hit_def>
+  <Hit_accession>XM_030348088</Hit_accession>
+  <Hit_len>11340</Hit_len>
+  <Hit_hsps>
+    <Hsp>
+      <Hsp_num>1</Hsp_num>
+      <Hsp_bit-score>65.3059</Hsp_bit-score>
+      <Hsp_score>71</Hsp_score>
+      <Hsp_evalue>3.31592e-05</Hsp_evalue>
+      <Hsp_query-from>3</Hsp_query-from>
+      <Hsp_query-to>61</Hsp_query-to>
+      <Hsp_hit-from>5030</Hsp_hit-from>
+      <Hsp_hit-to>4971</Hsp_hit-to>
+      <Hsp_query-frame>1</Hsp_query-frame>
+      <Hsp_hit-frame>-1</Hsp_hit-frame>
+      <Hsp_identity>51</Hsp_identity>
+      <Hsp_positive>51</Hsp_positive>
+      <Hsp_gaps>1</Hsp_gaps>
+      <Hsp_align-len>60</Hsp_align-len>
+      <Hsp_qseq>GGAGGAGCCGCAGTCA-GATCCTAGCGTCGCTGCTGCTGCTGCTGCTGCTGCTGCTGCTG</Hsp_qseq>
+      <Hsp_hseq>GGAGGAGCCGCAGTAAGGCACCTTGTAGCTCTGCTGCTGCTGCTGCTGCTGCTGCTGCTG</Hsp_hseq>
+      <Hsp_midline>|||||||||||||| | |  ||| |   | ||||||||||||||||||||||||||||||</Hsp_midline>
+    </Hsp>
+  </Hit_hsps>
+</Hit>
+<Hit>
+  <Hit_num>2</Hit_num>
+  <Hit_id>gi|926794170|ref|XM_014050105.1|</Hit_id>
+  <Hit_def>Monoraphidium neglectum hypothetical protein mRNA</Hit_def>
+  <Hit_accession>XM_014050105</Hit_accession>
+  <Hit_len>3489</Hit_len>
+  <Hit_hsps>
+    <Hsp>
+      <Hsp_num>1</Hsp_num>
+      <Hsp_bit-score>65.3059</Hsp_bit-score>
+      <Hsp_score>71</Hsp_score>
+      <Hsp_evalue>3.31592e-05</Hsp_evalue>
+      <Hsp_query-from>4</Hsp_query-from>
+      <Hsp_query-to>61</Hsp_query-to>
+      <Hsp_hit-from>94</Hsp_hit-from>
+      <Hsp_hit-to>37</Hsp_hit-to>
+      <Hsp_query-frame>1</Hsp_query-frame>
+      <Hsp_hit-frame>-1</Hsp_hit-frame>
+      <Hsp_identity>49</Hsp_identity>
+      <Hsp_positive>49</Hsp_positive>
+      <Hsp_gaps>0</Hsp_gaps>
+      <Hsp_align-len>58</Hsp_align-len>
+      <Hsp_qseq>GAGGAGCCGCAGTCAGATCCTAGCGTCGCTGCTGCTGCTGCTGCTGCTGCTGCTGCTG</Hsp_qseq>
+      <Hsp_hseq>GAGGAGCCGCAGGCTGCTGCTGCTGCTGCTGCTGCTGCTGCTGCTGCTGCTGCTGCTG</Hsp_hseq>
+      <Hsp_midline>|||||||||||| | | | ||   |  |||||||||||||||||||||||||||||||</Hsp_midline>
+    </Hsp>
+  </Hit_hsps>
+</Hit>
+<Hit>
+  <Hit_num>3</Hit_num>
+  <Hit_id>gi|1721991167|ref|XM_030348089.1|</Hit_id>
+  <Hit_def>PREDICTED: Gadus morhua trichorhinophalangeal syndrome I (trps1), transcript variant X2, mRNA</Hit_def>
+  <Hit_accession>XM_030348089</Hit_accession>
+  <Hit_len>11228</Hit_len>
+  <Hit_hsps>
+    <Hsp>
+      <Hsp_num>1</Hsp_num>
+      <Hsp_bit-score>65.3059</Hsp_bit-score>
+      <Hsp_score>71</Hsp_score>
+      <Hsp_evalue>3.31592e-05</Hsp_evalue>
+      <Hsp_query-from>3</Hsp_query-from>
+      <Hsp_query-to>61</Hsp_query-to>
+      <Hsp_hit-from>4918</Hsp_hit-from>
+      <Hsp_hit-to>4859</Hsp_hit-to>
+      <Hsp_query-frame>1</Hsp_query-frame>
+      <Hsp_hit-frame>-1</Hsp_hit-frame>
+      <Hsp_identity>51</Hsp_identity>
+      <Hsp_positive>51</Hsp_positive>
+      <Hsp_gaps>1</Hsp_gaps>
+      <Hsp_align-len>60</Hsp_align-len>
+      <Hsp_qseq>GGAGGAGCCGCAGTCA-GATCCTAGCGTCGCTGCTGCTGCTGCTGCTGCTGCTGCTGCTG</Hsp_qseq>
+      <Hsp_hseq>GGAGGAGCCGCAGTAAGGCACCTTGTAGCTCTGCTGCTGCTGCTGCTGCTGCTGCTGCTG</Hsp_hseq>
+      <Hsp_midline>|||||||||||||| | |  ||| |   | ||||||||||||||||||||||||||||||</Hsp_midline>
+    </Hsp>
+  </Hit_hsps>
+</Hit>
+<Hit>
+  <Hit_num>4</Hit_num>
+  <Hit_id>gi|2801848197|emb|OZ180150.1|</Hit_id>
+  <Hit_def>Melanogrammus aeglefinus genome assembly, chromosome: 18</Hit_def>
+  <Hit_accession>OZ180150</Hit_accession>
+  <Hit_len>21689503</Hit_len>
+  <Hit_hsps>
+    <Hsp>
+      <Hsp_num>1</Hsp_num>
+      <Hsp_bit-score>64.4042</Hsp_bit-score>
+      <Hsp_score>70</Hsp_score>
+      <Hsp_evalue>3.31592e-05</Hsp_evalue>
+      <Hsp_query-from>3</Hsp_query-from>
+      <Hsp_query-to>61</Hsp_query-to>
+      <Hsp_hit-from>14378580</Hsp_hit-from>
+      <Hsp_hit-to>14378518</Hsp_hit-to>
+      <Hsp_query-frame>1</Hsp_query-frame>
+      <Hsp_hit-frame>-1</Hsp_hit-frame>
+      <Hsp_identity>52</Hsp_identity>
+      <Hsp_positive>52</Hsp_positive>
+      <Hsp_gaps>4</Hsp_gaps>
+      <Hsp_align-len>63</Hsp_align-len>
+      <Hsp_qseq>GGAGGAGCCGCAGT----CAGATCCTAGCGTCGCTGCTGCTGCTGCTGCTGCTGCTGCTGCTG</Hsp_qseq>
+      <Hsp_hseq>GGAGGAGCCGCAGTAGGGCACCTTGTAGCTCTGCTGCTGCTGCTGCTGCTGCTGCTGCTGCTG</Hsp_hseq>
+      <Hsp_midline>||||||||||||||    ||  |  ||||   |||||||||||||||||||||||||||||||</Hsp_midline>
+    </Hsp>
+  </Hit_hsps>
+</Hit>
+<Hit>
+  <Hit_num>5</Hit_num>
+  <Hit_id>gi|2278008802|ref|XM_049683545.1|</Hit_id>
+  <Hit_def>PREDICTED: Anopheles darlingi pneumococcal serine-rich repeat protein-like (LOC125953771), mRNA</Hit_def>
+  <Hit_accession>XM_049683545</Hit_accession>
+  <Hit_len>10089</Hit_len>
+  <Hit_hsps>
+    <Hsp>
+      <Hsp_num>1</Hsp_num>
+      <Hsp_bit-score>61.6992</Hsp_bit-score>
+      <Hsp_score>67</Hsp_score>
+      <Hsp_evalue>0.000403961</Hsp_evalue>
+      <Hsp_query-from>9</Hsp_query-from>
+      <Hsp_query-to>62</Hsp_query-to>
+      <Hsp_hit-from>9099</Hsp_hit-from>
+      <Hsp_hit-to>9046</Hsp_hit-to>
+      <Hsp_query-frame>1</Hsp_query-frame>
+      <Hsp_hit-frame>-1</Hsp_hit-frame>
+      <Hsp_identity>48</Hsp_identity>
+      <Hsp_positive>48</Hsp_positive>
+      <Hsp_gaps>2</Hsp_gaps>
+      <Hsp_align-len>55</Hsp_align-len>
+      <Hsp_qseq>GCCGCAGTCAGA-TCCTAGCGTCGCTGCTGCTGCTGCTGCTGCTGCTGCTGCTGA</Hsp_qseq>
+      <Hsp_hseq>GCCGCAGTCAGACTGTTTGC-TTGCTGCTGCTGCTGCTGGTGCTGCTGCTGCTGA</Hsp_hseq>
+      <Hsp_midline>|||||||||||| |  | || | |||||||||||||||| |||||||||||||||</Hsp_midline>
+    </Hsp>
+  </Hit_hsps>
+</Hit>
+<Hit>
+  <Hit_num>6</Hit_num>
+  <Hit_id>gi|2579848875|ref|XM_059679572.1|</Hit_id>
+  <Hit_def>PREDICTED: Myotis daubentonii mediator complex subunit 12 (MED12), transcript variant X4, mRNA</Hit_def>
+  <Hit_accession>XM_059679572</Hit_accession>
+  <Hit_len>6954</Hit_len>
+  <Hit_hsps>
+    <Hsp>
+      <Hsp_num>1</Hsp_num>
+      <Hsp_bit-score>60.7975</Hsp_bit-score>
+      <Hsp_score>66</Hsp_score>
+      <Hsp_evalue>0.000403961</Hsp_evalue>
+      <Hsp_query-from>3</Hsp_query-from>
+      <Hsp_query-to>61</Hsp_query-to>
+      <Hsp_hit-from>6566</Hsp_hit-from>
+      <Hsp_hit-to>6511</Hsp_hit-to>
+      <Hsp_query-frame>1</Hsp_query-frame>
+      <Hsp_hit-frame>-1</Hsp_hit-frame>
+      <Hsp_identity>49</Hsp_identity>
+      <Hsp_positive>49</Hsp_positive>
+      <Hsp_gaps>3</Hsp_gaps>
+      <Hsp_align-len>59</Hsp_align-len>
+      <Hsp_qseq>GGAGGAGCCGCAGTCAGATCCTAGCGTCGCTGCTGCTGCTGCTGCTGCTGCTGCTGCTG</Hsp_qseq>
+      <Hsp_hseq>GGAGGAGCCGCTGCCTGTTGCT---GCTGCTGCTGCTGCTGCTGCTGCTGCTGCTGCTG</Hsp_hseq>
+      <Hsp_midline>||||||||||| | | | | ||   |  |||||||||||||||||||||||||||||||</Hsp_midline>
+    </Hsp>
+  </Hit_hsps>
+</Hit>
+<Hit>
+  <Hit_num>7</Hit_num>
+  <Hit_id>gi|2579848885|ref|XM_059679577.1|</Hit_id>
+  <Hit_def>PREDICTED: Myotis daubentonii mediator complex subunit 12 (MED12), transcript variant X9, mRNA</Hit_def>
+  <Hit_accession>XM_059679577</Hit_accession>
+  <Hit_len>6930</Hit_len>
+  <Hit_hsps>
+    <Hsp>
+      <Hsp_num>1</Hsp_num>
+      <Hsp_bit-score>60.7975</Hsp_bit-score>
+      <Hsp_score>66</Hsp_score>
+      <Hsp_evalue>0.000403961</Hsp_evalue>
+      <Hsp_query-from>3</Hsp_query-from>
+      <Hsp_query-to>61</Hsp_query-to>
+      <Hsp_hit-from>6542</Hsp_hit-from>
+      <Hsp_hit-to>6487</Hsp_hit-to>
+      <Hsp_query-frame>1</Hsp_query-frame>
+      <Hsp_hit-frame>-1</Hsp_hit-frame>
+      <Hsp_identity>49</Hsp_identity>
+      <Hsp_positive>49</Hsp_positive>
+      <Hsp_gaps>3</Hsp_gaps>
+      <Hsp_align-len>59</Hsp_align-len>
+      <Hsp_qseq>GGAGGAGCCGCAGTCAGATCCTAGCGTCGCTGCTGCTGCTGCTGCTGCTGCTGCTGCTG</Hsp_qseq>
+      <Hsp_hseq>GGAGGAGCCGCTGCCTGTTGCT---GCTGCTGCTGCTGCTGCTGCTGCTGCTGCTGCTG</Hsp_hseq>
+      <Hsp_midline>||||||||||| | | | | ||   |  |||||||||||||||||||||||||||||||</Hsp_midline>
+    </Hsp>
+  </Hit_hsps>
+</Hit>
+<Hit>
+  <Hit_num>8</Hit_num>
+  <Hit_id>gi|2579848883|ref|XM_059679576.1|</Hit_id>
+  <Hit_def>PREDICTED: Myotis daubentonii mediator complex subunit 12 (MED12), transcript variant X8, mRNA</Hit_def>
+  <Hit_accession>XM_059679576</Hit_accession>
+  <Hit_len>6936</Hit_len>
+  <Hit_hsps>
+    <Hsp>
+      <Hsp_num>1</Hsp_num>
+      <Hsp_bit-score>60.7975</Hsp_bit-score>
+      <Hsp_score>66</Hsp_score>
+      <Hsp_evalue>0.000403961</Hsp_evalue>
+      <Hsp_query-from>3</Hsp_query-from>
+      <Hsp_query-to>61</Hsp_query-to>
+      <Hsp_hit-from>6548</Hsp_hit-from>
+      <Hsp_hit-to>6493</Hsp_hit-to>
+      <Hsp_query-frame>1</Hsp_query-frame>
+      <Hsp_hit-frame>-1</Hsp_hit-frame>
+      <Hsp_identity>49</Hsp_identity>
+      <Hsp_positive>49</Hsp_positive>
+      <Hsp_gaps>3</Hsp_gaps>
+      <Hsp_align-len>59</Hsp_align-len>
+      <Hsp_qseq>GGAGGAGCCGCAGTCAGATCCTAGCGTCGCTGCTGCTGCTGCTGCTGCTGCTGCTGCTG</Hsp_qseq>
+      <Hsp_hseq>GGAGGAGCCGCTGCCTGTTGCT---GCTGCTGCTGCTGCTGCTGCTGCTGCTGCTGCTG</Hsp_hseq>
+      <Hsp_midline>||||||||||| | | | | ||   |  |||||||||||||||||||||||||||||||</Hsp_midline>
+    </Hsp>
+  </Hit_hsps>
+</Hit>
+<Hit>
+  <Hit_num>9</Hit_num>
+  <Hit_id>gi|2579848889|ref|XM_059679579.1|</Hit_id>
+  <Hit_def>PREDICTED: Myotis daubentonii mediator complex subunit 12 (MED12), transcript variant X11, mRNA</Hit_def>
+  <Hit_accession>XM_059679579</Hit_accession>
+  <Hit_len>6915</Hit_len>
+  <Hit_hsps>
+    <Hsp>
+      <Hsp_num>1</Hsp_num>
+      <Hsp_bit-score>60.7975</Hsp_bit-score>
+      <Hsp_score>66</Hsp_score>
+      <Hsp_evalue>0.000403961</Hsp_evalue>
+      <Hsp_query-from>3</Hsp_query-from>
+      <Hsp_query-to>61</Hsp_query-to>
+      <Hsp_hit-from>6527</Hsp_hit-from>
+      <Hsp_hit-to>6472</Hsp_hit-to>
+      <Hsp_query-frame>1</Hsp_query-frame>
+      <Hsp_hit-frame>-1</Hsp_hit-frame>
+      <Hsp_identity>49</Hsp_identity>
+      <Hsp_positive>49</Hsp_positive>
+      <Hsp_gaps>3</Hsp_gaps>
+      <Hsp_align-len>59</Hsp_align-len>
+      <Hsp_qseq>GGAGGAGCCGCAGTCAGATCCTAGCGTCGCTGCTGCTGCTGCTGCTGCTGCTGCTGCTG</Hsp_qseq>
+      <Hsp_hseq>GGAGGAGCCGCTGCCTGTTGCT---GCTGCTGCTGCTGCTGCTGCTGCTGCTGCTGCTG</Hsp_hseq>
+      <Hsp_midline>||||||||||| | | | | ||   |  |||||||||||||||||||||||||||||||</Hsp_midline>
+    </Hsp>
+  </Hit_hsps>
+</Hit>
+<Hit>
+  <Hit_num>10</Hit_num>
+  <Hit_id>gi|2579848871|ref|XM_059679570.1|</Hit_id>
+  <Hit_def>PREDICTED: Myotis daubentonii mediator complex subunit 12 (MED12), transcript variant X2, mRNA</Hit_def>
+  <Hit_accession>XM_059679570</Hit_accession>
+  <Hit_len>6963</Hit_len>
+  <Hit_hsps>
+    <Hsp>
+      <Hsp_num>1</Hsp_num>
+      <Hsp_bit-score>60.7975</Hsp_bit-score>
+      <Hsp_score>66</Hsp_score>
+      <Hsp_evalue>0.000403961</Hsp_evalue>
+      <Hsp_query-from>3</Hsp_query-from>
+      <Hsp_query-to>61</Hsp_query-to>
+      <Hsp_hit-from>6575</Hsp_hit-from>
+      <Hsp_hit-to>6520</Hsp_hit-to>
+      <Hsp_query-frame>1</Hsp_query-frame>
+      <Hsp_hit-frame>-1</Hsp_hit-frame>
+      <Hsp_identity>49</Hsp_identity>
+      <Hsp_positive>49</Hsp_positive>
+      <Hsp_gaps>3</Hsp_gaps>
+      <Hsp_align-len>59</Hsp_align-len>
+      <Hsp_qseq>GGAGGAGCCGCAGTCAGATCCTAGCGTCGCTGCTGCTGCTGCTGCTGCTGCTGCTGCTG</Hsp_qseq>
+      <Hsp_hseq>GGAGGAGCCGCTGCCTGTTGCT---GCTGCTGCTGCTGCTGCTGCTGCTGCTGCTGCTG</Hsp_hseq>
+      <Hsp_midline>||||||||||| | | | | ||   |  |||||||||||||||||||||||||||||||</Hsp_midline>
+    </Hsp>
+  </Hit_hsps>
+</Hit>
+<Hit>
+  <Hit_num>11</Hit_num>
+  <Hit_id>gi|2579848897|ref|XM_059679583.1|</Hit_id>
+  <Hit_def>PREDICTED: Myotis daubentonii mediator complex subunit 12 (MED12), transcript variant X15, mRNA</Hit_def>
+  <Hit_accession>XM_059679583</Hit_accession>
+  <Hit_len>6712</Hit_len>
+  <Hit_hsps>
+    <Hsp>
+      <Hsp_num>1</Hsp_num>
+      <Hsp_bit-score>60.7975</Hsp_bit-score>
+      <Hsp_score>66</Hsp_score>
+      <Hsp_evalue>0.000403961</Hsp_evalue>
+      <Hsp_query-from>3</Hsp_query-from>
+      <Hsp_query-to>61</Hsp_query-to>
+      <Hsp_hit-from>6324</Hsp_hit-from>
+      <Hsp_hit-to>6269</Hsp_hit-to>
+      <Hsp_query-frame>1</Hsp_query-frame>
+      <Hsp_hit-frame>-1</Hsp_hit-frame>
+      <Hsp_identity>49</Hsp_identity>
+      <Hsp_positive>49</Hsp_positive>
+      <Hsp_gaps>3</Hsp_gaps>
+      <Hsp_align-len>59</Hsp_align-len>
+      <Hsp_qseq>GGAGGAGCCGCAGTCAGATCCTAGCGTCGCTGCTGCTGCTGCTGCTGCTGCTGCTGCTG</Hsp_qseq>
+      <Hsp_hseq>GGAGGAGCCGCTGCCTGTTGCT---GCTGCTGCTGCTGCTGCTGCTGCTGCTGCTGCTG</Hsp_hseq>
+      <Hsp_midline>||||||||||| | | | | ||   |  |||||||||||||||||||||||||||||||</Hsp_midline>
+    </Hsp>
+  </Hit_hsps>
+</Hit>
+<Hit>
+  <Hit_num>12</Hit_num>
+  <Hit_id>gi|2579848869|ref|XM_059679569.1|</Hit_id>
+  <Hit_def>PREDICTED: Myotis daubentonii mediator complex subunit 12 (MED12), transcript variant X1, mRNA</Hit_def>
+  <Hit_accession>XM_059679569</Hit_accession>
+  <Hit_len>6966</Hit_len>
+  <Hit_hsps>
+    <Hsp>
+      <Hsp_num>1</Hsp_num>
+      <Hsp_bit-score>60.7975</Hsp_bit-score>
+      <Hsp_score>66</Hsp_score>
+      <Hsp_evalue>0.000403961</Hsp_evalue>
+      <Hsp_query-from>3</Hsp_query-from>
+      <Hsp_query-to>61</Hsp_query-to>
+      <Hsp_hit-from>6578</Hsp_hit-from>
+      <Hsp_hit-to>6523</Hsp_hit-to>
+      <Hsp_query-frame>1</Hsp_query-frame>
+      <Hsp_hit-frame>-1</Hsp_hit-frame>
+      <Hsp_identity>49</Hsp_identity>
+      <Hsp_positive>49</Hsp_positive>
+      <Hsp_gaps>3</Hsp_gaps>
+      <Hsp_align-len>59</Hsp_align-len>
+      <Hsp_qseq>GGAGGAGCCGCAGTCAGATCCTAGCGTCGCTGCTGCTGCTGCTGCTGCTGCTGCTGCTG</Hsp_qseq>
+      <Hsp_hseq>GGAGGAGCCGCTGCCTGTTGCT---GCTGCTGCTGCTGCTGCTGCTGCTGCTGCTGCTG</Hsp_hseq>
+      <Hsp_midline>||||||||||| | | | | ||   |  |||||||||||||||||||||||||||||||</Hsp_midline>
+    </Hsp>
+  </Hit_hsps>
+</Hit>
+<Hit>
+  <Hit_num>13</Hit_num>
+  <Hit_id>gi|2579848893|ref|XM_059679581.1|</Hit_id>
+  <Hit_def>PREDICTED: Myotis daubentonii mediator complex subunit 12 (MED12), transcript variant X13, mRNA</Hit_def>
+  <Hit_accession>XM_059679581</Hit_accession>
+  <Hit_len>6892</Hit_len>
+  <Hit_hsps>
+    <Hsp>
+      <Hsp_num>1</Hsp_num>
+      <Hsp_bit-score>60.7975</Hsp_bit-score>
+      <Hsp_score>66</Hsp_score>
+      <Hsp_evalue>0.000403961</Hsp_evalue>
+      <Hsp_query-from>3</Hsp_query-from>
+      <Hsp_query-to>61</Hsp_query-to>
+      <Hsp_hit-from>6504</Hsp_hit-from>
+      <Hsp_hit-to>6449</Hsp_hit-to>
+      <Hsp_query-frame>1</Hsp_query-frame>
+      <Hsp_hit-frame>-1</Hsp_hit-frame>
+      <Hsp_identity>49</Hsp_identity>
+      <Hsp_positive>49</Hsp_positive>
+      <Hsp_gaps>3</Hsp_gaps>
+      <Hsp_align-len>59</Hsp_align-len>
+      <Hsp_qseq>GGAGGAGCCGCAGTCAGATCCTAGCGTCGCTGCTGCTGCTGCTGCTGCTGCTGCTGCTG</Hsp_qseq>
+      <Hsp_hseq>GGAGGAGCCGCTGCCTGTTGCT---GCTGCTGCTGCTGCTGCTGCTGCTGCTGCTGCTG</Hsp_hseq>
+      <Hsp_midline>||||||||||| | | | | ||   |  |||||||||||||||||||||||||||||||</Hsp_midline>
+    </Hsp>
+  </Hit_hsps>
+</Hit>
+<Hit>
+  <Hit_num>14</Hit_num>
+  <Hit_id>gi|2579848887|ref|XM_059679578.1|</Hit_id>
+  <Hit_def>PREDICTED: Myotis daubentonii mediator complex subunit 12 (MED12), transcript variant X10, mRNA</Hit_def>
+  <Hit_accession>XM_059679578</Hit_accession>
+  <Hit_len>6927</Hit_len>
+  <Hit_hsps>
+    <Hsp>
+      <Hsp_num>1</Hsp_num>
+      <Hsp_bit-score>60.7975</Hsp_bit-score>
+      <Hsp_score>66</Hsp_score>
+      <Hsp_evalue>0.000403961</Hsp_evalue>
+      <Hsp_query-from>3</Hsp_query-from>
+      <Hsp_query-to>61</Hsp_query-to>
+      <Hsp_hit-from>6539</Hsp_hit-from>
+      <Hsp_hit-to>6484</Hsp_hit-to>
+      <Hsp_query-frame>1</Hsp_query-frame>
+      <Hsp_hit-frame>-1</Hsp_hit-frame>
+      <Hsp_identity>49</Hsp_identity>
+      <Hsp_positive>49</Hsp_positive>
+      <Hsp_gaps>3</Hsp_gaps>
+      <Hsp_align-len>59</Hsp_align-len>
+      <Hsp_qseq>GGAGGAGCCGCAGTCAGATCCTAGCGTCGCTGCTGCTGCTGCTGCTGCTGCTGCTGCTG</Hsp_qseq>
+      <Hsp_hseq>GGAGGAGCCGCTGCCTGTTGCT---GCTGCTGCTGCTGCTGCTGCTGCTGCTGCTGCTG</Hsp_hseq>
+      <Hsp_midline>||||||||||| | | | | ||   |  |||||||||||||||||||||||||||||||</Hsp_midline>
+    </Hsp>
+  </Hit_hsps>
+</Hit>
+<Hit>
+  <Hit_num>15</Hit_num>
+  <Hit_id>gi|2579848901|ref|XM_059679585.1|</Hit_id>
+  <Hit_def>PREDICTED: Myotis daubentonii mediator complex subunit 12 (MED12), transcript variant X17, mRNA</Hit_def>
+  <Hit_accession>XM_059679585</Hit_accession>
+  <Hit_len>6888</Hit_len>
+  <Hit_hsps>
+    <Hsp>
+      <Hsp_num>1</Hsp_num>
+      <Hsp_bit-score>60.7975</Hsp_bit-score>
+      <Hsp_score>66</Hsp_score>
+      <Hsp_evalue>0.000403961</Hsp_evalue>
+      <Hsp_query-from>3</Hsp_query-from>
+      <Hsp_query-to>61</Hsp_query-to>
+      <Hsp_hit-from>6500</Hsp_hit-from>
+      <Hsp_hit-to>6445</Hsp_hit-to>
+      <Hsp_query-frame>1</Hsp_query-frame>
+      <Hsp_hit-frame>-1</Hsp_hit-frame>
+      <Hsp_identity>49</Hsp_identity>
+      <Hsp_positive>49</Hsp_positive>
+      <Hsp_gaps>3</Hsp_gaps>
+      <Hsp_align-len>59</Hsp_align-len>
+      <Hsp_qseq>GGAGGAGCCGCAGTCAGATCCTAGCGTCGCTGCTGCTGCTGCTGCTGCTGCTGCTGCTG</Hsp_qseq>
+      <Hsp_hseq>GGAGGAGCCGCTGCCTGTTGCT---GCTGCTGCTGCTGCTGCTGCTGCTGCTGCTGCTG</Hsp_hseq>
+      <Hsp_midline>||||||||||| | | | | ||   |  |||||||||||||||||||||||||||||||</Hsp_midline>
+    </Hsp>
+  </Hit_hsps>
+</Hit>
+<Hit>
+  <Hit_num>16</Hit_num>
+  <Hit_id>gi|2579848895|ref|XM_059679582.1|</Hit_id>
+  <Hit_def>PREDICTED: Myotis daubentonii mediator complex subunit 12 (MED12), transcript variant X14, mRNA</Hit_def>
+  <Hit_accession>XM_059679582</Hit_accession>
+  <Hit_len>6864</Hit_len>
+  <Hit_hsps>
+    <Hsp>
+      <Hsp_num>1</Hsp_num>
+      <Hsp_bit-score>60.7975</Hsp_bit-score>
+      <Hsp_score>66</Hsp_score>
+      <Hsp_evalue>0.000403961</Hsp_evalue>
+      <Hsp_query-from>3</Hsp_query-from>
+      <Hsp_query-to>61</Hsp_query-to>
+      <Hsp_hit-from>6476</Hsp_hit-from>
+      <Hsp_hit-to>6421</Hsp_hit-to>
+      <Hsp_query-frame>1</Hsp_query-frame>
+      <Hsp_hit-frame>-1</Hsp_hit-frame>
+      <Hsp_identity>49</Hsp_identity>
+      <Hsp_positive>49</Hsp_positive>
+      <Hsp_gaps>3</Hsp_gaps>
+      <Hsp_align-len>59</Hsp_align-len>
+      <Hsp_qseq>GGAGGAGCCGCAGTCAGATCCTAGCGTCGCTGCTGCTGCTGCTGCTGCTGCTGCTGCTG</Hsp_qseq>
+      <Hsp_hseq>GGAGGAGCCGCTGCCTGTTGCT---GCTGCTGCTGCTGCTGCTGCTGCTGCTGCTGCTG</Hsp_hseq>
+      <Hsp_midline>||||||||||| | | | | ||   |  |||||||||||||||||||||||||||||||</Hsp_midline>
+    </Hsp>
+  </Hit_hsps>
+</Hit>
+<Hit>
+  <Hit_num>17</Hit_num>
+  <Hit_id>gi|2579848877|ref|XM_059679573.1|</Hit_id>
+  <Hit_def>PREDICTED: Myotis daubentonii mediator complex subunit 12 (MED12), transcript variant X5, mRNA</Hit_def>
+  <Hit_accession>XM_059679573</Hit_accession>
+  <Hit_len>6954</Hit_len>
+  <Hit_hsps>
+    <Hsp>
+      <Hsp_num>1</Hsp_num>
+      <Hsp_bit-score>60.7975</Hsp_bit-score>
+      <Hsp_score>66</Hsp_score>
+      <Hsp_evalue>0.000403961</Hsp_evalue>
+      <Hsp_query-from>3</Hsp_query-from>
+      <Hsp_query-to>61</Hsp_query-to>
+      <Hsp_hit-from>6566</Hsp_hit-from>
+      <Hsp_hit-to>6511</Hsp_hit-to>
+      <Hsp_query-frame>1</Hsp_query-frame>
+      <Hsp_hit-frame>-1</Hsp_hit-frame>
+      <Hsp_identity>49</Hsp_identity>
+      <Hsp_positive>49</Hsp_positive>
+      <Hsp_gaps>3</Hsp_gaps>
+      <Hsp_align-len>59</Hsp_align-len>
+      <Hsp_qseq>GGAGGAGCCGCAGTCAGATCCTAGCGTCGCTGCTGCTGCTGCTGCTGCTGCTGCTGCTG</Hsp_qseq>
+      <Hsp_hseq>GGAGGAGCCGCTGCCTGTTGCT---GCTGCTGCTGCTGCTGCTGCTGCTGCTGCTGCTG</Hsp_hseq>
+      <Hsp_midline>||||||||||| | | | | ||   |  |||||||||||||||||||||||||||||||</Hsp_midline>
+    </Hsp>
+  </Hit_hsps>
+</Hit>
+<Hit>
+  <Hit_num>18</Hit_num>
+  <Hit_id>gi|2579848891|ref|XM_059679580.1|</Hit_id>
+  <Hit_def>PREDICTED: Myotis daubentonii mediator complex subunit 12 (MED12), transcript variant X12, mRNA</Hit_def>
+  <Hit_accession>XM_059679580</Hit_accession>
+  <Hit_len>6903</Hit_len>
+  <Hit_hsps>
+    <Hsp>
+      <Hsp_num>1</Hsp_num>
+      <Hsp_bit-score>60.7975</Hsp_bit-score>
+      <Hsp_score>66</Hsp_score>
+      <Hsp_evalue>0.000403961</Hsp_evalue>
+      <Hsp_query-from>3</Hsp_query-from>
+      <Hsp_query-to>61</Hsp_query-to>
+      <Hsp_hit-from>6515</Hsp_hit-from>
+      <Hsp_hit-to>6460</Hsp_hit-to>
+      <Hsp_query-frame>1</Hsp_query-frame>
+      <Hsp_hit-frame>-1</Hsp_hit-frame>
+      <Hsp_identity>49</Hsp_identity>
+      <Hsp_positive>49</Hsp_positive>
+      <Hsp_gaps>3</Hsp_gaps>
+      <Hsp_align-len>59</Hsp_align-len>
+      <Hsp_qseq>GGAGGAGCCGCAGTCAGATCCTAGCGTCGCTGCTGCTGCTGCTGCTGCTGCTGCTGCTG</Hsp_qseq>
+      <Hsp_hseq>GGAGGAGCCGCTGCCTGTTGCT---GCTGCTGCTGCTGCTGCTGCTGCTGCTGCTGCTG</Hsp_hseq>
+      <Hsp_midline>||||||||||| | | | | ||   |  |||||||||||||||||||||||||||||||</Hsp_midline>
+    </Hsp>
+  </Hit_hsps>
+</Hit>
+<Hit>
+  <Hit_num>19</Hit_num>
+  <Hit_id>gi|2579848873|ref|XM_059679571.1|</Hit_id>
+  <Hit_def>PREDICTED: Myotis daubentonii mediator complex subunit 12 (MED12), transcript variant X3, mRNA</Hit_def>
+  <Hit_accession>XM_059679571</Hit_accession>
+  <Hit_len>6957</Hit_len>
+  <Hit_hsps>
+    <Hsp>
+      <Hsp_num>1</Hsp_num>
+      <Hsp_bit-score>60.7975</Hsp_bit-score>
+      <Hsp_score>66</Hsp_score>
+      <Hsp_evalue>0.000403961</Hsp_evalue>
+      <Hsp_query-from>3</Hsp_query-from>
+      <Hsp_query-to>61</Hsp_query-to>
+      <Hsp_hit-from>6569</Hsp_hit-from>
+      <Hsp_hit-to>6514</Hsp_hit-to>
+      <Hsp_query-frame>1</Hsp_query-frame>
+      <Hsp_hit-frame>-1</Hsp_hit-frame>
+      <Hsp_identity>49</Hsp_identity>
+      <Hsp_positive>49</Hsp_positive>
+      <Hsp_gaps>3</Hsp_gaps>
+      <Hsp_align-len>59</Hsp_align-len>
+      <Hsp_qseq>GGAGGAGCCGCAGTCAGATCCTAGCGTCGCTGCTGCTGCTGCTGCTGCTGCTGCTGCTG</Hsp_qseq>
+      <Hsp_hseq>GGAGGAGCCGCTGCCTGTTGCT---GCTGCTGCTGCTGCTGCTGCTGCTGCTGCTGCTG</Hsp_hseq>
+      <Hsp_midline>||||||||||| | | | | ||   |  |||||||||||||||||||||||||||||||</Hsp_midline>
+    </Hsp>
+  </Hit_hsps>
+</Hit>
+<Hit>
+  <Hit_num>20</Hit_num>
+  <Hit_id>gi|2579848881|ref|XM_059679575.1|</Hit_id>
+  <Hit_def>PREDICTED: Myotis daubentonii mediator complex subunit 12 (MED12), transcript variant X7, mRNA</Hit_def>
+  <Hit_accession>XM_059679575</Hit_accession>
+  <Hit_len>6939</Hit_len>
+  <Hit_hsps>
+    <Hsp>
+      <Hsp_num>1</Hsp_num>
+      <Hsp_bit-score>60.7975</Hsp_bit-score>
+      <Hsp_score>66</Hsp_score>
+      <Hsp_evalue>0.000403961</Hsp_evalue>
+      <Hsp_query-from>3</Hsp_query-from>
+      <Hsp_query-to>61</Hsp_query-to>
+      <Hsp_hit-from>6551</Hsp_hit-from>
+      <Hsp_hit-to>6496</Hsp_hit-to>
+      <Hsp_query-frame>1</Hsp_query-frame>
+      <Hsp_hit-frame>-1</Hsp_hit-frame>
+      <Hsp_identity>49</Hsp_identity>
+      <Hsp_positive>49</Hsp_positive>
+      <Hsp_gaps>3</Hsp_gaps>
+      <Hsp_align-len>59</Hsp_align-len>
+      <Hsp_qseq>GGAGGAGCCGCAGTCAGATCCTAGCGTCGCTGCTGCTGCTGCTGCTGCTGCTGCTGCTG</Hsp_qseq>
+      <Hsp_hseq>GGAGGAGCCGCTGCCTGTTGCT---GCTGCTGCTGCTGCTGCTGCTGCTGCTGCTGCTG</Hsp_hseq>
+      <Hsp_midline>||||||||||| | | | | ||   |  |||||||||||||||||||||||||||||||</Hsp_midline>
+    </Hsp>
+  </Hit_hsps>
+</Hit>
+<Hit>
+  <Hit_num>21</Hit_num>
+  <Hit_id>gi|2579848899|ref|XM_059679584.1|</Hit_id>
+  <Hit_def>PREDICTED: Myotis daubentonii mediator complex subunit 12 (MED12), transcript variant X16, mRNA</Hit_def>
+  <Hit_accession>XM_059679584</Hit_accession>
+  <Hit_len>6855</Hit_len>
+  <Hit_hsps>
+    <Hsp>
+      <Hsp_num>1</Hsp_num>
+      <Hsp_bit-score>60.7975</Hsp_bit-score>
+      <Hsp_score>66</Hsp_score>
+      <Hsp_evalue>0.000403961</Hsp_evalue>
+      <Hsp_query-from>3</Hsp_query-from>
+      <Hsp_query-to>61</Hsp_query-to>
+      <Hsp_hit-from>6467</Hsp_hit-from>
+      <Hsp_hit-to>6412</Hsp_hit-to>
+      <Hsp_query-frame>1</Hsp_query-frame>
+      <Hsp_hit-frame>-1</Hsp_hit-frame>
+      <Hsp_identity>49</Hsp_identity>
+      <Hsp_positive>49</Hsp_positive>
+      <Hsp_gaps>3</Hsp_gaps>
+      <Hsp_align-len>59</Hsp_align-len>
+      <Hsp_qseq>GGAGGAGCCGCAGTCAGATCCTAGCGTCGCTGCTGCTGCTGCTGCTGCTGCTGCTGCTG</Hsp_qseq>
+      <Hsp_hseq>GGAGGAGCCGCTGCCTGTTGCT---GCTGCTGCTGCTGCTGCTGCTGCTGCTGCTGCTG</Hsp_hseq>
+      <Hsp_midline>||||||||||| | | | | ||   |  |||||||||||||||||||||||||||||||</Hsp_midline>
+    </Hsp>
+  </Hit_hsps>
+</Hit>
+<Hit>
+  <Hit_num>22</Hit_num>
+  <Hit_id>gi|2579848879|ref|XM_059679574.1|</Hit_id>
+  <Hit_def>PREDICTED: Myotis daubentonii mediator complex subunit 12 (MED12), transcript variant X6, mRNA</Hit_def>
+  <Hit_accession>XM_059679574</Hit_accession>
+  <Hit_len>6951</Hit_len>
+  <Hit_hsps>
+    <Hsp>
+      <Hsp_num>1</Hsp_num>
+      <Hsp_bit-score>60.7975</Hsp_bit-score>
+      <Hsp_score>66</Hsp_score>
+      <Hsp_evalue>0.000403961</Hsp_evalue>
+      <Hsp_query-from>3</Hsp_query-from>
+      <Hsp_query-to>61</Hsp_query-to>
+      <Hsp_hit-from>6563</Hsp_hit-from>
+      <Hsp_hit-to>6508</Hsp_hit-to>
+      <Hsp_query-frame>1</Hsp_query-frame>
+      <Hsp_hit-frame>-1</Hsp_hit-frame>
+      <Hsp_identity>49</Hsp_identity>
+      <Hsp_positive>49</Hsp_positive>
+      <Hsp_gaps>3</Hsp_gaps>
+      <Hsp_align-len>59</Hsp_align-len>
+      <Hsp_qseq>GGAGGAGCCGCAGTCAGATCCTAGCGTCGCTGCTGCTGCTGCTGCTGCTGCTGCTGCTG</Hsp_qseq>
+      <Hsp_hseq>GGAGGAGCCGCTGCCTGTTGCT---GCTGCTGCTGCTGCTGCTGCTGCTGCTGCTGCTG</Hsp_hseq>
+      <Hsp_midline>||||||||||| | | | | ||   |  |||||||||||||||||||||||||||||||</Hsp_midline>
+    </Hsp>
+  </Hit_hsps>
+</Hit>
+<Hit>
+  <Hit_num>23</Hit_num>
+  <Hit_id>gi|916422121|ref|XM_013376838.1|</Hit_id>
+  <Hit_def>Eimeria tenella uncharacterized protein (ETH_00011520), partial mRNA</Hit_def>
+  <Hit_accession>XM_013376838</Hit_accession>
+  <Hit_len>1557</Hit_len>
+  <Hit_hsps>
+    <Hsp>
+      <Hsp_num>1</Hsp_num>
+      <Hsp_bit-score>59.8958</Hsp_bit-score>
+      <Hsp_score>65</Hsp_score>
+      <Hsp_evalue>0.00140996</Hsp_evalue>
+      <Hsp_query-from>2</Hsp_query-from>
+      <Hsp_query-to>61</Hsp_query-to>
+      <Hsp_hit-from>602</Hsp_hit-from>
+      <Hsp_hit-to>661</Hsp_hit-to>
+      <Hsp_query-frame>1</Hsp_query-frame>
+      <Hsp_hit-frame>1</Hsp_hit-frame>
+      <Hsp_identity>49</Hsp_identity>
+      <Hsp_positive>49</Hsp_positive>
+      <Hsp_gaps>0</Hsp_gaps>
+      <Hsp_align-len>60</Hsp_align-len>
+      <Hsp_qseq>TGGAGGAGCCGCAGTCAGATCCTAGCGTCGCTGCTGCTGCTGCTGCTGCTGCTGCTGCTG</Hsp_qseq>
+      <Hsp_hseq>TGGAGGAGCCGCAGACGCCGGCGAGTGAAGCTGCTGCTGCTGCCGCTGCTGCTGCTGCTG</Hsp_hseq>
+      <Hsp_midline>|||||||||||||| |     | || |  |||||||||||||| ||||||||||||||||</Hsp_midline>
+    </Hsp>
+  </Hit_hsps>
+</Hit>
+<Hit>
+  <Hit_num>24</Hit_num>
+  <Hit_id>gi|921127071|ref|XM_013582691.1|</Hit_id>
+  <Hit_def>Eimeria necatrix hypothetical protein, conserved partial mRNA</Hit_def>
+  <Hit_accession>XM_013582691</Hit_accession>
+  <Hit_len>1617</Hit_len>
+  <Hit_hsps>
+    <Hsp>
+      <Hsp_num>1</Hsp_num>
+      <Hsp_bit-score>59.8958</Hsp_bit-score>
+      <Hsp_score>65</Hsp_score>
+      <Hsp_evalue>0.00140996</Hsp_evalue>
+      <Hsp_query-from>2</Hsp_query-from>
+      <Hsp_query-to>61</Hsp_query-to>
+      <Hsp_hit-from>659</Hsp_hit-from>
+      <Hsp_hit-to>718</Hsp_hit-to>
+      <Hsp_query-frame>1</Hsp_query-frame>
+      <Hsp_hit-frame>1</Hsp_hit-frame>
+      <Hsp_identity>49</Hsp_identity>
+      <Hsp_positive>49</Hsp_positive>
+      <Hsp_gaps>0</Hsp_gaps>
+      <Hsp_align-len>60</Hsp_align-len>
+      <Hsp_qseq>TGGAGGAGCCGCAGTCAGATCCTAGCGTCGCTGCTGCTGCTGCTGCTGCTGCTGCTGCTG</Hsp_qseq>
+      <Hsp_hseq>TGGAGGAGCCGCAGACGCCGGCGAGTGAAGCTGCTGCTGCTGCCGCTGCTGCTGCTGCTG</Hsp_hseq>
+      <Hsp_midline>|||||||||||||| |     | || |  |||||||||||||| ||||||||||||||||</Hsp_midline>
+    </Hsp>
+  </Hit_hsps>
+</Hit>
+<Hit>
+  <Hit_num>25</Hit_num>
+  <Hit_id>gi|1911210301|ref|XM_036304648.1|</Hit_id>
+  <Hit_def>PREDICTED: Myotis myotis mediator complex subunit 12 (MED12), transcript variant X14, mRNA</Hit_def>
+  <Hit_accession>XM_036304648</Hit_accession>
+  <Hit_len>6902</Hit_len>
+  <Hit_hsps>
+    <Hsp>
+      <Hsp_num>1</Hsp_num>
+      <Hsp_bit-score>58.0924</Hsp_bit-score>
+      <Hsp_score>63</Hsp_score>
+      <Hsp_evalue>0.00492126</Hsp_evalue>
+      <Hsp_query-from>3</Hsp_query-from>
+      <Hsp_query-to>61</Hsp_query-to>
+      <Hsp_hit-from>6517</Hsp_hit-from>
+      <Hsp_hit-to>6459</Hsp_hit-to>
+      <Hsp_query-frame>1</Hsp_query-frame>
+      <Hsp_hit-frame>-1</Hsp_hit-frame>
+      <Hsp_identity>48</Hsp_identity>
+      <Hsp_positive>48</Hsp_positive>
+      <Hsp_gaps>0</Hsp_gaps>
+      <Hsp_align-len>59</Hsp_align-len>
+      <Hsp_qseq>GGAGGAGCCGCAGTCAGATCCTAGCGTCGCTGCTGCTGCTGCTGCTGCTGCTGCTGCTG</Hsp_qseq>
+      <Hsp_hseq>GGAGGAGCCGCTGCCTGTTGCTGCTGCTGCTGCTGCTGCTGCTGCTGCTGTTGCTGCTG</Hsp_hseq>
+      <Hsp_midline>||||||||||| | | | | ||   |  |||||||||||||||||||||| ||||||||</Hsp_midline>
+    </Hsp>
+  </Hit_hsps>
+</Hit>
+<Hit>
+  <Hit_num>26</Hit_num>
+  <Hit_id>gi|2169338202|ref|XR_006739823.1|</Hit_id>
+  <Hit_def>PREDICTED: Pipistrellus kuhlii mediator complex subunit 12 (MED12), transcript variant X3, misc_RNA</Hit_def>
+  <Hit_accession>XR_006739823</Hit_accession>
+  <Hit_len>7365</Hit_len>
+  <Hit_hsps>
+    <Hsp>
+      <Hsp_num>1</Hsp_num>
+      <Hsp_bit-score>58.0924</Hsp_bit-score>
+      <Hsp_score>63</Hsp_score>
+      <Hsp_evalue>0.00492126</Hsp_evalue>
+      <Hsp_query-from>3</Hsp_query-from>
+      <Hsp_query-to>61</Hsp_query-to>
+      <Hsp_hit-from>6979</Hsp_hit-from>
+      <Hsp_hit-to>6921</Hsp_hit-to>
+      <Hsp_query-frame>1</Hsp_query-frame>
+      <Hsp_hit-frame>-1</Hsp_hit-frame>
+      <Hsp_identity>48</Hsp_identity>
+      <Hsp_positive>48</Hsp_positive>
+      <Hsp_gaps>0</Hsp_gaps>
+      <Hsp_align-len>59</Hsp_align-len>
+      <Hsp_qseq>GGAGGAGCCGCAGTCAGATCCTAGCGTCGCTGCTGCTGCTGCTGCTGCTGCTGCTGCTG</Hsp_qseq>
+      <Hsp_hseq>GGAGGAGCCGCTGCCTGTTGCTGCTGCTGCTGCTGCTGCTGTTGCTGCTGCTGCTGCTG</Hsp_hseq>
+      <Hsp_midline>||||||||||| | | | | ||   |  ||||||||||||| |||||||||||||||||</Hsp_midline>
+    </Hsp>
+  </Hit_hsps>
+</Hit>
+<Hit>
+  <Hit_num>27</Hit_num>
+  <Hit_id>gi|2169338204|ref|XR_006739825.1|</Hit_id>
+  <Hit_def>PREDICTED: Pipistrellus kuhlii mediator complex subunit 12 (MED12), transcript variant X5, misc_RNA</Hit_def>
+  <Hit_accession>XR_006739825</Hit_accession>
+  <Hit_len>7362</Hit_len>
+  <Hit_hsps>
+    <Hsp>
+      <Hsp_num>1</Hsp_num>
+      <Hsp_bit-score>58.0924</Hsp_bit-score>
+      <Hsp_score>63</Hsp_score>
+      <Hsp_evalue>0.00492126</Hsp_evalue>
+      <Hsp_query-from>3</Hsp_query-from>
+      <Hsp_query-to>61</Hsp_query-to>
+      <Hsp_hit-from>6976</Hsp_hit-from>
+      <Hsp_hit-to>6918</Hsp_hit-to>
+      <Hsp_query-frame>1</Hsp_query-frame>
+      <Hsp_hit-frame>-1</Hsp_hit-frame>
+      <Hsp_identity>48</Hsp_identity>
+      <Hsp_positive>48</Hsp_positive>
+      <Hsp_gaps>0</Hsp_gaps>
+      <Hsp_align-len>59</Hsp_align-len>
+      <Hsp_qseq>GGAGGAGCCGCAGTCAGATCCTAGCGTCGCTGCTGCTGCTGCTGCTGCTGCTGCTGCTG</Hsp_qseq>
+      <Hsp_hseq>GGAGGAGCCGCTGCCTGTTGCTGCTGCTGCTGCTGCTGCTGTTGCTGCTGCTGCTGCTG</Hsp_hseq>
+      <Hsp_midline>||||||||||| | | | | ||   |  ||||||||||||| |||||||||||||||||</Hsp_midline>
+    </Hsp>
+  </Hit_hsps>
+</Hit>
+<Hit>
+  <Hit_num>28</Hit_num>
+  <Hit_id>gi|2445320681|ref|XM_053656641.1|</Hit_id>
+  <Hit_def>PREDICTED: Artibeus jamaicensis mediator complex subunit 12 (MED12), transcript variant X5, mRNA</Hit_def>
+  <Hit_accession>XM_053656641</Hit_accession>
+  <Hit_len>7002</Hit_len>
+  <Hit_hsps>
+    <Hsp>
+      <Hsp_num>1</Hsp_num>
+      <Hsp_bit-score>58.0924</Hsp_bit-score>
+      <Hsp_score>63</Hsp_score>
+      <Hsp_evalue>0.00492126</Hsp_evalue>
+      <Hsp_query-from>3</Hsp_query-from>
+      <Hsp_query-to>61</Hsp_query-to>
+      <Hsp_hit-from>6614</Hsp_hit-from>
+      <Hsp_hit-to>6556</Hsp_hit-to>
+      <Hsp_query-frame>1</Hsp_query-frame>
+      <Hsp_hit-frame>-1</Hsp_hit-frame>
+      <Hsp_identity>48</Hsp_identity>
+      <Hsp_positive>48</Hsp_positive>
+      <Hsp_gaps>0</Hsp_gaps>
+      <Hsp_align-len>59</Hsp_align-len>
+      <Hsp_qseq>GGAGGAGCCGCAGTCAGATCCTAGCGTCGCTGCTGCTGCTGCTGCTGCTGCTGCTGCTG</Hsp_qseq>
+      <Hsp_hseq>GGAGGAGCCGCCGCTTGCTGCTGCTGTTGCTGCTGCTGCTGCTGCTGTTGCTGCTGCTG</Hsp_hseq>
+      <Hsp_midline>||||||||||| |   | | ||   || ||||||||||||||||||| |||||||||||</Hsp_midline>
+    </Hsp>
+  </Hit_hsps>
+</Hit>
+<Hit>
+  <Hit_num>29</Hit_num>
+  <Hit_id>gi|2169338205|ref|XR_006739826.1|</Hit_id>
+  <Hit_def>PREDICTED: Pipistrellus kuhlii mediator complex subunit 12 (MED12), transcript variant X6, misc_RNA</Hit_def>
+  <Hit_accession>XR_006739826</Hit_accession>
+  <Hit_len>7358</Hit_len>
+  <Hit_hsps>
+    <Hsp>
+      <Hsp_num>1</Hsp_num>
+      <Hsp_bit-score>58.0924</Hsp_bit-score>
+      <Hsp_score>63</Hsp_score>
+      <Hsp_evalue>0.00492126</Hsp_evalue>
+      <Hsp_query-from>3</Hsp_query-from>
+      <Hsp_query-to>61</Hsp_query-to>
+      <Hsp_hit-from>6972</Hsp_hit-from>
+      <Hsp_hit-to>6914</Hsp_hit-to>
+      <Hsp_query-frame>1</Hsp_query-frame>
+      <Hsp_hit-frame>-1</Hsp_hit-frame>
+      <Hsp_identity>48</Hsp_identity>
+      <Hsp_positive>48</Hsp_positive>
+      <Hsp_gaps>0</Hsp_gaps>
+      <Hsp_align-len>59</Hsp_align-len>
+      <Hsp_qseq>GGAGGAGCCGCAGTCAGATCCTAGCGTCGCTGCTGCTGCTGCTGCTGCTGCTGCTGCTG</Hsp_qseq>
+      <Hsp_hseq>GGAGGAGCCGCTGCCTGTTGCTGCTGCTGCTGCTGCTGCTGTTGCTGCTGCTGCTGCTG</Hsp_hseq>
+      <Hsp_midline>||||||||||| | | | | ||   |  ||||||||||||| |||||||||||||||||</Hsp_midline>
+    </Hsp>
+  </Hit_hsps>
+</Hit>
+<Hit>
+  <Hit_num>30</Hit_num>
+  <Hit_id>gi|2445320679|ref|XM_037126702.2|</Hit_id>
+  <Hit_def>PREDICTED: Artibeus jamaicensis mediator complex subunit 12 (MED12), transcript variant X4, mRNA</Hit_def>
+  <Hit_accession>XM_037126702</Hit_accession>
+  <Hit_len>7005</Hit_len>
+  <Hit_hsps>
+    <Hsp>
+      <Hsp_num>1</Hsp_num>
+      <Hsp_bit-score>58.0924</Hsp_bit-score>
+      <Hsp_score>63</Hsp_score>
+      <Hsp_evalue>0.00492126</Hsp_evalue>
+      <Hsp_query-from>3</Hsp_query-from>
+      <Hsp_query-to>61</Hsp_query-to>
+      <Hsp_hit-from>6617</Hsp_hit-from>
+      <Hsp_hit-to>6559</Hsp_hit-to>
+      <Hsp_query-frame>1</Hsp_query-frame>
+      <Hsp_hit-frame>-1</Hsp_hit-frame>
+      <Hsp_identity>48</Hsp_identity>
+      <Hsp_positive>48</Hsp_positive>
+      <Hsp_gaps>0</Hsp_gaps>
+      <Hsp_align-len>59</Hsp_align-len>
+      <Hsp_qseq>GGAGGAGCCGCAGTCAGATCCTAGCGTCGCTGCTGCTGCTGCTGCTGCTGCTGCTGCTG</Hsp_qseq>
+      <Hsp_hseq>GGAGGAGCCGCCGCTTGCTGCTGCTGTTGCTGCTGCTGCTGCTGCTGTTGCTGCTGCTG</Hsp_hseq>
+      <Hsp_midline>||||||||||| |   | | ||   || ||||||||||||||||||| |||||||||||</Hsp_midline>
+    </Hsp>
+  </Hit_hsps>
+</Hit>
+<Hit>
+  <Hit_num>31</Hit_num>
+  <Hit_id>gi|2445320689|ref|XM_053656646.1|</Hit_id>
+  <Hit_def>PREDICTED: Artibeus jamaicensis mediator complex subunit 12 (MED12), transcript variant X9, mRNA</Hit_def>
+  <Hit_accession>XM_053656646</Hit_accession>
+  <Hit_len>6927</Hit_len>
+  <Hit_hsps>
+    <Hsp>
+      <Hsp_num>1</Hsp_num>
+      <Hsp_bit-score>58.0924</Hsp_bit-score>
+      <Hsp_score>63</Hsp_score>
+      <Hsp_evalue>0.00492126</Hsp_evalue>
+      <Hsp_query-from>3</Hsp_query-from>
+      <Hsp_query-to>61</Hsp_query-to>
+      <Hsp_hit-from>6539</Hsp_hit-from>
+      <Hsp_hit-to>6481</Hsp_hit-to>
+      <Hsp_query-frame>1</Hsp_query-frame>
+      <Hsp_hit-frame>-1</Hsp_hit-frame>
+      <Hsp_identity>48</Hsp_identity>
+      <Hsp_positive>48</Hsp_positive>
+      <Hsp_gaps>0</Hsp_gaps>
+      <Hsp_align-len>59</Hsp_align-len>
+      <Hsp_qseq>GGAGGAGCCGCAGTCAGATCCTAGCGTCGCTGCTGCTGCTGCTGCTGCTGCTGCTGCTG</Hsp_qseq>
+      <Hsp_hseq>GGAGGAGCCGCCGCTTGCTGCTGCTGTTGCTGCTGCTGCTGCTGCTGTTGCTGCTGCTG</Hsp_hseq>
+      <Hsp_midline>||||||||||| |   | | ||   || ||||||||||||||||||| |||||||||||</Hsp_midline>
+    </Hsp>
+  </Hit_hsps>
+</Hit>
+<Hit>
+  <Hit_num>32</Hit_num>
+  <Hit_id>gi|2445320673|ref|XM_037126701.2|</Hit_id>
+  <Hit_def>PREDICTED: Artibeus jamaicensis mediator complex subunit 12 (MED12), transcript variant X1, mRNA</Hit_def>
+  <Hit_accession>XM_037126701</Hit_accession>
+  <Hit_len>7017</Hit_len>
+  <Hit_hsps>
+    <Hsp>
+      <Hsp_num>1</Hsp_num>
+      <Hsp_bit-score>58.0924</Hsp_bit-score>
+      <Hsp_score>63</Hsp_score>
+      <Hsp_evalue>0.00492126</Hsp_evalue>
+      <Hsp_query-from>3</Hsp_query-from>
+      <Hsp_query-to>61</Hsp_query-to>
+      <Hsp_hit-from>6629</Hsp_hit-from>
+      <Hsp_hit-to>6571</Hsp_hit-to>
+      <Hsp_query-frame>1</Hsp_query-frame>
+      <Hsp_hit-frame>-1</Hsp_hit-frame>
+      <Hsp_identity>48</Hsp_identity>
+      <Hsp_positive>48</Hsp_positive>
+      <Hsp_gaps>0</Hsp_gaps>
+      <Hsp_align-len>59</Hsp_align-len>
+      <Hsp_qseq>GGAGGAGCCGCAGTCAGATCCTAGCGTCGCTGCTGCTGCTGCTGCTGCTGCTGCTGCTG</Hsp_qseq>
+      <Hsp_hseq>GGAGGAGCCGCCGCTTGCTGCTGCTGTTGCTGCTGCTGCTGCTGCTGTTGCTGCTGCTG</Hsp_hseq>
+      <Hsp_midline>||||||||||| |   | | ||   || ||||||||||||||||||| |||||||||||</Hsp_midline>
+    </Hsp>
+  </Hit_hsps>
+</Hit>
+<Hit>
+  <Hit_num>33</Hit_num>
+  <Hit_id>gi|2445320683|ref|XM_053656642.1|</Hit_id>
+  <Hit_def>PREDICTED: Artibeus jamaicensis mediator complex subunit 12 (MED12), transcript variant X6, mRNA</Hit_def>
+  <Hit_accession>XM_053656642</Hit_accession>
+  <Hit_len>6996</Hit_len>
+  <Hit_hsps>
+    <Hsp>
+      <Hsp_num>1</Hsp_num>
+      <Hsp_bit-score>58.0924</Hsp_bit-score>
+      <Hsp_score>63</Hsp_score>
+      <Hsp_evalue>0.00492126</Hsp_evalue>
+      <Hsp_query-from>3</Hsp_query-from>
+      <Hsp_query-to>61</Hsp_query-to>
+      <Hsp_hit-from>6608</Hsp_hit-from>
+      <Hsp_hit-to>6550</Hsp_hit-to>
+      <Hsp_query-frame>1</Hsp_query-frame>
+      <Hsp_hit-frame>-1</Hsp_hit-frame>
+      <Hsp_identity>48</Hsp_identity>
+      <Hsp_positive>48</Hsp_positive>
+      <Hsp_gaps>0</Hsp_gaps>
+      <Hsp_align-len>59</Hsp_align-len>
+      <Hsp_qseq>GGAGGAGCCGCAGTCAGATCCTAGCGTCGCTGCTGCTGCTGCTGCTGCTGCTGCTGCTG</Hsp_qseq>
+      <Hsp_hseq>GGAGGAGCCGCCGCTTGCTGCTGCTGTTGCTGCTGCTGCTGCTGCTGTTGCTGCTGCTG</Hsp_hseq>
+      <Hsp_midline>||||||||||| |   | | ||   || ||||||||||||||||||| |||||||||||</Hsp_midline>
+    </Hsp>
+  </Hit_hsps>
+</Hit>
+<Hit>
+  <Hit_num>34</Hit_num>
+  <Hit_id>gi|2169338211|ref|XR_006739832.1|</Hit_id>
+  <Hit_def>PREDICTED: Pipistrellus kuhlii mediator complex subunit 12 (MED12), transcript variant X12, misc_RNA</Hit_def>
+  <Hit_accession>XR_006739832</Hit_accession>
+  <Hit_len>7108</Hit_len>
+  <Hit_hsps>
+    <Hsp>
+      <Hsp_num>1</Hsp_num>
+      <Hsp_bit-score>58.0924</Hsp_bit-score>
+      <Hsp_score>63</Hsp_score>
+      <Hsp_evalue>0.00492126</Hsp_evalue>
+      <Hsp_query-from>3</Hsp_query-from>
+      <Hsp_query-to>61</Hsp_query-to>
+      <Hsp_hit-from>6722</Hsp_hit-from>
+      <Hsp_hit-to>6664</Hsp_hit-to>
+      <Hsp_query-frame>1</Hsp_query-frame>
+      <Hsp_hit-frame>-1</Hsp_hit-frame>
+      <Hsp_identity>48</Hsp_identity>
+      <Hsp_positive>48</Hsp_positive>
+      <Hsp_gaps>0</Hsp_gaps>
+      <Hsp_align-len>59</Hsp_align-len>
+      <Hsp_qseq>GGAGGAGCCGCAGTCAGATCCTAGCGTCGCTGCTGCTGCTGCTGCTGCTGCTGCTGCTG</Hsp_qseq>
+      <Hsp_hseq>GGAGGAGCCGCTGCCTGTTGCTGCTGCTGCTGCTGCTGCTGTTGCTGCTGCTGCTGCTG</Hsp_hseq>
+      <Hsp_midline>||||||||||| | | | | ||   |  ||||||||||||| |||||||||||||||||</Hsp_midline>
+    </Hsp>
+  </Hit_hsps>
+</Hit>
+<Hit>
+  <Hit_num>35</Hit_num>
+  <Hit_id>gi|2445320685|ref|XM_053656643.1|</Hit_id>
+  <Hit_def>PREDICTED: Artibeus jamaicensis mediator complex subunit 12 (MED12), transcript variant X7, mRNA</Hit_def>
+  <Hit_accession>XM_053656643</Hit_accession>
+  <Hit_len>6993</Hit_len>
+  <Hit_hsps>
+    <Hsp>
+      <Hsp_num>1</Hsp_num>
+      <Hsp_bit-score>58.0924</Hsp_bit-score>
+      <Hsp_score>63</Hsp_score>
+      <Hsp_evalue>0.00492126</Hsp_evalue>
+      <Hsp_query-from>3</Hsp_query-from>
+      <Hsp_query-to>61</Hsp_query-to>
+      <Hsp_hit-from>6605</Hsp_hit-from>
+      <Hsp_hit-to>6547</Hsp_hit-to>
+      <Hsp_query-frame>1</Hsp_query-frame>
+      <Hsp_hit-frame>-1</Hsp_hit-frame>
+      <Hsp_identity>48</Hsp_identity>
+      <Hsp_positive>48</Hsp_positive>
+      <Hsp_gaps>0</Hsp_gaps>
+      <Hsp_align-len>59</Hsp_align-len>
+      <Hsp_qseq>GGAGGAGCCGCAGTCAGATCCTAGCGTCGCTGCTGCTGCTGCTGCTGCTGCTGCTGCTG</Hsp_qseq>
+      <Hsp_hseq>GGAGGAGCCGCCGCTTGCTGCTGCTGTTGCTGCTGCTGCTGCTGCTGTTGCTGCTGCTG</Hsp_hseq>
+      <Hsp_midline>||||||||||| |   | | ||   || ||||||||||||||||||| |||||||||||</Hsp_midline>
+    </Hsp>
+  </Hit_hsps>
+</Hit>
+<Hit>
+  <Hit_num>36</Hit_num>
+  <Hit_id>gi|2445320677|ref|XM_053656640.1|</Hit_id>
+  <Hit_def>PREDICTED: Artibeus jamaicensis mediator complex subunit 12 (MED12), transcript variant X3, mRNA</Hit_def>
+  <Hit_accession>XM_053656640</Hit_accession>
+  <Hit_len>7008</Hit_len>
+  <Hit_hsps>
+    <Hsp>
+      <Hsp_num>1</Hsp_num>
+      <Hsp_bit-score>58.0924</Hsp_bit-score>
+      <Hsp_score>63</Hsp_score>
+      <Hsp_evalue>0.00492126</Hsp_evalue>
+      <Hsp_query-from>3</Hsp_query-from>
+      <Hsp_query-to>61</Hsp_query-to>
+      <Hsp_hit-from>6620</Hsp_hit-from>
+      <Hsp_hit-to>6562</Hsp_hit-to>
+      <Hsp_query-frame>1</Hsp_query-frame>
+      <Hsp_hit-frame>-1</Hsp_hit-frame>
+      <Hsp_identity>48</Hsp_identity>
+      <Hsp_positive>48</Hsp_positive>
+      <Hsp_gaps>0</Hsp_gaps>
+      <Hsp_align-len>59</Hsp_align-len>
+      <Hsp_qseq>GGAGGAGCCGCAGTCAGATCCTAGCGTCGCTGCTGCTGCTGCTGCTGCTGCTGCTGCTG</Hsp_qseq>
+      <Hsp_hseq>GGAGGAGCCGCCGCTTGCTGCTGCTGTTGCTGCTGCTGCTGCTGCTGTTGCTGCTGCTG</Hsp_hseq>
+      <Hsp_midline>||||||||||| |   | | ||   || ||||||||||||||||||| |||||||||||</Hsp_midline>
+    </Hsp>
+  </Hit_hsps>
+</Hit>
+<Hit>
+  <Hit_num>37</Hit_num>
+  <Hit_id>gi|2445320675|ref|XM_053656639.1|</Hit_id>
+  <Hit_def>PREDICTED: Artibeus jamaicensis mediator complex subunit 12 (MED12), transcript variant X2, mRNA</Hit_def>
+  <Hit_accession>XM_053656639</Hit_accession>
+  <Hit_len>7014</Hit_len>
+  <Hit_hsps>
+    <Hsp>
+      <Hsp_num>1</Hsp_num>
+      <Hsp_bit-score>58.0924</Hsp_bit-score>
+      <Hsp_score>63</Hsp_score>
+      <Hsp_evalue>0.00492126</Hsp_evalue>
+      <Hsp_query-from>3</Hsp_query-from>
+      <Hsp_query-to>61</Hsp_query-to>
+      <Hsp_hit-from>6626</Hsp_hit-from>
+      <Hsp_hit-to>6568</Hsp_hit-to>
+      <Hsp_query-frame>1</Hsp_query-frame>
+      <Hsp_hit-frame>-1</Hsp_hit-frame>
+      <Hsp_identity>48</Hsp_identity>
+      <Hsp_positive>48</Hsp_positive>
+      <Hsp_gaps>0</Hsp_gaps>
+      <Hsp_align-len>59</Hsp_align-len>
+      <Hsp_qseq>GGAGGAGCCGCAGTCAGATCCTAGCGTCGCTGCTGCTGCTGCTGCTGCTGCTGCTGCTG</Hsp_qseq>
+      <Hsp_hseq>GGAGGAGCCGCCGCTTGCTGCTGCTGTTGCTGCTGCTGCTGCTGCTGTTGCTGCTGCTG</Hsp_hseq>
+      <Hsp_midline>||||||||||| |   | | ||   || ||||||||||||||||||| |||||||||||</Hsp_midline>
+    </Hsp>
+  </Hit_hsps>
+</Hit>
+<Hit>
+  <Hit_num>38</Hit_num>
+  <Hit_id>gi|2169338210|ref|XR_006739831.1|</Hit_id>
+  <Hit_def>PREDICTED: Pipistrellus kuhlii mediator complex subunit 12 (MED12), transcript variant X11, misc_RNA</Hit_def>
+  <Hit_accession>XR_006739831</Hit_accession>
+  <Hit_len>7271</Hit_len>
+  <Hit_hsps>
+    <Hsp>
+      <Hsp_num>1</Hsp_num>
+      <Hsp_bit-score>58.0924</Hsp_bit-score>
+      <Hsp_score>63</Hsp_score>
+      <Hsp_evalue>0.00492126</Hsp_evalue>
+      <Hsp_query-from>3</Hsp_query-from>
+      <Hsp_query-to>61</Hsp_query-to>
+      <Hsp_hit-from>6885</Hsp_hit-from>
+      <Hsp_hit-to>6827</Hsp_hit-to>
+      <Hsp_query-frame>1</Hsp_query-frame>
+      <Hsp_hit-frame>-1</Hsp_hit-frame>
+      <Hsp_identity>48</Hsp_identity>
+      <Hsp_positive>48</Hsp_positive>
+      <Hsp_gaps>0</Hsp_gaps>
+      <Hsp_align-len>59</Hsp_align-len>
+      <Hsp_qseq>GGAGGAGCCGCAGTCAGATCCTAGCGTCGCTGCTGCTGCTGCTGCTGCTGCTGCTGCTG</Hsp_qseq>
+      <Hsp_hseq>GGAGGAGCCGCTGCCTGTTGCTGCTGCTGCTGCTGCTGCTGTTGCTGCTGCTGCTGCTG</Hsp_hseq>
+      <Hsp_midline>||||||||||| | | | | ||   |  ||||||||||||| |||||||||||||||||</Hsp_midline>
+    </Hsp>
+  </Hit_hsps>
+</Hit>
+<Hit>
+  <Hit_num>39</Hit_num>
+  <Hit_id>gi|2445320687|ref|XM_053656644.1|</Hit_id>
+  <Hit_def>PREDICTED: Artibeus jamaicensis mediator complex subunit 12 (MED12), transcript variant X8, mRNA</Hit_def>
+  <Hit_accession>XM_053656644</Hit_accession>
+  <Hit_len>6942</Hit_len>
+  <Hit_hsps>
+    <Hsp>
+      <Hsp_num>1</Hsp_num>
+      <Hsp_bit-score>58.0924</Hsp_bit-score>
+      <Hsp_score>63</Hsp_score>
+      <Hsp_evalue>0.00492126</Hsp_evalue>
+      <Hsp_query-from>3</Hsp_query-from>
+      <Hsp_query-to>61</Hsp_query-to>
+      <Hsp_hit-from>6554</Hsp_hit-from>
+      <Hsp_hit-to>6496</Hsp_hit-to>
+      <Hsp_query-frame>1</Hsp_query-frame>
+      <Hsp_hit-frame>-1</Hsp_hit-frame>
+      <Hsp_identity>48</Hsp_identity>
+      <Hsp_positive>48</Hsp_positive>
+      <Hsp_gaps>0</Hsp_gaps>
+      <Hsp_align-len>59</Hsp_align-len>
+      <Hsp_qseq>GGAGGAGCCGCAGTCAGATCCTAGCGTCGCTGCTGCTGCTGCTGCTGCTGCTGCTGCTG</Hsp_qseq>
+      <Hsp_hseq>GGAGGAGCCGCCGCTTGCTGCTGCTGTTGCTGCTGCTGCTGCTGCTGTTGCTGCTGCTG</Hsp_hseq>
+      <Hsp_midline>||||||||||| |   | | ||   || ||||||||||||||||||| |||||||||||</Hsp_midline>
+    </Hsp>
+  </Hit_hsps>
+</Hit>
+<Hit>
+  <Hit_num>40</Hit_num>
+  <Hit_id>gi|2169338208|ref|XR_006739829.1|</Hit_id>
+  <Hit_def>PREDICTED: Pipistrellus kuhlii mediator complex subunit 12 (MED12), transcript variant X9, misc_RNA</Hit_def>
+  <Hit_accession>XR_006739829</Hit_accession>
+  <Hit_len>7334</Hit_len>
+  <Hit_hsps>
+    <Hsp>
+      <Hsp_num>1</Hsp_num>
+      <Hsp_bit-score>58.0924</Hsp_bit-score>
+      <Hsp_score>63</Hsp_score>
+      <Hsp_evalue>0.00492126</Hsp_evalue>
+      <Hsp_query-from>3</Hsp_query-from>
+      <Hsp_query-to>61</Hsp_query-to>
+      <Hsp_hit-from>6948</Hsp_hit-from>
+      <Hsp_hit-to>6890</Hsp_hit-to>
+      <Hsp_query-frame>1</Hsp_query-frame>
+      <Hsp_hit-frame>-1</Hsp_hit-frame>
+      <Hsp_identity>48</Hsp_identity>
+      <Hsp_positive>48</Hsp_positive>
+      <Hsp_gaps>0</Hsp_gaps>
+      <Hsp_align-len>59</Hsp_align-len>
+      <Hsp_qseq>GGAGGAGCCGCAGTCAGATCCTAGCGTCGCTGCTGCTGCTGCTGCTGCTGCTGCTGCTG</Hsp_qseq>
+      <Hsp_hseq>GGAGGAGCCGCTGCCTGTTGCTGCTGCTGCTGCTGCTGCTGTTGCTGCTGCTGCTGCTG</Hsp_hseq>
+      <Hsp_midline>||||||||||| | | | | ||   |  ||||||||||||| |||||||||||||||||</Hsp_midline>
+    </Hsp>
+  </Hit_hsps>
+</Hit>
+<Hit>
+  <Hit_num>41</Hit_num>
+  <Hit_id>gi|2169338200|ref|XR_006739821.1|</Hit_id>
+  <Hit_def>PREDICTED: Pipistrellus kuhlii mediator complex subunit 12 (MED12), transcript variant X1, misc_RNA</Hit_def>
+  <Hit_accession>XR_006739821</Hit_accession>
+  <Hit_len>7374</Hit_len>
+  <Hit_hsps>
+    <Hsp>
+      <Hsp_num>1</Hsp_num>
+      <Hsp_bit-score>58.0924</Hsp_bit-score>
+      <Hsp_score>63</Hsp_score>
+      <Hsp_evalue>0.00492126</Hsp_evalue>
+      <Hsp_query-from>3</Hsp_query-from>
+      <Hsp_query-to>61</Hsp_query-to>
+      <Hsp_hit-from>6988</Hsp_hit-from>
+      <Hsp_hit-to>6930</Hsp_hit-to>
+      <Hsp_query-frame>1</Hsp_query-frame>
+      <Hsp_hit-frame>-1</Hsp_hit-frame>
+      <Hsp_identity>48</Hsp_identity>
+      <Hsp_positive>48</Hsp_positive>
+      <Hsp_gaps>0</Hsp_gaps>
+      <Hsp_align-len>59</Hsp_align-len>
+      <Hsp_qseq>GGAGGAGCCGCAGTCAGATCCTAGCGTCGCTGCTGCTGCTGCTGCTGCTGCTGCTGCTG</Hsp_qseq>
+      <Hsp_hseq>GGAGGAGCCGCTGCCTGTTGCTGCTGCTGCTGCTGCTGCTGTTGCTGCTGCTGCTGCTG</Hsp_hseq>
+      <Hsp_midline>||||||||||| | | | | ||   |  ||||||||||||| |||||||||||||||||</Hsp_midline>
+    </Hsp>
+  </Hit_hsps>
+</Hit>
+<Hit>
+  <Hit_num>42</Hit_num>
+  <Hit_id>gi|2169338206|ref|XR_006739827.1|</Hit_id>
+  <Hit_def>PREDICTED: Pipistrellus kuhlii mediator complex subunit 12 (MED12), transcript variant X7, misc_RNA</Hit_def>
+  <Hit_accession>XR_006739827</Hit_accession>
+  <Hit_len>7346</Hit_len>
+  <Hit_hsps>
+    <Hsp>
+      <Hsp_num>1</Hsp_num>
+      <Hsp_bit-score>58.0924</Hsp_bit-score>
+      <Hsp_score>63</Hsp_score>
+      <Hsp_evalue>0.00492126</Hsp_evalue>
+      <Hsp_query-from>3</Hsp_query-from>
+      <Hsp_query-to>61</Hsp_query-to>
+      <Hsp_hit-from>6960</Hsp_hit-from>
+      <Hsp_hit-to>6902</Hsp_hit-to>
+      <Hsp_query-frame>1</Hsp_query-frame>
+      <Hsp_hit-frame>-1</Hsp_hit-frame>
+      <Hsp_identity>48</Hsp_identity>
+      <Hsp_positive>48</Hsp_positive>
+      <Hsp_gaps>0</Hsp_gaps>
+      <Hsp_align-len>59</Hsp_align-len>
+      <Hsp_qseq>GGAGGAGCCGCAGTCAGATCCTAGCGTCGCTGCTGCTGCTGCTGCTGCTGCTGCTGCTG</Hsp_qseq>
+      <Hsp_hseq>GGAGGAGCCGCTGCCTGTTGCTGCTGCTGCTGCTGCTGCTGTTGCTGCTGCTGCTGCTG</Hsp_hseq>
+      <Hsp_midline>||||||||||| | | | | ||   |  ||||||||||||| |||||||||||||||||</Hsp_midline>
+    </Hsp>
+  </Hit_hsps>
+</Hit>
+<Hit>
+  <Hit_num>43</Hit_num>
+  <Hit_id>gi|2169338201|ref|XR_006739822.1|</Hit_id>
+  <Hit_def>PREDICTED: Pipistrellus kuhlii mediator complex subunit 12 (MED12), transcript variant X2, misc_RNA</Hit_def>
+  <Hit_accession>XR_006739822</Hit_accession>
+  <Hit_len>7371</Hit_len>
+  <Hit_hsps>
+    <Hsp>
+      <Hsp_num>1</Hsp_num>
+      <Hsp_bit-score>58.0924</Hsp_bit-score>
+      <Hsp_score>63</Hsp_score>
+      <Hsp_evalue>0.00492126</Hsp_evalue>
+      <Hsp_query-from>3</Hsp_query-from>
+      <Hsp_query-to>61</Hsp_query-to>
+      <Hsp_hit-from>6985</Hsp_hit-from>
+      <Hsp_hit-to>6927</Hsp_hit-to>
+      <Hsp_query-frame>1</Hsp_query-frame>
+      <Hsp_hit-frame>-1</Hsp_hit-frame>
+      <Hsp_identity>48</Hsp_identity>
+      <Hsp_positive>48</Hsp_positive>
+      <Hsp_gaps>0</Hsp_gaps>
+      <Hsp_align-len>59</Hsp_align-len>
+      <Hsp_qseq>GGAGGAGCCGCAGTCAGATCCTAGCGTCGCTGCTGCTGCTGCTGCTGCTGCTGCTGCTG</Hsp_qseq>
+      <Hsp_hseq>GGAGGAGCCGCTGCCTGTTGCTGCTGCTGCTGCTGCTGCTGTTGCTGCTGCTGCTGCTG</Hsp_hseq>
+      <Hsp_midline>||||||||||| | | | | ||   |  ||||||||||||| |||||||||||||||||</Hsp_midline>
+    </Hsp>
+  </Hit_hsps>
+</Hit>
+<Hit>
+  <Hit_num>44</Hit_num>
+  <Hit_id>gi|2169338214|ref|XM_036411488.2|</Hit_id>
+  <Hit_def>PREDICTED: Pipistrellus kuhlii mediator complex subunit 12 (MED12), transcript variant X15, mRNA</Hit_def>
+  <Hit_accession>XM_036411488</Hit_accession>
+  <Hit_len>6960</Hit_len>
+  <Hit_hsps>
+    <Hsp>
+      <Hsp_num>1</Hsp_num>
+      <Hsp_bit-score>58.0924</Hsp_bit-score>
+      <Hsp_score>63</Hsp_score>
+      <Hsp_evalue>0.00492126</Hsp_evalue>
+      <Hsp_query-from>3</Hsp_query-from>
+      <Hsp_query-to>61</Hsp_query-to>
+      <Hsp_hit-from>6574</Hsp_hit-from>
+      <Hsp_hit-to>6516</Hsp_hit-to>
+      <Hsp_query-frame>1</Hsp_query-frame>
+      <Hsp_hit-frame>-1</Hsp_hit-frame>
+      <Hsp_identity>48</Hsp_identity>
+      <Hsp_positive>48</Hsp_positive>
+      <Hsp_gaps>0</Hsp_gaps>
+      <Hsp_align-len>59</Hsp_align-len>
+      <Hsp_qseq>GGAGGAGCCGCAGTCAGATCCTAGCGTCGCTGCTGCTGCTGCTGCTGCTGCTGCTGCTG</Hsp_qseq>
+      <Hsp_hseq>GGAGGAGCCGCTGCCTGTTGCTGCTGCTGCTGCTGCTGCTGTTGCTGCTGCTGCTGCTG</Hsp_hseq>
+      <Hsp_midline>||||||||||| | | | | ||   |  ||||||||||||| |||||||||||||||||</Hsp_midline>
+    </Hsp>
+  </Hit_hsps>
+</Hit>
+<Hit>
+  <Hit_num>45</Hit_num>
+  <Hit_id>gi|2169338207|ref|XR_006739828.1|</Hit_id>
+  <Hit_def>PREDICTED: Pipistrellus kuhlii mediator complex subunit 12 (MED12), transcript variant X8, misc_RNA</Hit_def>
+  <Hit_accession>XR_006739828</Hit_accession>
+  <Hit_len>7343</Hit_len>
+  <Hit_hsps>
+    <Hsp>
+      <Hsp_num>1</Hsp_num>
+      <Hsp_bit-score>58.0924</Hsp_bit-score>
+      <Hsp_score>63</Hsp_score>
+      <Hsp_evalue>0.00492126</Hsp_evalue>
+      <Hsp_query-from>3</Hsp_query-from>
+      <Hsp_query-to>61</Hsp_query-to>
+      <Hsp_hit-from>6957</Hsp_hit-from>
+      <Hsp_hit-to>6899</Hsp_hit-to>
+      <Hsp_query-frame>1</Hsp_query-frame>
+      <Hsp_hit-frame>-1</Hsp_hit-frame>
+      <Hsp_identity>48</Hsp_identity>
+      <Hsp_positive>48</Hsp_positive>
+      <Hsp_gaps>0</Hsp_gaps>
+      <Hsp_align-len>59</Hsp_align-len>
+      <Hsp_qseq>GGAGGAGCCGCAGTCAGATCCTAGCGTCGCTGCTGCTGCTGCTGCTGCTGCTGCTGCTG</Hsp_qseq>
+      <Hsp_hseq>GGAGGAGCCGCTGCCTGTTGCTGCTGCTGCTGCTGCTGCTGTTGCTGCTGCTGCTGCTG</Hsp_hseq>
+      <Hsp_midline>||||||||||| | | | | ||   |  ||||||||||||| |||||||||||||||||</Hsp_midline>
+    </Hsp>
+  </Hit_hsps>
+</Hit>
+<Hit>
+  <Hit_num>46</Hit_num>
+  <Hit_id>gi|2169338203|ref|XR_006739824.1|</Hit_id>
+  <Hit_def>PREDICTED: Pipistrellus kuhlii mediator complex subunit 12 (MED12), transcript variant X4, misc_RNA</Hit_def>
+  <Hit_accession>XR_006739824</Hit_accession>
+  <Hit_len>7361</Hit_len>
+  <Hit_hsps>
+    <Hsp>
+      <Hsp_num>1</Hsp_num>
+      <Hsp_bit-score>58.0924</Hsp_bit-score>
+      <Hsp_score>63</Hsp_score>
+      <Hsp_evalue>0.00492126</Hsp_evalue>
+      <Hsp_query-from>3</Hsp_query-from>
+      <Hsp_query-to>61</Hsp_query-to>
+      <Hsp_hit-from>6975</Hsp_hit-from>
+      <Hsp_hit-to>6917</Hsp_hit-to>
+      <Hsp_query-frame>1</Hsp_query-frame>
+      <Hsp_hit-frame>-1</Hsp_hit-frame>
+      <Hsp_identity>48</Hsp_identity>
+      <Hsp_positive>48</Hsp_positive>
+      <Hsp_gaps>0</Hsp_gaps>
+      <Hsp_align-len>59</Hsp_align-len>
+      <Hsp_qseq>GGAGGAGCCGCAGTCAGATCCTAGCGTCGCTGCTGCTGCTGCTGCTGCTGCTGCTGCTG</Hsp_qseq>
+      <Hsp_hseq>GGAGGAGCCGCTGCCTGTTGCTGCTGCTGCTGCTGCTGCTGTTGCTGCTGCTGCTGCTG</Hsp_hseq>
+      <Hsp_midline>||||||||||| | | | | ||   |  ||||||||||||| |||||||||||||||||</Hsp_midline>
+    </Hsp>
+  </Hit_hsps>
+</Hit>
+<Hit>
+  <Hit_num>47</Hit_num>
+  <Hit_id>gi|2169338209|ref|XR_006739830.1|</Hit_id>
+  <Hit_def>PREDICTED: Pipistrellus kuhlii mediator complex subunit 12 (MED12), transcript variant X10, misc_RNA</Hit_def>
+  <Hit_accession>XR_006739830</Hit_accession>
+  <Hit_len>7300</Hit_len>
+  <Hit_hsps>
+    <Hsp>
+      <Hsp_num>1</Hsp_num>
+      <Hsp_bit-score>58.0924</Hsp_bit-score>
+      <Hsp_score>63</Hsp_score>
+      <Hsp_evalue>0.00492126</Hsp_evalue>
+      <Hsp_query-from>3</Hsp_query-from>
+      <Hsp_query-to>61</Hsp_query-to>
+      <Hsp_hit-from>6914</Hsp_hit-from>
+      <Hsp_hit-to>6856</Hsp_hit-to>
+      <Hsp_query-frame>1</Hsp_query-frame>
+      <Hsp_hit-frame>-1</Hsp_hit-frame>
+      <Hsp_identity>48</Hsp_identity>
+      <Hsp_positive>48</Hsp_positive>
+      <Hsp_gaps>0</Hsp_gaps>
+      <Hsp_align-len>59</Hsp_align-len>
+      <Hsp_qseq>GGAGGAGCCGCAGTCAGATCCTAGCGTCGCTGCTGCTGCTGCTGCTGCTGCTGCTGCTG</Hsp_qseq>
+      <Hsp_hseq>GGAGGAGCCGCTGCCTGTTGCTGCTGCTGCTGCTGCTGCTGTTGCTGCTGCTGCTGCTG</Hsp_hseq>
+      <Hsp_midline>||||||||||| | | | | ||   |  ||||||||||||| |||||||||||||||||</Hsp_midline>
+    </Hsp>
+  </Hit_hsps>
+</Hit>
+<Hit>
+  <Hit_num>48</Hit_num>
+  <Hit_id>gi|3135759503|gb|PX584652.1|</Hit_id>
+  <Hit_def>Homo sapiens isolate CLL tumor protein 53 (TP53) mRNA, complete cds</Hit_def>
+  <Hit_accession>PX584652</Hit_accession>
+  <Hit_len>1182</Hit_len>
+  <Hit_hsps>
+    <Hsp>
+      <Hsp_num>1</Hsp_num>
+      <Hsp_bit-score>57.1907</Hsp_bit-score>
+      <Hsp_score>62</Hsp_score>
+      <Hsp_evalue>0.00492126</Hsp_evalue>
+      <Hsp_query-from>1</Hsp_query-from>
+      <Hsp_query-to>31</Hsp_query-to>
+      <Hsp_hit-from>1</Hsp_hit-from>
+      <Hsp_hit-to>31</Hsp_hit-to>
+      <Hsp_query-frame>1</Hsp_query-frame>
+      <Hsp_hit-frame>1</Hsp_hit-frame>
+      <Hsp_identity>31</Hsp_identity>
+      <Hsp_positive>31</Hsp_positive>
+      <Hsp_gaps>0</Hsp_gaps>
+      <Hsp_align-len>31</Hsp_align-len>
+      <Hsp_qseq>ATGGAGGAGCCGCAGTCAGATCCTAGCGTCG</Hsp_qseq>
+      <Hsp_hseq>ATGGAGGAGCCGCAGTCAGATCCTAGCGTCG</Hsp_hseq>
+      <Hsp_midline>|||||||||||||||||||||||||||||||</Hsp_midline>
+    </Hsp>
+  </Hit_hsps>
+</Hit>
+<Hit>
+  <Hit_num>49</Hit_num>
+  <Hit_id>gi|2909903186|gb|PQ741723.1|</Hit_id>
+  <Hit_def>Homo sapiens isolate TWH-2033-0-1 mutant tumor protein p53 transcript variant 1 (TP53) mRNA, complete cds</Hit_def>
+  <Hit_accession>PQ741723</Hit_accession>
+  <Hit_len>741</Hit_len>
+  <Hit_hsps>
+    <Hsp>
+      <Hsp_num>1</Hsp_num>
+      <Hsp_bit-score>57.1907</Hsp_bit-score>
+      <Hsp_score>62</Hsp_score>
+      <Hsp_evalue>0.00492126</Hsp_evalue>
+      <Hsp_query-from>1</Hsp_query-from>
+      <Hsp_query-to>31</Hsp_query-to>
+      <Hsp_hit-from>1</Hsp_hit-from>
+      <Hsp_hit-to>31</Hsp_hit-to>
+      <Hsp_query-frame>1</Hsp_query-frame>
+      <Hsp_hit-frame>1</Hsp_hit-frame>
+      <Hsp_identity>31</Hsp_identity>
+      <Hsp_positive>31</Hsp_positive>
+      <Hsp_gaps>0</Hsp_gaps>
+      <Hsp_align-len>31</Hsp_align-len>
+      <Hsp_qseq>ATGGAGGAGCCGCAGTCAGATCCTAGCGTCG</Hsp_qseq>
+      <Hsp_hseq>ATGGAGGAGCCGCAGTCAGATCCTAGCGTCG</Hsp_hseq>
+      <Hsp_midline>|||||||||||||||||||||||||||||||</Hsp_midline>
+    </Hsp>
+  </Hit_hsps>
+</Hit>
+<Hit>
+  <Hit_num>50</Hit_num>
+  <Hit_id>gi|2694965231|ref|XM_004058511.5|</Hit_id>
+  <Hit_def>PREDICTED: Gorilla gorilla gorilla tumor protein p53 (TP53), transcript variant X2, mRNA</Hit_def>
+  <Hit_accession>XM_004058511</Hit_accession>
+  <Hit_len>2529</Hit_len>
+  <Hit_hsps>
+    <Hsp>
+      <Hsp_num>1</Hsp_num>
+      <Hsp_bit-score>57.1907</Hsp_bit-score>
+      <Hsp_score>62</Hsp_score>
+      <Hsp_evalue>0.00492126</Hsp_evalue>
+      <Hsp_query-from>1</Hsp_query-from>
+      <Hsp_query-to>31</Hsp_query-to>
+      <Hsp_hit-from>165</Hsp_hit-from>
+      <Hsp_hit-to>195</Hsp_hit-to>
+      <Hsp_query-frame>1</Hsp_query-frame>
+      <Hsp_hit-frame>1</Hsp_hit-frame>
+      <Hsp_identity>31</Hsp_identity>
+      <Hsp_positive>31</Hsp_positive>
+      <Hsp_gaps>0</Hsp_gaps>
+      <Hsp_align-len>31</Hsp_align-len>
+      <Hsp_qseq>ATGGAGGAGCCGCAGTCAGATCCTAGCGTCG</Hsp_qseq>
+      <Hsp_hseq>ATGGAGGAGCCGCAGTCAGATCCTAGCGTCG</Hsp_hseq>
+      <Hsp_midline>|||||||||||||||||||||||||||||||</Hsp_midline>
+    </Hsp>
+  </Hit_hsps>
+</Hit>
+</Iteration_hits>
+  <Iteration_stat>
+    <Statistics>
+      <Statistics_db-num>120367913</Statistics_db-num>
+      <Statistics_db-len>1046609866405</Statistics_db-len>
+      <Statistics_hsp-len>0</Statistics_hsp-len>
+      <Statistics_eff-space>0</Statistics_eff-space>
+      <Statistics_kappa>0.41</Statistics_kappa>
+      <Statistics_lambda>0.625</Statistics_lambda>
+      <Statistics_entropy>0.78</Statistics_entropy>
+    </Statistics>
+  </Iteration_stat>
+</Iteration>
+</BlastOutput_iterations>
+</BlastOutput>

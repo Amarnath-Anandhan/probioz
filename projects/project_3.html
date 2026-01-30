@@ -1,0 +1,444 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>probioz | project_3_python</title>
+    <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon.png">
+    <link rel="icon" type="image/png" sizes="48x48" href="/images/favicon.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="/images/favicon.png">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Raleway:wght@400;600;700&family=Karla:wght@300;400;500;600&family=Ubuntu+Mono:wght@400;700&display=swap"
+        rel="stylesheet">
+    <!-- Notebook Playground dependencies -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.65.16/codemirror.min.css">
+    <link rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.65.16/theme/material-darker.min.css">
+    <link rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/styles/atom-one-dark.min.css">
+    <!-- Notebook Playground styles -->
+    <link rel="stylesheet" href="project_notebook.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.65.16/codemirror.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.65.16/mode/python/python.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/highlight.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/pyodide/v0.24.1/full/pyodide.js"></script>
+    <link rel="stylesheet" href="../css/tokens.css">
+    <link rel="stylesheet" href="../css/primitives.css">
+    <link rel="stylesheet" href="../css/header-sizing.css">
+    <link rel="stylesheet" href="../css/layout-sizing.css">
+    <link rel="stylesheet" href="../css/page-specific.css">
+    <link rel="stylesheet" href="../css/project.css">
+</head>
+
+<body class="footer-stick">
+    <a class="skip-link" href="#main">Skip to content</a>
+
+    <!-- Header / Nav -->
+    <header class="site-header">
+        <nav class="navbar" role="navigation" aria-label="Main">
+            <div class="brand">
+                <img src="../images/logo.png" alt="Website Logo" class="site-logo">
+                <span class="logo-text">probioz</span>
+            </div>
+
+            <button class="hamburger" aria-label="Toggle menu" aria-expanded="false" aria-controls="navMenu">
+                <span class="bar"></span><span class="bar"></span><span class="bar"></span>
+            </button>
+
+            <ul id="navMenu" class="nav-links">
+                <li><a href="../home.html">Home</a></li>
+                <li><a class="active" href="../prlist.html">Projects</a></li>
+                <li><a href="../quizzes.html">Quiz</a></li>
+                <li><a href="../about.html">About Us</a></li>
+                <li><a href="../feedback.html">Feedback</a></li>
+                <li><a href="../contact.html">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+    <!-- Secondary Subject Navigation -->
+    <div class="subject-bar">
+        <ul>
+            <li><a href="../python.html">Python</a></li>
+            <li><a href="../perl.html">Perl</a></li>
+            <li><a href="../r.html">R</a></li>
+            <li><a href="../sql.html">SQL</a></li>
+            <li><a href="../ml.html">ML</a></li>
+        </ul>
+    </div>
+    <div class="wrap">
+        <div class="card">
+            <button class="btn_prev" onclick="window.location.href='project_2.html'">previous</button>
+            <div class="meta">
+                <h1>3.ORF + Motif + Sliding GC Tool</h1>
+                <div class="badge">Beginner</div>
+            </div>
+    
+            <div>
+                <p><strong style="color:#7dd3fc">Goal: </strong>Goal: Build one program that reads a DNA sequence and
+                    explores it in three ways: find ORFs, search for a motif, and see how GC% changes along the sequence.
+                </p>
+                <p><strong style="color:#7dd3fc">Rule: </strong>Rule: Each cell has partial code. You fill the TODO lines,
+                    run the cell, look at the output, and then move to the next cell. In the last cell, everything is
+                    already connected into one full program.</p>
+                <p><strong style="color:#7dd3fc">What this tool will do: </strong>What this tool will do: It reads a DNA
+                    sequence from a FASTA file. Then it looks for ORFs in three frames, searches for a motif you give,
+                    calculates GC% using a sliding window, and finally draws a GC% plot.</p>
+            </div>
+    
+            <!-- Notebook Playground section added -->
+            <div class="section nb-playground" id="notebook">
+                <h3>Lets start</h3>
+    
+                <div class="nb-filebar">
+                    <div class="nb-filebar-actions">
+                        <button type="button" class="nb-upload-global">Upload File</button>
+                        <button type="button" class="nb-show-uploads">Show Uploads</button>
+                        <button type="button" class="nb-clear-uploads-global">Clear Uploads</button>
+                        <span class="nb-upload-status" aria-live="polite"></span>
+                    </div>
+    
+                    <div class="nb-uploads-panel" hidden>
+                        <div class="nb-uploads-header">
+                            <strong>Uploaded files</strong>
+                            <button type="button" class="nb-refresh-uploads">Refresh</button>
+                        </div>
+                        <div class="nb-uploads-list"></div>
+                    </div>
+                </div>
+    
+                <div class="nb-cell" data-cell="1">
+    
+                    <div class="nb-cell-title">Read FASTA and get the sequence</div>
+                    <p class="nb-cell-desc">We start by reading the FASTA file and extracting only the sequence. FASTA files
+                        have header lines that start with &gt;, and we don’t want those in our sequence.
+                        Inside the loop, we strip each line to remove \n and spaces. Empty lines are skipped so they don’t
+                        add noise.
+                        <br>For sequence lines, we collect them in a list (seq_parts). At the end we join them into one long
+                        string using "".join(seq_parts) and convert to uppercase using upper().
+                        When you run this cell, you should see the sequence length and the first 60 bases. If length is 0,
+                        your file path or FASTA format is wrong.</p>
+    
+                    <textarea class="nb-editor"># Cell 1: Read FASTA and get sequence
+    
+    def read_fasta_sequence(file_path: str) -> str:
+        seq_parts = []
+    
+        with open(file_path, "r", encoding="utf-8") as f:
+            for line in f:
+                line = line.strip()
+    
+                if line == "":
+                    continue
+    
+                if line.startswith(">"):
+                    continue
+                else:
+                    # TODO: add sequence line
+                    # Hint: seq_parts.append(line)
+                    pass
+    
+        # TODO: join all parts into one string
+        # Hint: seq = "".join(seq_parts)
+    
+        # TODO: convert to uppercase
+        # Hint: seq = seq.upper()
+    
+        # return seq
+    
+    file_path = input("Enter FASTA file path: ")
+    file_path = file_path.strip()
+    sequence = read_fasta_sequence(file_path)
+    
+    print("Sequence length:", len(sequence))
+    print("First 60 bases:", sequence[:60])</textarea>
+                    <div class="nb-actions">
+                        <button class="nb-run" type="button">Run Cell</button>
+                        <button class="nb-reset" type="button">Reset</button>
+                        <button class="nb-clear" type="button">Clear</button>
+                    </div>
+                    <div class="nb-output" aria-live="polite">
+                        <pre class="nb-output-text"></pre>
+                    </div>
+                    <div class="nb-files"></div>
+                    <div class="nb-plot"></div>
+                </div>
+    
+                <div class="nb-cell" data-cell="2">
+    
+                    <div class="nb-cell-title">Find ORFs in 3 frames</div>
+                    <p class="nb-cell-desc">Now we look for ORFs. We define an ORF here as: starts with ATG, then continues
+                        in steps of 3 until it hits a stop codon (TAA, TAG, TGA).
+                        We scan codons using slicing like seq[i:i+3]. The frame tells where to start: 0 means start at index
+                        0, 1 means start at index 1, 2 means start at index 2.
+                        <br>When we hit ATG, we start a second pointer j to walk forward in steps of 3. If we find a stop codon,
+                        we save (start, end) positions.
+                        <br>When you run this cell, you should see ORF counts for each frame. Some sequences may have zero ORFs
+                        in some frames — that’s normal.</p>
+    
+                    <textarea class="nb-editor"># Cell 2: ORF finder (3 frames)
+    
+    stop_codons = {"TAA", "TAG", "TGA"}
+    
+    def find_orfs(seq: str, frame: int):
+        orfs = []
+        i = frame
+    
+        while i + 3 <= len(seq):
+            codon = seq[i:i+3]
+    
+            if codon == "ATG":
+                start = i
+                j = i + 3
+    
+                # TODO: move in steps of 3 until we find a stop codon
+                # Hint:
+                # while j + 3 <= len(seq):
+                #     next_codon = seq[j:j+3]
+                #     if next_codon in stop_codons:
+                #         end = j + 3
+                #         orfs.append((start, end))
+                #         break
+                #     j += 3
+    
+                # TODO: continue search from here
+                # Hint: i = j
+            else:
+                i += 3
+    
+        return orfs
+    
+    orfs_f0 = find_orfs(sequence, 0)
+    orfs_f1 = find_orfs(sequence, 1)
+    orfs_f2 = find_orfs(sequence, 2)
+    
+    print("ORFs in frame 0:", len(orfs_f0))
+    print("ORFs in frame 1:", len(orfs_f1))
+    print("ORFs in frame 2:", len(orfs_f2))</textarea>
+                    <div class="nb-actions">
+                        <button class="nb-run" type="button">Run Cell</button>
+                        <button class="nb-reset" type="button">Reset</button>
+                        <button class="nb-clear" type="button">Clear</button>
+                    </div>
+                    <div class="nb-output" aria-live="polite">
+                        <pre class="nb-output-text"></pre>
+                    </div>
+                    <div class="nb-files"></div>
+                    <div class="nb-plot"></div>
+                </div>
+    
+                <div class="nb-cell" data-cell="3">
+    
+                    <div class="nb-cell-title">Motif search and sliding GC%</div>
+                    <p class="nb-cell-desc">Now we do two separate analyses, but both use the same idea: scan the sequence
+                        and collect results.
+                        For motif search, we use seq.find(motif, start) so we can search from a specific position.
+                        If find() returns -1, the motif isn’t found anymore, so we stop. If it finds a match, we store the
+                        index and move start forward by 1 to find overlapping matches too.
+                        When you run motif search, you get a list of positions. If the list is empty, the motif isn’t
+                        present.
+                        For sliding GC%, we take a fixed-size window (example: 100 bases). We move the window one step at a
+                        time using slicing: seq[i:i+window_size].
+                        Inside each window, we compute GC% using count("G") and count("C"), then store it in a list.
+                        When you run it, the number of windows should be roughly len(seq) - window_size + 1. If you choose a
+                        window bigger than the sequence, you’ll get 0 windows.</p>
+    
+                    <textarea class="nb-editor"># Cell 3: Motif search + Sliding GC%
+
+def find_motif_positions(seq: str, motif: str):
+    positions = []
+    start = 0
+
+    while True:
+        # TODO: find motif starting from 'start'
+        # Hint: idx = seq.find(motif, start)
+
+        # TODO: if not found, stop the loop
+        # Hint: if idx == -1: break
+
+        # TODO: store position and move forward
+        # Hint:
+        # positions.append(idx)
+        # start = idx + 1
+
+        pass
+
+    return positions
+
+
+def sliding_gc(seq: str, window_size: int):
+    gc_values = []
+
+    # TODO: move a window across the sequence
+    # Hint:
+    # for i in range(0, len(seq) - window_size + 1):
+    #     window = seq[i:i+window_size]
+    #     gc = (window.count("G") + window.count("C")) / len(window) * 100
+    #     gc_values.append(gc)
+
+    return gc_values
+
+
+motif = input("Enter motif to search: ")
+motif = motif.strip().upper()
+positions = find_motif_positions(sequence, motif)
+print("Motif found at positions:", positions)
+
+window_size = int(input("Enter window size for GC% (example 100): "))
+gc_values = sliding_gc(sequence, window_size)
+print("GC windows calculated:", len(gc_values))</textarea>
+                    <div class="nb-actions">
+                        <button class="nb-run" type="button">Run Cell</button>
+                        <button class="nb-reset" type="button">Reset</button>
+                        <button class="nb-clear" type="button">Clear</button>
+                    </div>
+                    <div class="nb-output" aria-live="polite">
+                        <pre class="nb-output-text"></pre>
+                    </div>
+                    <div class="nb-files"></div>
+                    <div class="nb-plot"></div>
+                </div>
+    
+                <div class="nb-cell" data-cell="4">
+    
+                    <div class="nb-cell-title">Full final program</div>
+                    <p class="nb-cell-desc">Now we connect everything into one program. The structure is simple: read the
+                        sequence, run ORF finding, run motif search, run sliding GC, then plot the GC list.
+                        The plotting part uses matplotlib. We plot gc_values directly, so the x-axis becomes window index
+                        (0, 1, 2…). That’s fine for a first version.
+                        When you run the full program, you should see ORF counts, motif positions, and a GC plot window. If
+                        the plot is flat, your GC is stable. If it moves up and down, GC content changes across the
+                        sequence.</p>
+                    <details>
+                        <summary>Show full program</summary>
+                        <textarea class="nb-editor"># Cell 4: Full Final Code - ORF + Motif + Sliding GC Tool
+
+import matplotlib.pyplot as plt
+
+stop_codons = {"TAA", "TAG", "TGA"}
+
+def read_fasta_sequence(file_path: str) -> str:
+    seq_parts = []
+
+    with open(file_path, "r", encoding="utf-8") as f:
+        for line in f:
+            line = line.strip()
+            if line == "" or line.startswith(">"):
+                continue
+            seq_parts.append(line)
+
+    seq = "".join(seq_parts)
+    seq = seq.upper()
+    return seq
+
+
+def find_orfs(seq: str, frame: int):
+    orfs = []
+    i = frame
+
+    while i + 3 <= len(seq):
+        codon = seq[i:i+3]
+
+        if codon == "ATG":
+            start = i
+            j = i + 3
+
+            while j + 3 <= len(seq):
+                next_codon = seq[j:j+3]
+                if next_codon in stop_codons:
+                    end = j + 3
+                    orfs.append((start, end))
+                    break
+                j += 3
+
+            i = j
+        else:
+            i += 3
+
+    return orfs
+
+
+def find_motif_positions(seq: str, motif: str):
+    positions = []
+    start = 0
+
+    while True:
+        idx = seq.find(motif, start)
+        if idx == -1:
+            break
+        positions.append(idx)
+        start = idx + 1
+
+    return positions
+
+
+def sliding_gc(seq: str, window_size: int):
+    gc_values = []
+
+    for i in range(0, len(seq) - window_size + 1):
+        window = seq[i:i+window_size]
+        gc = (window.count("G") + window.count("C")) / len(window) * 100
+        gc_values.append(gc)
+
+    return gc_values
+
+
+file_path = input("Enter FASTA file path: ")
+file_path = file_path.strip()
+sequence = read_fasta_sequence(file_path)
+
+print("Sequence length:", len(sequence))
+
+orfs_f0 = find_orfs(sequence, 0)
+orfs_f1 = find_orfs(sequence, 1)
+orfs_f2 = find_orfs(sequence, 2)
+
+print("ORFs in frame 0:", len(orfs_f0))
+print("ORFs in frame 1:", len(orfs_f1))
+print("ORFs in frame 2:", len(orfs_f2))
+
+motif = input("Enter motif to search: ")
+motif = motif.strip().upper()
+positions = find_motif_positions(sequence, motif)
+print("Motif positions:", positions)
+
+window_size = int(input("Enter window size for GC% (example 100): "))
+gc_values = sliding_gc(sequence, window_size)
+
+plt.figure()
+plt.plot(gc_values)
+plt.xlabel("Window index")
+plt.ylabel("GC%")
+plt.title("Sliding Window GC%")
+plt.show()</textarea>
+                    </details>
+    
+                    <div class="nb-actions">
+                        <button class="nb-run" type="button">Run Cell</button>
+                        <button class="nb-reset" type="button">Reset</button>
+                        <button class="nb-clear" type="button">Clear</button>
+                    </div>
+                    <div class="nb-output" aria-live="polite">
+                        <pre class="nb-output-text"></pre>
+                    </div>
+                    <div class="nb-files"></div>
+                    <div class="nb-plot"></div>
+                </div>
+            </div>
+            <div class="btn_wrapper">
+                <button class="btn_prev" onclick="window.location.href='project_2.html'">previous</button>
+                <button class="btn_next" onclick="window.location.href='project_4.html'">Next</button>
+            </div>
+        </div>
+    </div>
+
+    <footer class="site-footer">
+        <p>&copy; 2026 Probioz &mdash; Built for Biologists, by Biologist.</p>
+    </footer>
+
+    <!-- Notebook Playground logic -->
+    <script src="project_notebook.js"></script>
+    <script src="../js/project.js"></script>
+</body>
+
+</html>

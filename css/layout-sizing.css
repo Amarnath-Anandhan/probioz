@@ -1,0 +1,28 @@
+/* layout-sizing.css */
+.wrap {
+  max-width: 1280px;
+  width: 100%;
+  margin: 0 auto;
+  padding-left: var(--container-pad);
+  padding-right: var(--container-pad);
+}
+
+body.has-subnav .wrap {
+  padding-top: calc(var(--nav-h) + var(--subnav-h) + 16px);
+}
+
+body.no-subnav .wrap {
+  padding-top: calc(var(--nav-h) + 16px);
+}
+
+.grid {
+  display: grid;
+  gap: 18px;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+}
+
+@media (max-width:840px) {
+  .grid {
+    grid-template-columns: 1fr;
+  }
+}

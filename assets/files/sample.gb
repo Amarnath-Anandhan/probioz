@@ -1,0 +1,21 @@
+LOCUS       SMALL001     72 bp    DNA             SYN       23-JAN-2026
+DEFINITION  Synthetic demo sequence for GenBank parsing practice.
+ACCESSION   SMALL001
+VERSION     SMALL001.1
+KEYWORDS    .
+SOURCE      Synthetic construct
+  ORGANISM  Synthetic construct
+            other sequences; artificial sequences.
+FEATURES             Location/Qualifiers
+     source          1..72
+                     /organism="Synthetic construct"
+                     /mol_type="genomic DNA"
+     gene            1..72
+                     /gene="demoGene"
+     CDS             1..72
+                     /gene="demoGene"
+                     /product="demo protein"
+ORIGIN
+        1 atgagaacat acgttaacgg atccgtttac ggtacatgac aagtttggta aatggttcaa
+       61 tgaagctttc ca
+//

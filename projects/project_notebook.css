@@ -1,0 +1,385 @@
+﻿/* Notebook Playground styles for project_1.html */
+.nb-playground {
+    margin-top: 18px;
+}
+
+.nb-cell {
+    margin-top: 16px;
+    padding: 16px;
+    border-radius: 10px;
+    background: rgba(7, 16, 40, 0.6);
+    border: 1px solid var(--glass-border);
+}
+
+.nb-cell-title {
+    font-weight: 700;
+    color: var(--accent);
+    margin-bottom: 6px;
+    font-size: var(--h3);
+}
+
+.nb-cell-desc {
+    margin: 0 0 10px;
+    color: rgba(201, 208, 219, 0.9);
+    font-size: var(--p);
+    line-height: 1.5;
+}
+
+.nb-cell-header {
+    position: relative;
+    padding-right: 120px;
+}
+
+.nb-toggle {
+    background: transparent;
+    color: var(--accent);
+    border: 1px solid rgba(125, 211, 252, 0.4);
+    border-radius: 8px;
+    cursor: pointer;
+    position: absolute;
+    top: 0;
+    right: 0;
+}
+
+.nb-toggle:hover {
+    border-color: rgba(125, 211, 252, 0.8);
+}
+
+.nb-actions {
+    display: flex;
+    gap: 8px;
+    margin-top: 10px;
+}
+
+.nb-actions button {
+    background: linear-gradient(90deg, #08527a, #0b3d91);
+    color: #fff;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+}
+
+.nb-actions button:disabled {
+    opacity: 0.6;
+    cursor: not-allowed;
+}
+
+.nb-filebar {
+    margin: 12px 0 16px;
+    padding: 12px 14px;
+    border-radius: 10px;
+    background: rgba(7, 16, 40, 0.6);
+    border: 1px solid var(--glass-border);
+}
+
+.nb-filebar-actions {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    align-items: center;
+}
+
+.nb-filebar-actions button {
+    background: linear-gradient(90deg, #08527a, #0b3d91);
+    color: #fff;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+}
+
+.nb-upload-status {
+    margin-left: 6px;
+    font-size: var(--badge-font);
+    color: rgba(201, 208, 219, 0.85);
+}
+
+.nb-uploads-panel {
+    margin-top: 10px;
+    padding: 10px;
+    border-radius: 8px;
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    background: rgba(5, 10, 26, 0.6);
+}
+
+.nb-uploads-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 8px;
+    font-size: var(--badge-font);
+    color: var(--text);
+}
+
+.nb-uploads-header button {
+    background: transparent;
+    color: var(--accent);
+    border: 1px solid rgba(125, 211, 252, 0.4);
+    border-radius: 6px;
+    padding: var(--btn-pad-y) var(--btn-pad-x);
+    min-height: 40px;
+    font-size: var(--badge-font);
+    cursor: pointer;
+}
+
+.nb-uploads-list {
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+    font-size: var(--badge-font);
+}
+
+.nb-upload-item {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 8px;
+    padding: 4px 6px;
+    border-radius: 6px;
+    background: rgba(255, 255, 255, 0.03);
+}
+
+.nb-upload-path {
+    color: var(--text);
+}
+
+.nb-upload-name {
+    margin-right: 16px;
+    color: var(--text);
+    font-weight: 600;
+}
+
+.nb-upload-path-text {
+    opacity: 0.85;
+}
+
+.nb-upload-delete,
+.nb-upload-open {
+    background: transparent;
+    color: var(--accent);
+    border: 1px solid rgba(125, 211, 252, 0.4);
+    border-radius: 6px;
+    cursor: pointer;
+}
+
+.nb-upload-actions {
+    display: flex;
+    gap: 6px;
+}
+
+.nb-output {
+    margin-top: 10px;
+    background: #050a1a;
+    border-radius: 8px;
+    padding: 10px;
+    border: 1px solid rgba(255, 255, 255, 0.06);
+    min-height: 40px;
+}
+
+.nb-input-row {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    margin-top: 6px;
+    flex-wrap: wrap;
+}
+
+.nb-input-prompt {
+    color: var(--text);
+    font-family: "Ubuntu Mono", monospace;
+    font-size: var(--pre-font);
+}
+
+.nb-input-field {
+    flex: 1 1 160px;
+    min-width: 160px;
+    background: #0b1020;
+    color: var(--text);
+    border: 1px solid rgba(255, 255, 255, 0.15);
+    border-radius: 6px;
+    padding: calc(var(--btn-pad-y) - 2px) calc(var(--btn-pad-x) - 2px);
+    font-family: "Ubuntu Mono", monospace;
+    font-size: var(--pre-font);
+    min-height: 40px;
+}
+
+.nb-input-submit {
+    background: linear-gradient(90deg, #08527a, #0b3d91);
+    color: #fff;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+}
+
+.nb-output-text {
+    margin: 0;
+    white-space: pre-wrap;
+    word-break: break-word;
+    font-family: "Ubuntu Mono", monospace;
+    font-size: var(--pre-font);
+    color: var(--text);
+    
+}
+
+.nb-inline-input-field {
+    outline: none;
+    border: none;
+    background: transparent;
+    color: var(--text);
+    font-family: "Ubuntu Mono", monospace;
+    font-size: var(--pre-font);
+    padding: 0;
+    margin: 0;
+    min-width: 24ch;
+    width: 100%;
+    max-width: 100%;
+    box-sizing: border-box;
+}
+
+.nb-files,
+.nb-plot {
+    margin-top: 8px;
+}
+
+.nb-files a {
+    color: var(--accent);
+    text-decoration: none;
+    margin-right: 8px;
+}
+
+.nb-plot img {
+    max-width: 100%;
+    height: auto;
+    display: block;
+    border-radius: 6px;
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    margin-bottom: 10px;
+}
+
+.nb-plot a {
+    display: inline-block;
+    margin-top: 6px;
+    color: var(--accent);
+}
+
+.CodeMirror {
+    height: auto;
+    min-height: 180px;
+    background: #0b1020;
+    border-radius: 8px;
+    border: 1px solid rgba(255, 255, 255, 0.06);
+    font-size: var(--pre-font);
+}
+.CodeMirror,
+.CodeMirror-scroll,
+.CodeMirror-sizer,
+.CodeMirror-lines,
+.cm-s-default.CodeMirror,
+.cm-s-default .CodeMirror-scroll {
+    background: #0b1020 !important;
+}
+
+/* Optional: gutters (line numbers area) */
+.CodeMirror-gutters {
+    background: #0b1020 !important;
+    border-right: 1px solid rgba(0, 0, 0, 0.1) !important;
+}
+
+.nb-cell.nb-collapsed .CodeMirror {
+    box-shadow: inset 0 -12px 18px rgba(0, 0, 0, 0.35);
+}
+
+.nb-fullcode-hidden .CodeMirror {
+    display: none;
+}
+
+.nb-inline-code {
+    font-family: "Ubuntu Mono", monospace;
+    background: rgba(125, 211, 252, 0.12);
+    color: var(--accent);
+    padding: 1px 6px;
+    border-radius: 6px;
+}
+
+.nb-actions button,
+.nb-filebar-actions button,
+.nb-input-submit,
+.nb-upload-delete,
+.nb-upload-open,
+.nb-refresh-uploads,
+.nb-toggle {
+    padding: calc(var(--btn-pad-y) - 4px) calc(var(--btn-pad-x) - 4px);
+    font-size: var(--p);
+    min-height: 32px;
+}
+
+.nb-refresh-uploads {
+    padding: calc(var(--btn-pad-y) - 7px) calc(var(--btn-pad-x) - 7px);
+    min-height: 26px;
+}
+
+@media (min-width:1024px) and (max-width:1199px) {
+    .CodeMirror {
+        min-height: 170px;
+    }
+
+    .nb-actions button,
+    .nb-filebar-actions button,
+    .nb-input-submit,
+    .nb-upload-delete,
+    .nb-upload-open,
+    .nb-refresh-uploads,
+    .nb-toggle {
+        padding: calc(var(--btn-pad-y) - 5px) calc(var(--btn-pad-x) - 5px);
+        min-height: 30px;
+    }
+
+    .nb-refresh-uploads {
+        padding: calc(var(--btn-pad-y) - 8px) calc(var(--btn-pad-x) - 8px);
+        min-height: 24px;
+    }
+}
+
+@media (min-width:768px) and (max-width:1023px) {
+    .CodeMirror {
+        min-height: 165px;
+    }
+
+    .nb-actions button,
+    .nb-filebar-actions button,
+    .nb-input-submit,
+    .nb-upload-delete,
+    .nb-upload-open,
+    .nb-refresh-uploads,
+    .nb-toggle {
+        padding: calc(var(--btn-pad-y) - 6px) calc(var(--btn-pad-x) - 6px);
+        min-height: 28px;
+    }
+
+    .nb-refresh-uploads {
+        padding: calc(var(--btn-pad-y) - 9px) calc(var(--btn-pad-x) - 9px);
+        min-height: 22px;
+    }
+}
+
+@media (max-width:767px) {
+    .CodeMirror {
+        min-height: 160px;
+    }
+
+    .nb-actions button,
+    .nb-filebar-actions button,
+    .nb-input-submit,
+    .nb-upload-delete,
+    .nb-upload-open,
+    .nb-refresh-uploads,
+    .nb-toggle {
+        padding: calc(var(--btn-pad-y) - 7px) calc(var(--btn-pad-x) - 7px);
+        min-height: 26px;
+        border-radius: 6px;
+    }
+
+    .nb-refresh-uploads {
+        padding: calc(var(--btn-pad-y) - 10px) calc(var(--btn-pad-x) - 10px);
+        min-height: 20px;
+    }
+}

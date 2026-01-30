@@ -1,0 +1,308 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>probioz | project_6_python</title>
+    <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon.png">
+    <link rel="icon" type="image/png" sizes="48x48" href="/images/favicon.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="/images/favicon.png">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Raleway:wght@400;600;700&family=Karla:wght@300;400;500;600&family=Ubuntu+Mono:wght@400;700&display=swap"
+        rel="stylesheet">
+    <!-- Notebook Playground dependencies -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.65.16/codemirror.min.css">
+    <link rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.65.16/theme/material-darker.min.css">
+    <link rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/styles/atom-one-dark.min.css">
+    <!-- Notebook Playground styles -->
+    <link rel="stylesheet" href="project_notebook.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.65.16/codemirror.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.65.16/mode/python/python.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/highlight.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/pyodide/v0.24.1/full/pyodide.js"></script>
+    <link rel="stylesheet" href="../css/tokens.css">
+    <link rel="stylesheet" href="../css/primitives.css">
+    <link rel="stylesheet" href="../css/header-sizing.css">
+    <link rel="stylesheet" href="../css/layout-sizing.css">
+    <link rel="stylesheet" href="../css/page-specific.css">
+    <link rel="stylesheet" href="../css/project.css">
+</head>
+
+<body class="footer-stick">
+    <a class="skip-link" href="#main">Skip to content</a>
+
+    <!-- Header / Nav -->
+    <header class="site-header">
+        <nav class="navbar" role="navigation" aria-label="Main">
+            <div class="brand">
+                <img src="../images/logo.png" alt="Website Logo" class="site-logo">
+                <span class="logo-text">probioz</span>
+            </div>
+
+            <button class="hamburger" aria-label="Toggle menu" aria-expanded="false" aria-controls="navMenu">
+                <span class="bar"></span><span class="bar"></span><span class="bar"></span>
+            </button>
+
+            <ul id="navMenu" class="nav-links">
+                <li><a href="../home.html">Home</a></li>
+                <li><a class="active" href="../prlist.html">Projects</a></li>
+                <li><a href="../quizzes.html">Quiz</a></li>
+                <li><a href="../about.html">About Us</a></li>
+                <li><a href="../feedback.html">Feedback</a></li>
+                <li><a href="../contact.html">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+    <!-- Secondary Subject Navigation -->
+    <div class="subject-bar">
+        <ul>
+            <li><a href="../python.html">Python</a></li>
+            <li><a href="../perl.html">Perl</a></li>
+            <li><a href="../r.html">R</a></li>
+            <li><a href="../sql.html">SQL</a></li>
+            <li><a href="../ml.html">ML</a></li>
+        </ul>
+    </div>
+    <div class="wrap">
+        <div class="card">
+            <button class="btn_prev" onclick="window.location.href='project_5.html'">previous</button>
+            <div class="meta">
+                <h1>6.NCBI Sequence Fetcher (FASTA Downloader)</h1>
+                <div class="badge">Beginner</div>
+            </div>
+    
+            <div>
+                <p><strong style="color:#7dd3fc">Goal: </strong>Goal: Build one program that takes an NCBI ID, downloads the
+                    sequence, and saves it as a FASTA file with a small summary.</p>
+                <p><strong style="color:#7dd3fc">Rule: </strong>Rule: Each cell has partial code. Fill the TODO lines, run
+                    the cell, check the output, then go to the next cell. The last cell has the full working program.</p>
+                <p><strong style="color:#7dd3fc">What this tool will do: </strong>What this tool will do: It asks for an
+                    NCBI nucleotide ID (or accession), fetches the sequence using Biopython Entrez, prints basic details
+                    (ID, length, preview), and saves the sequence as a FASTA file.</p>
+            </div>
+    
+            <!-- Notebook Playground section added -->
+            <div class="section nb-playground" id="notebook">
+                <h3>Lets start</h3>
+    
+                <div class="nb-filebar">
+                    <div class="nb-filebar-actions">
+                        <button type="button" class="nb-upload-global">Upload File</button>
+                        <button type="button" class="nb-show-uploads">Show Uploads</button>
+                        <button type="button" class="nb-clear-uploads-global">Clear Uploads</button>
+                        <span class="nb-upload-status" aria-live="polite"></span>
+                    </div>
+    
+                    <div class="nb-uploads-panel" hidden>
+                        <div class="nb-uploads-header">
+                            <strong>Uploaded files</strong>
+                            <button type="button" class="nb-refresh-uploads">Refresh</button>
+                        </div>
+                        <div class="nb-uploads-list"></div>
+                    </div>
+                </div>
+    
+                <div class="nb-cell" data-cell="1">
+    
+                    <div class="nb-cell-title">Setup Entrez and take inputs</div>
+                    <p class="nb-cell-desc">First we set up Entrez. NCBI expects you to provide an email. This is required
+                        for responsible usage.
+                        We also collect the database name (usually nucleotide) and the ID/accession from the user.
+                        When you run this cell, you should only see printed inputs, nothing fetched yet.</p>
+    
+                    <textarea class="nb-editor"># Cell 1: Entrez setup + inputs
+    
+    from Bio import Entrez
+    
+    # TODO: set your email (required by NCBI)
+    # Hint: Entrez.email = "your_email@example.com"
+    
+    db = "nucleotide"
+    ncbi_id = input("Enter NCBI nucleotide ID/accession (example NM_000546): ")
+    ncbi_id = ncbi_id.strip()
+    
+    print("DB:", db)
+    print("ID:", ncbi_id)</textarea>
+                    <div class="nb-actions">
+                        <button class="nb-run" type="button">Run Cell</button>
+                        <button class="nb-reset" type="button">Reset</button>
+                        <button class="nb-clear" type="button">Clear</button>
+                    </div>
+                    <div class="nb-output" aria-live="polite">
+                        <pre class="nb-output-text"></pre>
+                    </div>
+                    <div class="nb-files"></div>
+                    <div class="nb-plot"></div>
+                </div>
+    
+                <div class="nb-cell" data-cell="2">
+    
+                    <div class="nb-cell-title">Fetch FASTA text from NCBI</div>
+                    <p class="nb-cell-desc">Now we fetch FASTA from NCBI using Entrez.efetch.
+                        We fetch in rettype="fasta" and read the response using .read().
+                        When you run this cell, you should see FASTA text starting with &gt; and a few sequence lines.</p>
+    
+                    <textarea class="nb-editor"># Cell 2: Fetch FASTA text
+    
+    from Bio import Entrez
+    
+    def fetch_fasta_text(db: str, ncbi_id: str) -> str:
+        # TODO: use Entrez.efetch to get FASTA
+        # Hint:
+        # handle = Entrez.efetch(db=db, id=ncbi_id, rettype="fasta", retmode="text")
+        # fasta_text = handle.read()
+        # handle.close()
+        # return fasta_text
+        pass
+    
+    # TODO: call the function and print a preview
+    # Hint:
+    # fasta_text = fetch_fasta_text(db, ncbi_id)
+    # print(fasta_text[:300])</textarea>
+                    <div class="nb-actions">
+                        <button class="nb-run" type="button">Run Cell</button>
+                        <button class="nb-reset" type="button">Reset</button>
+                        <button class="nb-clear" type="button">Clear</button>
+                    </div>
+                    <div class="nb-output" aria-live="polite">
+                        <pre class="nb-output-text"></pre>
+                    </div>
+                    <div class="nb-files"></div>
+                    <div class="nb-plot"></div>
+                </div>
+    
+                <div class="nb-cell" data-cell="3">
+    
+                    <div class="nb-cell-title">Parse FASTA and make a small summary</div>
+                    <p class="nb-cell-desc">Now we turn the FASTA text into a real sequence record using SeqIO.read.
+                        We also build a short summary: record id, description, length, and first 60 bases.
+                        When you run this cell, you should see the ID and a clean length number.</p>
+    
+                    <textarea class="nb-editor"># Cell 3: Parse FASTA + summary
+    
+    from Bio import SeqIO
+    from io import StringIO
+    
+    def parse_fasta(fasta_text: str):
+        # TODO: convert text to a file-like object and parse
+        # Hint:
+        # handle = StringIO(fasta_text)
+        # record = SeqIO.read(handle, "fasta")
+        # return record
+        pass
+    
+    # TODO: parse and print summary
+    # Hint:
+    # record = parse_fasta(fasta_text)
+    # print("Record ID:", record.id)
+    # print("Description:", record.description)
+    # print("Length:", len(record.seq))
+    # print("First 60 bases:", str(record.seq)[:60])</textarea>
+                    <div class="nb-actions">
+                        <button class="nb-run" type="button">Run Cell</button>
+                        <button class="nb-reset" type="button">Reset</button>
+                        <button class="nb-clear" type="button">Clear</button>
+                    </div>
+                    <div class="nb-output" aria-live="polite">
+                        <pre class="nb-output-text"></pre>
+                    </div>
+                    <div class="nb-files"></div>
+                    <div class="nb-plot"></div>
+                </div>
+    
+                <div class="nb-cell" data-cell="4">
+    
+                    <div class="nb-cell-title">Full final program with save to FASTA</div>
+                    <p class="nb-cell-desc">Now we connect everything. We fetch, parse, print summary, then save to a FASTA
+                        file.
+                        We use SeqIO.write to save in FASTA format.
+                        If the ID is wrong or internet blocks the request, you’ll get an error — that’s normal, so we catch
+                        it and print a clean message.</p>
+                    <details>
+                        <summary>Show full program</summary>
+                        <textarea class="nb-editor"># Cell 4: Full Final Code - NCBI Sequence Fetcher (FASTA Downloader)
+
+from Bio import Entrez, SeqIO
+from io import StringIO
+
+def fetch_fasta_text(db: str, ncbi_id: str) -> str:
+    handle = Entrez.efetch(db=db, id=ncbi_id, rettype="fasta", retmode="text")
+    fasta_text = handle.read()
+    handle.close()
+    return fasta_text
+
+def parse_fasta(fasta_text: str):
+    handle = StringIO(fasta_text)
+    record = SeqIO.read(handle, "fasta")
+    return record
+
+def save_fasta(record, out_path: str):
+    with open(out_path, "w", encoding="utf-8") as f:
+        SeqIO.write(record, f, "fasta")
+
+# Required by NCBI
+Entrez.email = input("Enter your email (required by NCBI): ")
+Entrez.email = Entrez.email.strip()
+
+db = "nucleotide"
+ncbi_id = input("Enter NCBI nucleotide ID/accession (example NM_000546): ")
+out_path = input("Output FASTA name (example sequence.fasta): ")
+ncbi_id = ncbi_id.strip()
+out_path = out_path.strip()
+if out_path == "":
+    out_path = "sequence.fasta"
+
+try:
+    fasta_text = fetch_fasta_text(db, ncbi_id)
+
+    if fasta_text.strip() == "":
+        print("No data returned. Check the ID/accession.")
+        raise SystemExit
+
+    record = parse_fasta(fasta_text)
+
+    print("Record ID:", record.id)
+    print("Description:", record.description)
+    print("Length:", len(record.seq))
+    print("First 60 bases:", str(record.seq)[:60])
+
+    save_fasta(record, out_path)
+    print("Saved:", out_path)
+
+except Exception as e:
+    print("Fetch failed.")
+    print("Reason:", str(e))</textarea>
+                    </details>
+    
+                    <div class="nb-actions">
+                        <button class="nb-run" type="button">Run Cell</button>
+                        <button class="nb-reset" type="button">Reset</button>
+                        <button class="nb-clear" type="button">Clear</button>
+                    </div>
+                    <div class="nb-output" aria-live="polite">
+                        <pre class="nb-output-text"></pre>
+                    </div>
+                    <div class="nb-files"></div>
+                    <div class="nb-plot"></div>
+                </div>
+            </div>
+            <div class="btn_wrapper">
+                <button class="btn_prev" onclick="window.location.href='project_5.html'">previous</button>
+                <button class="btn_next" onclick="window.location.href='project_7.html'">Next</button>
+            </div>
+        </div>
+    </div>
+
+    <footer class="site-footer">
+        <p>&copy; 2026 Probioz &mdash; Built for Biologists, by Biologist.</p>
+    </footer>
+
+    <!-- Notebook Playground logic -->
+    <script src="project_notebook.js"></script>
+    <script src="../js/project.js"></script>
+</body>
+
+</html>
