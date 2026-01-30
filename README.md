@@ -30,15 +30,15 @@ This is a platform to learn programming with biological examples and use cases f
 
 ## Screenshots
 Reference screenshots:
-- `screenshots/home_page_1.png`
-- `screenshots/about_page.png`
-- `screenshots/contact_page.png`
-- `screenshots/feedback_page.png`
-- `screenshots/home_page_2.png`
-- `screenshots/project_list.png`
-- `screenshots/project_page.png`
-- `screenshots/python_page_1.png`
-- `screenshots/python_page_2.png`
+- [Home Page 1](screenshots/home_page_1.png)
+- [About Page](screenshots/about_page.png)
+- [Contact Page](screenshots/contact_page.png)
+- [Feedback Page](screenshots/feedback_page.png)
+- [Home Page 2](screenshots/home_page_2.png)
+- [Project List](screenshots/project_list.png)
+- [Project Page](screenshots/project_page.png)
+- [Python Page 1](screenshots/python_page_1.png)
+- [Python Page 2](screenshots/python_page_2.png)
 
 ## How to Run Locally
 1. Download or clone the repository
